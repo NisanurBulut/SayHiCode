@@ -43,5 +43,17 @@ namespace webApiTokenAuthentication.Controllers
                         .Select(c => c.Value);
             return Ok("Merhaba " + identity.Name + " Role: " + string.Join(",", roles.ToList()));
         }
+        //Sadece Admin Kullanıcılar için
+        [Authorize(Roles = "admin")]
+        [HttpGet]     
+        [Route("api/data/ListCihaz")]
+        public IHttpActionResult ListCihaz()
+        {
+            var identity = (ClaimsIdentity)User.Identity;
+            var roles = identity.Claims
+                        .Where(c => c.Type == ClaimTypes.Role)
+                        .Select(c => c.Value);
+            return Ok("Merhaba " + identity.Name + " Role: " + string.Join(",", roles.ToList()));
+        }
     }
 }

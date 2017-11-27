@@ -3,6 +3,9 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using webApiTokenAuthentication.Models;
 using System.Linq;
+using Microsoft.Owin.Security;
+using System.Collections.Generic;
+
 namespace webApiTokenAuthentication
 {
     public class MyAuthorizationServerProvider : OAuthAuthorizationServerProvider
@@ -25,6 +28,7 @@ namespace webApiTokenAuthentication
                 identity.AddClaim(new Claim(ClaimTypes.Role, "admin"));
                 identity.AddClaim(new Claim("username", "admin"));
                 identity.AddClaim(new Claim(ClaimTypes.Name, _kulllanici.UAd));
+               
                 context.Validated(identity);
             }
             else if (_kulllanici.PID ==1 )//bakım
@@ -46,6 +50,7 @@ namespace webApiTokenAuthentication
                 context.SetError("invalid_grant", "Provided username and password is incorrect");
                 return;
             }
+           
         }
     }
 }
