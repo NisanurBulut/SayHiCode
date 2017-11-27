@@ -13,7 +13,7 @@ namespace webApiTokenAuthentication
     {
         public void Configuration(IAppBuilder app)
         {
-            
+            //CORS istklerine izin ver
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
             var myProvider = new MyAuthorizationServerProvider();
