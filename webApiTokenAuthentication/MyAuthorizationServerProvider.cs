@@ -1,15 +1,14 @@
 ﻿using Microsoft.Owin.Security.OAuth;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
-
+using webApiTokenAuthentication.Models;
+using System.Linq;
 namespace webApiTokenAuthentication
 {
     public class MyAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
+
+        VkbAnalizEntities vk = new VkbAnalizEntities();
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             context.Validated(); // 
@@ -17,24 +16,34 @@ namespace webApiTokenAuthentication
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
+            Kullanici _kulllanici = vk.Kullanicis.Where(a=>a.UAd==context.UserName && a.UPass==context.Password).FirstOrDefault();
+
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-            if (context.UserName == "admin" && context.Password == "admin")
+
+            if (_kulllanici.PID==0)//admin
             {
                 identity.AddClaim(new Claim(ClaimTypes.Role, "admin"));
                 identity.AddClaim(new Claim("username", "admin"));
-                identity.AddClaim(new Claim(ClaimTypes.Name, "Nisanur Bulut"));
+                identity.AddClaim(new Claim(ClaimTypes.Name, _kulllanici.UAd));
                 context.Validated(identity);
             }
-            else if (context.UserName == "user" && context.Password == "user")
+            else if (_kulllanici.PID ==1 )//bakım
             {
-                identity.AddClaim(new Claim(ClaimTypes.Role, "user"));
+                identity.AddClaim(new Claim(ClaimTypes.Role, "bakim"));
+                identity.AddClaim(new Claim("username", "bakim"));
+                identity.AddClaim(new Claim(ClaimTypes.Name, "Bakim Kullanicisi"));
+                context.Validated(identity);
+            }
+            else if (_kulllanici.PID == 2)//normal
+            {
+                identity.AddClaim(new Claim(ClaimTypes.Role, "normal"));
                 identity.AddClaim(new Claim("username", "user"));
-                identity.AddClaim(new Claim(ClaimTypes.Name, "Uğur Gürel"));
+                identity.AddClaim(new Claim(ClaimTypes.Name, "Normal Kullanici"));
                 context.Validated(identity);
             }
             else
             {
-                context.SetError("invalid_grant", "Kullanıcı adı ya da parola hatalıdır.");
+                context.SetError("invalid_grant", "Provided username and password is incorrect");
                 return;
             }
         }
