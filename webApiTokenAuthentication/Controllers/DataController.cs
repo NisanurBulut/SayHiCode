@@ -47,8 +47,8 @@ namespace webApiTokenAuthentication.Controllers
         //Sadece Admin Kullanıcılar için
         [Authorize(Roles = "admin")]
         [HttpGet]     
-        [Route("api/data/ListCihaz")]
-        public IHttpActionResult ListCihaz()
+        [Route("api/data/ListTren")]
+        public IHttpActionResult ListTren()
         {
             using (VkbAnalizEntities vk = new VkbAnalizEntities())
             {
@@ -61,6 +61,27 @@ namespace webApiTokenAuthentication.Controllers
                 return Ok(trens);
             }
            
+        }
+        //Sadece Admin Kullanıcılar için
+        [Authorize(Roles = "admin")]
+        [HttpGet]
+        [Route("api/data/ListCihaz")]
+        public IHttpActionResult ListCihaz(int id)
+        {
+            using (VkbAnalizEntities vk = new VkbAnalizEntities())
+            {
+
+                var tcihazs = vk.TrenCihazs.Where(a=>a.CTrenId==id).Select(a => new
+                {
+                    a.CAd,
+                    a.CDurum,
+                    a.Cid,
+                    a.CSonVeriTar,
+                    a.CTrenId
+                }).ToList();
+                return Ok(tcihazs);
+            }
+
         }
     }
 }
