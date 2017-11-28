@@ -13,7 +13,7 @@ namespace webApiTokenAuthentication.Controllers
     {
         // Bu eylemi tüm anonim kullanıcılar için ekledim.
         //Kimliği doğrulanmış olsun veya olmasın, her tür talep bu işleme erişebilir.
-      
+
         [AllowAnonymous]
         [HttpGet]
         [Route("api/data/forall")]
@@ -46,7 +46,7 @@ namespace webApiTokenAuthentication.Controllers
         }
         //Sadece Admin Kullanıcılar için
         [Authorize(Roles = "admin")]
-        [HttpGet]     
+        [HttpGet]
         [Route("api/data/ListTren")]
         public IHttpActionResult ListTren()
         {
@@ -60,7 +60,7 @@ namespace webApiTokenAuthentication.Controllers
                 }).ToList();
                 return Ok(trens);
             }
-           
+
         }
         //Sadece Admin Kullanıcılar için
         [Authorize(Roles = "admin")]
@@ -70,8 +70,7 @@ namespace webApiTokenAuthentication.Controllers
         {
             using (VkbAnalizEntities vk = new VkbAnalizEntities())
             {
-
-                var tcihazs = vk.TrenCihazs.Where(a=>a.CTrenId==id).Select(a => new
+                var tcihazs = vk.TrenCihazs.Where(a => a.CTrenId == id).Select(a => new
                 {
                     a.CAd,
                     a.CDurum,
@@ -83,5 +82,30 @@ namespace webApiTokenAuthentication.Controllers
             }
 
         }
+        //Sadece Admin Kullanıcılar için
+        [Authorize(Roles = "admin")]
+        [HttpGet]
+        [Route("api/data/ListCihazDetay")]
+        public IHttpActionResult ListCihazDetay(int id)
+        {
+            
+                using (VkbAnalizEntities vk = new VkbAnalizEntities())
+                {
+               
+                    var tcihazd = vk.CihazDetays.Where(a => a.DetayCihazId == id).Select(a => new
+                    {
+                        a.DetayCihazId,
+                        a.DetayErisimSonTar,
+                        a.DetayStr,
+                        a.DetayId
+                    }).ToList();
+               
+
+                    return Ok(tcihazd);
+
+                }
+               
+
+            }
+        }
     }
-}
