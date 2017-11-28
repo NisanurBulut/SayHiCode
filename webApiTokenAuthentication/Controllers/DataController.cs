@@ -5,15 +5,16 @@ using System.Net;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Web.Http;
+using webApiTokenAuthentication.Models;
 
 namespace webApiTokenAuthentication.Controllers
 {
     public class DataController : ApiController
     {
-       // Bu eylemi tüm anonim kullanıcılar için ekledim.
-       //Kimliği doğrulanmış olsun veya olmasın, her tür talep bu işleme erişebilir.
-
-       [AllowAnonymous]
+        // Bu eylemi tüm anonim kullanıcılar için ekledim.
+        //Kimliği doğrulanmış olsun veya olmasın, her tür talep bu işleme erişebilir.
+      
+        [AllowAnonymous]
         [HttpGet]
         [Route("api/data/forall")]
         public IHttpActionResult Get()
@@ -49,11 +50,17 @@ namespace webApiTokenAuthentication.Controllers
         [Route("api/data/ListCihaz")]
         public IHttpActionResult ListCihaz()
         {
-            var identity = (ClaimsIdentity)User.Identity;
-            var roles = identity.Claims
-                        .Where(c => c.Type == ClaimTypes.Role)
-                        .Select(c => c.Value);
-            return Ok("Merhaba " + identity.Name + " Role: " + string.Join(",", roles.ToList()));
+            using (VkbAnalizEntities vk = new VkbAnalizEntities())
+            {
+
+                var trens = vk.Trens.Select(a => new
+                {
+                    a.TrenId,
+                    a.TrenAd
+                }).ToList();
+                return Ok(trens);
+            }
+           
         }
     }
 }
