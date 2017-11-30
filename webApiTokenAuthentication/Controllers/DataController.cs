@@ -48,7 +48,7 @@ namespace webApiTokenAuthentication.Controllers
         [Authorize(Roles = "admin")]
         [HttpGet]
         [Route("api/data/ListTren")]
-        public IHttpActionResult ListTren()
+        public IHttpActionResult ListTren(int id)
         {
             using (VkbAnalizEntities vk = new VkbAnalizEntities())
             {
@@ -58,6 +58,14 @@ namespace webApiTokenAuthentication.Controllers
                     a.TrenId,
                     a.TrenAd
                 }).ToList();
+
+                if (id >= trens.Count)
+                    return Json(false);
+                else if (id > 0)
+                    trens = trens.GetRange((id - 1), (trens.Count - id >= 10 ? 10 : trens.Count - id));
+                else
+                    trens = trens.GetRange(id, (trens.Count - id >= 10 ? 10 : trens.Count - id));
+              
                 return Ok(trens);
             }
 
