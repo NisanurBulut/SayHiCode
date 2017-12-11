@@ -5,10 +5,12 @@ using System.Net;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using webApiTokenAuthentication.Models;
 
 namespace webApiTokenAuthentication.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class UserController : ApiController
     {
         //[Authorize]

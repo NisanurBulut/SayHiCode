@@ -13,23 +13,28 @@ namespace webApiTokenAuthentication
     {
         public void Configuration(IAppBuilder app)
         {
-            //CORS istklerine izin ver
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
-
-            var myProvider = new MyAuthorizationServerProvider();
-            OAuthAuthorizationServerOptions options = new OAuthAuthorizationServerOptions
-            {
-                AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
-                Provider = myProvider
-            };
-            app.UseOAuthAuthorizationServer(options);
-            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+            // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
+         
+                //CORS istklerine izin ver
+                app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
 
-            HttpConfiguration config = new HttpConfiguration();
-            WebApiConfig.Register(config);
+                var myProvider = new MyAuthorizationServerProvider();
+                OAuthAuthorizationServerOptions options = new OAuthAuthorizationServerOptions
+                {
+                    AllowInsecureHttp = true,
+                    TokenEndpointPath = new PathString("/token"),
+                    AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
+                    Provider = myProvider,
+                    RefreshTokenProvider = new MyAuthorizationRefreshTokenProvider()
+                };
+                app.UseOAuthAuthorizationServer(options);
+                app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+
+
+                HttpConfiguration config = new HttpConfiguration();
+                WebApiConfig.Register(config);
+            
         }
     }
 }

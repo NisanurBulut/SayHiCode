@@ -5,12 +5,14 @@ using webApiTokenAuthentication.Models;
 using System.Linq;
 using Microsoft.Owin.Security;
 using System.Collections.Generic;
+using System.Web.Http.Cors;
 
 namespace webApiTokenAuthentication
 {
+    [EnableCors("*", "*", "*")]
     public class MyAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
-
+      
         VkbAnalizEntities vk = new VkbAnalizEntities();
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
@@ -19,11 +21,12 @@ namespace webApiTokenAuthentication
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
+            var kullanicilist = vk.Kullanicis.ToList();
             Kullanici _kulllanici = vk.Kullanicis.Where(a=>a.UAd==context.UserName && a.UPass==context.Password).FirstOrDefault();
 
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
 
-            if (_kulllanici.PID==0)//admin
+            if (_kulllanici.PID==1)//admin
             {
                 identity.AddClaim(new Claim(ClaimTypes.Role, "admin"));
                 identity.AddClaim(new Claim("username", "admin"));
@@ -31,14 +34,14 @@ namespace webApiTokenAuthentication
                
                 context.Validated(identity);
             }
-            else if (_kulllanici.PID ==1 )//bakım
+            else if (_kulllanici.PID ==2 )//bakım
             {
                 identity.AddClaim(new Claim(ClaimTypes.Role, "bakim"));
                 identity.AddClaim(new Claim("username", "bakim"));
                 identity.AddClaim(new Claim(ClaimTypes.Name, "Bakim Kullanicisi"));
                 context.Validated(identity);
             }
-            else if (_kulllanici.PID == 2)//normal
+            else if (_kulllanici.PID == 3)//normal
             {
                 identity.AddClaim(new Claim(ClaimTypes.Role, "normal"));
                 identity.AddClaim(new Claim("username", "user"));
