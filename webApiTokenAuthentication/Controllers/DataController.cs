@@ -28,26 +28,6 @@ namespace webApiTokenAuthentication.Controllers
         private const string AssistantRole = "bakim";
         private const string NormalRole = "normal";
 
-
-        [AllowAnonymous]
-        [HttpGet]
-        [Route("api/data/forall")]
-        [EnableCors(origins: "http://localhost:50572/api/data/", headers: "*", methods: "*")]
-        public IHttpActionResult Get()
-        {
-            return Ok("Şu an Server'da zaman: " + DateTime.Now.ToString());
-        }
-
-
-        //Yönetici kullanıcısı veya normal kullanıcı olsun, kimliği doğrulanmış tüm kullanıcı türleri için bu eylemi ekledim.
-        [Authorize]
-        [HttpGet]
-        [Route("api/data/authenticate")]
-        public IHttpActionResult GetForAuthenticate()
-        {
-            var identity = (ClaimsIdentity)User.Identity;
-            return Ok("Merhaba " + identity.Name);
-        }
         //Sadece Admin Kullanıcılar için
         [AuthorizeRoles(AdministratorRole, AssistantRole,NormalRole)]
         [HttpGet]
@@ -68,13 +48,14 @@ namespace webApiTokenAuthentication.Controllers
         {
             using (VkbAnalizEntities vk = new VkbAnalizEntities())
             {
-
                 var trens = vk.Trens.Select(a => new
                 {
-                    a.TrenId,
-                    a.TrenAd
+                    TrenId = a.TrenId,
+                    TrenAd = a.TrenAd,
+                    countT = vk.TrenCihazs.Where(b => b.CTrenId == a.TrenId).Count()
+                    
                 }).ToList();
-
+           
                 if (id >= trens.Count)
                     return Json(false);
                 else if (id > 0)
@@ -84,7 +65,6 @@ namespace webApiTokenAuthentication.Controllers
               
                 return Ok(trens);
             }
-
         }
         //Sadece Admin Kullanıcılar için
         [AuthorizeRoles(AdministratorRole, AssistantRole, NormalRole)]
@@ -104,32 +84,24 @@ namespace webApiTokenAuthentication.Controllers
                 }).ToList();
                 return Ok(tcihazs);
             }
-
         }
         //Sadece Admin Kullanıcılar için
         [AuthorizeRoles(AdministratorRole, AssistantRole, NormalRole)] //Şuan için herkesce erişim var
         [HttpGet]
         [Route("api/data/ListCihazDetay")]
         public IHttpActionResult ListCihazDetay(int id)
-        {
-            
+        {            
                 using (VkbAnalizEntities vk = new VkbAnalizEntities())
-                {
-               
+                {               
                     var tcihazd = vk.CihazDetays.Where(a => a.DetayCihazId == id).Select(a => new
                     {
                         a.DetayCihazId,
                         a.DetayErisimSonTar,
                         a.DetayStr,
                         a.DetayId
-                    }).ToList();
-               
-
+                    }).ToList();              
                     return Ok(tcihazd);
-
-                }
-               
-
+                }               
             }
         }
     }

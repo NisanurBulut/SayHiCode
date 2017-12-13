@@ -31,14 +31,21 @@ namespace webApiTokenAuthentication.Controllers
             }
             
         }
-        //Yönetici kullanıcısı veya normal kullanıcı olsun, kimliği doğrulanmış tüm kullanıcı türleri için bu eylemi ekledim.
         [Authorize]
         [HttpGet]
-        [Route("api/data/authenticate")]
-        public IHttpActionResult GetDataOfTrens()
+        public IHttpActionResult GetClaims()
         {
-            var identity = (ClaimsIdentity)User.Identity;
-            return Ok("Merhaba " + identity.Name);
+            var identity = User.Identity as ClaimsIdentity;
+           
+            var claims = from c in identity.Claims
+                         select new
+                         {
+                             subject = c.Subject.Name,
+                             type = c.Type,
+                             value = c.Value
+                         };
+
+            return Ok(claims);
         }
     }
 }

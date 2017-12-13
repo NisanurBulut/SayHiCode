@@ -18,5 +18,8 @@ namespace webApiTokenAuthentication.Models
         public Nullable<int> DetayCihazId { get; set; }
         public string DetayStr { get; set; }
         public Nullable<System.DateTime> DetayErisimSonTar { get; set; }
+        public string CSurum { get; set; }
+        public string DSurum { get; set; }
+        public string YSurum { get; set; }
     }
 }

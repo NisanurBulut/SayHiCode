@@ -135,15 +135,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Models\VkbAnalizModel.Context.tt">
+    <Content Include="Models\vkbAnalizModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>VkbAnalizModel.edmx</DependentUpon>
-      <LastGenOutput>VkbAnalizModel.Context.cs</LastGenOutput>
+      <DependentUpon>vkbAnalizModel.edmx</DependentUpon>
+      <LastGenOutput>vkbAnalizModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\VkbAnalizModel.tt">
+    <Content Include="Models\vkbAnalizModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>VkbAnalizModel.edmx</DependentUpon>
-      <LastGenOutput>VkbAnalizModel.cs</LastGenOutput>
+      <DependentUpon>vkbAnalizModel.edmx</DependentUpon>
+      <LastGenOutput>vkbAnalizModel.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -159,47 +159,38 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CihazDetay.cs">
-      <DependentUpon>VkbAnalizModel.tt</DependentUpon>
+      <DependentUpon>vkbAnalizModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CihazDurum.cs">
-      <DependentUpon>VkbAnalizModel.tt</DependentUpon>
+      <DependentUpon>vkbAnalizModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Kullanici.cs">
-      <DependentUpon>VkbAnalizModel.tt</DependentUpon>
+      <DependentUpon>vkbAnalizModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Role.cs">
-      <DependentUpon>VkbAnalizModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>VkbAnalizModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>VkbAnalizModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>VkbAnalizModel.tt</DependentUpon>
+      <DependentUpon>vkbAnalizModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tren.cs">
-      <DependentUpon>VkbAnalizModel.tt</DependentUpon>
+      <DependentUpon>vkbAnalizModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TrenCihaz.cs">
-      <DependentUpon>VkbAnalizModel.tt</DependentUpon>
+      <DependentUpon>vkbAnalizModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\VkbAnalizModel.Context.cs">
+    <Compile Include="Models\vkbAnalizModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VkbAnalizModel.Context.tt</DependentUpon>
+      <DependentUpon>vkbAnalizModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\VkbAnalizModel.cs">
+    <Compile Include="Models\vkbAnalizModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VkbAnalizModel.tt</DependentUpon>
+      <DependentUpon>vkbAnalizModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\VkbAnalizModel.Designer.cs">
+    <Compile Include="Models\vkbAnalizModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VkbAnalizModel.edmx</DependentUpon>
+      <DependentUpon>vkbAnalizModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="MyAuthorizationRefreshTokenProvider.cs" />
     <Compile Include="MyAuthorizationServerProvider.cs" />
@@ -208,12 +199,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="Models\VkbAnalizModel.edmx">
+    <EntityDeploy Include="Models\vkbAnalizModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>VkbAnalizModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>vkbAnalizModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\VkbAnalizModel.edmx.diagram">
-      <DependentUpon>VkbAnalizModel.edmx</DependentUpon>
+    <Content Include="Models\vkbAnalizModel.edmx.diagram">
+      <DependentUpon>vkbAnalizModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
