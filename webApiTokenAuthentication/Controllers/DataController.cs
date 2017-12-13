@@ -98,7 +98,10 @@ namespace webApiTokenAuthentication.Controllers
                         a.DetayCihazId,
                         a.DetayErisimSonTar,
                         a.DetayStr,
-                        a.DetayId
+                        a.DetayId,
+                        a.CSurum,
+                        a.DSurum,
+                        a.YSurum
                     }).ToList();              
                     return Ok(tcihazd);
                 }               
