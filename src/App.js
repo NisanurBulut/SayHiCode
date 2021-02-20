@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <Router>
+      <Switch>
       <Route path="/" exact={true}>
       <Dashboard></Dashboard>
       </Route>
@@ -14,6 +15,7 @@ function App() {
       <Route path="*">
       <Error />
       </Route>
+      </Switch>
     </Router>
   );
 }
