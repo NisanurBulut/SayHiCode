@@ -166,9 +166,7 @@ p {
   margin: 0 auto;
   max-width: 1170px;
 }
-.section-center h3{
-  color:#fff !important;
-}
+
 @media screen and (min-width: 992px) {
   .section-center {
     width: 95vw;
