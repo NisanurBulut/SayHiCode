@@ -15,7 +15,7 @@ const GithubProvider = ({ children }) => {
   const [githubRepos, setGithubRepos] = useState(mockRepos);
   const [githubFollowers, setGithubFollower] = useState(mockFollowers);
   const [requests, setRequests] = useState(0);
-  const [loading, stIsLoading] = useState(false);
+  const [isLoading, stIsLoading] = useState(false);
   const [error, setError] = useState({ show: false, msg: '' });
   //  check rate
   const checkRequests = () => {
@@ -37,7 +37,14 @@ const GithubProvider = ({ children }) => {
   useEffect(checkRequests, []);
   return (
     <GithubContext.Provider
-      value={{ githubUser, githubRepos, githubFollowers }}
+      value={{
+        githubUser,
+        githubRepos,
+        githubFollowers,
+        requests,
+        error,
+        isLoading,
+      }}
     >
       {children}
     </GithubContext.Provider>
