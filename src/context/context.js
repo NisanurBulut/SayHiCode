@@ -34,7 +34,7 @@ const GithubProvider = ({ children }) => {
   function toggleError(show = false, msg = '') {
     setError({ show, msg });
   }
-  useEffect(() => {}, []);
+  useEffect(checkRequests, []);
   return (
     <GithubContext.Provider
       value={{ githubUser, githubRepos, githubFollowers }}
