@@ -1,3 +1,8 @@
+### SayHiCode
+
+With this application, the use of react hooks and context api has been implemented. Hooks used: useState, useContext, useEffect
+
+![SayHiCode](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiCode.gif)
 
 ## Gihthub API
 
