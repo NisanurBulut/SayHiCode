@@ -1,12 +1,19 @@
 import React from 'react';
 import { GithubContext } from '../context/context';
 import styled from 'styled-components';
-import { GoRepo, GoGist } from 'react-icons/go';
+import { GoRepo, GoStar } from 'react-icons/go';
 import { FiUsers, FiUserPlus } from 'react-icons/fi';
 
 const UserInfo = () => {
   const { githubUser } = React.useContext(GithubContext);
-  const { public_repos, followers, following, public_gists } = githubUser;
+  const {githubRepos} =  React.useContext(GithubContext);
+ const starCount = githubRepos.map((repo)=>{
+    return repo.stargazers_count
+  }).reduce(function(a, b)
+  {
+    return a + b;
+  });
+  const { public_repos, followers, following } = githubUser;
   const items = [
     {
       id: 1,
@@ -31,9 +38,9 @@ const UserInfo = () => {
     },
     {
       id: 4,
-      icon: <GoGist className="icon" />,
-      label: 'gists',
-      value: public_gists,
+      icon: <GoStar className="icon" />,
+      label: 'starts',
+      value: starCount,
       color: 'yellow',
     },
   ];
@@ -106,5 +113,4 @@ const Wrapper = styled.section`
     }
   }
 `;
-
 export default UserInfo;
