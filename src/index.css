@@ -1,12 +1,12 @@
 /*
-=============== 
+===============
 Fonts
 ===============
 */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
 
 /*
-=============== 
+===============
 Variables
 ===============
 */
@@ -54,7 +54,7 @@ Variables
   --fixed-width: 620px;
 }
 /*
-=============== 
+===============
 Global Styles
 ===============
 */
@@ -68,7 +68,7 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-grey-10);
+  background: var(--clr-primary-1);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -165,6 +165,9 @@ p {
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
+}
+.section-center h3{
+  color:#fff !important;
 }
 @media screen and (min-width: 992px) {
   .section-center {
