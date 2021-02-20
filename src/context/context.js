@@ -11,6 +11,16 @@ const GithubContext = React.createContext();
 // Provider, consumer-GithubContext
 
 const GithubProvider = ({ children }) => {
-  return <GithubContext.Provider value={'Say Hi Code'}>{children}</GithubContext.Provider>;
+  const [githubUser, setGithubUser] = useState(mockUser);
+  const [githubRepos, setGithubRepos] = useState(mockRepos);
+  const [githubFollowers, setGithubFollower] = useState(mockFollowers);
+
+  return (
+    <GithubContext.Provider
+      value={{ githubUser, githubRepos, githubFollowers }}
+    >
+      {children}
+    </GithubContext.Provider>
+  );
 };
-export {GithubProvider,GithubContext};
+export { GithubProvider, GithubContext };
