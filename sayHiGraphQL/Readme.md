@@ -16,3 +16,7 @@
 <b>Subscriptionlar</b> server tarafında belirli bir event gerçekletiğinde WebSoket kullanarak belirtilen datayı gerçek zamanlı olarak client’a gönderir.
 
 ![operationTypes](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/sayHiGraphQL/images/operationTypes.png)
+
+### GraphQL Bileşenleri
+Projemizde client ve server taraflarında ayrı tanımlamalar yapmamızı sağlar. Client tarafında bunlar Queries,Mutation, Fragment
+Server tarafında ise Type Definition, Query Definition, Mutation Definition, Resolvers, Composition, Schema olarak ayırmak mümkün.
