@@ -20,3 +20,6 @@
 ### GraphQL Bileşenleri
 Projemizde client ve server taraflarında ayrı tanımlamalar yapmamızı sağlar. Client tarafında bunlar Queries,Mutation, Fragment
 Server tarafında ise Type Definition, Query Definition, Mutation Definition, Resolvers, Composition, Schema olarak ayırmak mümkün.
+
+### Installation
+- npm install --save express body-parser
