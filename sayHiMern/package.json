@@ -1,18 +1,20 @@
 {
-  "name": "y",
+  "name": "sayhimern",
   "version": "1.0.0",
-  "description": "<b>GraphQL</b> Hi ! My First Application is about GraphQL",
-  "main": "index.js",
+  "description": "<b>GraphQL</b> REST API yazmak yerine kullanılabilecek bir sorgu dilidir.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.0"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.7"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodeman app.js"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
