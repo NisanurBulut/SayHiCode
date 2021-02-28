@@ -50,7 +50,6 @@ app.use(
       },
       CreateEvent: (args) => {
         const event = new Event({
-          _id: Math.random().toString(),
           title: args.eventInput.title,
           description: args.eventInput.description,
           date: new Date(args.eventInput.date),
