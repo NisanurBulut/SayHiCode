@@ -39,10 +39,14 @@ app.use(
     rootValue: {
       events: (args) => {
         return Event.find()
-        .then(events=>{
-          return e
-        })
-        .catch()
+          .then((events) => {
+            return events.map((event) => {
+              return { ...event._doc, _id: event._doc._id.toString() };
+            });
+          })
+          .catch((err) => {
+            throw err;
+          });
       },
       CreateEvent: (args) => {
         const event = new Event({
@@ -52,11 +56,12 @@ app.use(
           date: new Date(args.eventInput.date),
           price: +args.eventInput.price,
         });
-       return event
+        console.log(event);
+        return event
           .save()
           .then((result) => {
             console.log(result);
-            return {...result._doc};
+            return { ...result._doc, _id: event.id };
           })
           .catch((err) => {
             console.log(err);
@@ -69,10 +74,10 @@ app.use(
 );
 
 mongoose
-  .connect(
-    `mongodb://127.0.0.1:27017/${process.env.MONGO_DB}`,
-    { useNewUrlParser: true,useUnifiedTopology: true }
-  )
+  .connect(`mongodb://127.0.0.1:27017/${process.env.MONGO_DB}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log('listening');
     app.listen(3000);
