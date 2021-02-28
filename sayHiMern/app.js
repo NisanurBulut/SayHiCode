@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { graphqlHTTP } = require('express-graphql');
 const { buildSchema } = require('graphql');
-
+const mongoose = require('mongoose');
+const Event = require('./models/event');
 const app = express();
-const events = [];
 
 app.use(bodyParser.json());
 
@@ -38,23 +38,49 @@ app.use(
     `),
     rootValue: {
       events: (args) => {
-        return events;
+        return Event.find()
+          .then((events) => {
+            return events.map((event) => {
+              return { ...event._doc, _id: event._doc._id.toString() };
+            });
+          })
+          .catch((err) => {
+            throw err;
+          });
       },
       CreateEvent: (args) => {
-        const event = {
-          _id: Math.random().toString(),
+        const event = new Event({
           title: args.eventInput.title,
           description: args.eventInput.description,
-          date: args.eventInput.date,
+          date: new Date(args.eventInput.date),
           price: +args.eventInput.price,
-        };
+        });
         console.log(event);
-        events.push(event);
-        return event;
+        return event
+          .save()
+          .then((result) => {
+            console.log(result);
+            return { ...result._doc, _id: event.id };
+          })
+          .catch((err) => {
+            console.log(err);
+            throw err;
+          });
       },
     },
     graphiql: true,
   })
 );
 
-app.listen(3000);
+mongoose
+  .connect(`mongodb://127.0.0.1:27017/${process.env.MONGO_DB}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log('listening');
+    app.listen(3000);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
