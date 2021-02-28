@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const Event = require('./models/event');
 const User = require('./models/user');
+const user = require('./models/user');
 
 const app = express();
 
@@ -67,13 +68,24 @@ app.use(
           description: args.eventInput.description,
           date: new Date(args.eventInput.date),
           price: +args.eventInput.price,
+          creator: '603b9c3e2031073b78512b10',
         });
-
+        let createdEvent;
         return event
           .save()
           .then((result) => {
-            console.log(result);
-            return { ...result._doc, _id: event.id };
+            createdEvent = { ...result._doc, _id: event.id };
+            return user.findById('603b9c3e2031073b78512b10');
+          })
+          .then((user) => {
+            if (!user) {
+              return new Error('User is not defined');
+            }
+            user.createdEvents.push(event);
+            return user.save();
+          })
+          .then((result) => {
+            return createdEvent;
           })
           .catch((err) => {
             console.log(err);
@@ -82,14 +94,14 @@ app.use(
       },
       CreateUser: (args) => {
         User.findOne({
-          email: args.userInput.email
-        }).then(user=>{
-          if(user){
-            throw new Error('User is already defined');
-          }
-          return  bcrypt
-          .hash(args.userInput.password, 12)
+          email: args.userInput.email,
         })
+          .then((user) => {
+            if (user) {
+              throw new Error('User is already defined');
+            }
+            return bcrypt.hash(args.userInput.password, 12);
+          })
           .then((hashedPassword) => {
             const user = new User({
               email: args.userInput.email,
@@ -98,7 +110,7 @@ app.use(
             return user.save();
           })
           .then((result) => {
-            return { ...result._doc,password:null, _id: result.id };
+            return { ...result._doc, password: null, _id: result.id };
           })
           .catch((err) => {
             console.log(err);
