@@ -1,1 +1,0 @@
-![Architect](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/sayHiGraphQL/images/architect.png)
