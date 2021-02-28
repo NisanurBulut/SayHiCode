@@ -18,21 +18,21 @@ With this application, the use of react hooks and context api has been implement
 <b>GraphQL</b> REST API yazmak yerine kullanılabilecek bir sorgu dilidir.
 
 - GraphQL hiçbir veritabanı türüne bağlı değildir.
-![Architect](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/sayHiGraphQL/images/architect.png)
+![Architect](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/architect.png)
 <br>
 
-![Architect](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/sayHiGraphQL/images/restApiLimits.png)
+![Architect](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/restApiLimits.png)
 <br>
 
 <b>Query</b> içerisine yazılabilecek sorgulama işlemlerini tanımlıyoruz. buraya yazdığımız tanımlamalar dışında herhangi birşey çalıştıramayız.
 
-![query](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/sayHiGraphQL/images/query.png)
+![query](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/query.png)
 <br>
 
 <b>Mutation</b>Veri oluşturma, silme ve güncelleme işlemleri için bu alanı kullanıyoruz.
 <b>Subscriptionlar</b> server tarafında belirli bir event gerçekletiğinde WebSoket kullanarak belirtilen datayı gerçek zamanlı olarak client’a gönderir.
 
-![operationTypes](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/sayHiGraphQL/images/operationTypes.png)
+![operationTypes](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/operationTypes.png)
 
 ### GraphQL Bileşenleri
 Projemizde client ve server taraflarında ayrı tanımlamalar yapmamızı sağlar. Client tarafında bunlar Queries,Mutation, Fragment
