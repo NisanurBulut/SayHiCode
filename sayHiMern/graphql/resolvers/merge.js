@@ -1,3 +1,6 @@
+const Event = require('../../models/event');
+const User = require('../../models/user');
+
 const events = async (eventIds) => {
   try {
     const events = await Event.find({ _id: { $in: eventIds } });
