@@ -3,24 +3,6 @@ const Event = require('../../models/event');
 const User = require('../../models/user');
 const Booking = require('../../models/booking');
 
-const bookings = async () => {
-  try {
-    const bookings = await Booking.find();
-    return bookings.map((booking) => {
-      return {
-        ...booking._doc,
-        _id: booking.id,
-        user: user.bind(this, booking._doc.user),
-        event: singleEvent.bind(this, booking._doc.event),
-        createdAt: new Date(booking._doc.createdAt).toISOString(),
-        updatedAt: new Date(booking._doc.updatedAt).toISOString(),
-      };
-    });
-  } catch (err) {
-    throw err;
-  }
-};
-
 const events = async (eventIds) => {
   try {
     const events = await Event.find({ _id: { $in: eventIds } });
@@ -72,6 +54,23 @@ module.exports = {
           _id: event.id,
           date: new Date(event._doc.date).toISOString(),
           creator: user.bind(this, event._doc.creator),
+        };
+      });
+    } catch (err) {
+      throw err;
+    }
+  },
+  bookings: async () => {
+    try {
+      const bookings = await Booking.find();
+      return bookings.map(booking => {
+        return {
+          ...booking._doc,
+          _id: booking.id,
+          user: user.bind(this, booking._doc.user),
+          event: singleEvent.bind(this, booking._doc.event),
+          createdAt: new Date(booking._doc.createdAt).toISOString(),
+          updatedAt: new Date(booking._doc.updatedAt).toISOString()
         };
       });
     } catch (err) {
