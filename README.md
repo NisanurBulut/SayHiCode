@@ -15,28 +15,11 @@ With this application, the use of react hooks and context api has been implement
 
   For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
 
-<b>GraphQL</b> REST API yazmak yerine kullanılabilecek bir sorgu dilidir.
+## SayHiMERN
 
-- GraphQL hiçbir veritabanı türüne bağlı değildir.
-![Architect](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/architect.png)
-<br>
+- Authorization kontrolü yapılır
+- kullanıcı, rezervasyon ve plan takvimi yapılır
 
-![Architect](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/restApiLimits.png)
-<br>
-
-<b>Query</b> içerisine yazılabilecek sorgulama işlemlerini tanımlıyoruz. buraya yazdığımız tanımlamalar dışında herhangi birşey çalıştıramayız.
-
-![query](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/query.png)
-<br>
-
-<b>Mutation</b>Veri oluşturma, silme ve güncelleme işlemleri için bu alanı kullanıyoruz.
-<b>Subscriptionlar</b> server tarafında belirli bir event gerçekletiğinde WebSoket kullanarak belirtilen datayı gerçek zamanlı olarak client’a gönderir.
-
-![operationTypes](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/operationTypes.png)
-
-### GraphQL Bileşenleri
-Projemizde client ve server taraflarında ayrı tanımlamalar yapmamızı sağlar. Client tarafında bunlar Queries,Mutation, Fragment
-Server tarafında ise Type Definition, Query Definition, Mutation Definition, Resolvers, Composition, Schema olarak ayırmak mümkün.
 
 ### Installation
 - npm install --save express body-parser
