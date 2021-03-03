@@ -1,14 +1,14 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import * as classes from './MainNavigation.module.css';
+import './MainNavigation.css';
 
 const MainNavigation = (props) => {
   return (
-    <header className={classes.mainNavigation}>
-      <div className={classes.mainNavigationLogo}>
+    <header className="mainNavigation">
+      <div className="mainNavigationLogo">
         <h1>Easy Event</h1>
       </div>
-      <nav className={classes.mainNavigationItems}>
+      <nav className="mainNavigationItems">
           <ul>
           <li>
             <NavLink to="/auth">Authenticate</NavLink>

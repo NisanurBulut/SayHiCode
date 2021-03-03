@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './AuthPage.css';
 
 export class AuthPage extends Component {
     render() {

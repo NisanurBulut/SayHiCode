@@ -37,7 +37,8 @@
     color:#fff;
 }
 
-.mainNavigation a.hover
+.mainNavigation a:hover
+.mainNavigation a:active
 .mainNavigation a.active {
-    opacity: 0ç8;
+    opacity: 0.8;
 }
