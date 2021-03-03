@@ -1,0 +1,43 @@
+.mainNavigation{
+    position: fixed;
+    background-color:rgb(216, 3, 46);
+    left:0;
+    top:0;
+    height: 3.5rem;
+    width: 100%;
+    color:#fff;
+    font-size: large;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.mainNavigationLogo h1
+{
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.mainNavigationItems{
+    margin-left: 1.5rem;
+}
+
+.mainNavigation ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 ;
+}
+.mainNavigation li {
+    margin: 0 1rem;
+}
+
+.mainNavigation a {
+    text-decoration: none;
+    color:#fff;
+}
+
+.mainNavigation a.hover
+.mainNavigation a.active {
+    opacity: 0ç8;
+}
