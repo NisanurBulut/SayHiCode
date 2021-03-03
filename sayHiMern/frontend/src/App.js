@@ -5,14 +5,14 @@ import AuthPage from './pages/AuthPage';
 import EventsPage from './pages/EventsPage';
 import BookingsPage from './pages/BookingsPage';
 import MainNavigation from './components/Navigation/MainNavigation';
-import * as classes from './App.css';
+import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
     <React.Fragment>
     <MainNavigation />
-     <main className={classes.mainContent}>
+     <main className="mainContent">
      <Switch>
         <Redirect from="/" to="/auth" exact />
         <Route path="/auth" component={AuthPage} />
