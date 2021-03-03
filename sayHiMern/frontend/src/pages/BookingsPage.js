@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class AuthPage extends Component {
+export class BookingsPage extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ export class AuthPage extends Component {
     }
 }
 
-export default AuthPage;
+export default BookingsPage;
