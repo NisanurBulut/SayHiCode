@@ -12,7 +12,11 @@
     align-items: center;
     justify-content: space-between;
 }
-
+.mainNavigationLogo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
 .mainNavigationLogo h1
 {
     margin: 0;

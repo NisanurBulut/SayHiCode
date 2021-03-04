@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './MainNavigation.css';
 import AuthContext from '../../context/auth-context';
-
+import EmojiEventsOutlinedIcon from '@material-ui/icons/EmojiEventsOutlined';
 const MainNavigation = (props) => {
   return (
     <AuthContext.Consumer>
@@ -10,7 +10,7 @@ const MainNavigation = (props) => {
         return (
           <header className="mainNavigation">
             <div className="mainNavigationLogo">
-              <h1>Easy Event</h1>
+             <EmojiEventsOutlinedIcon /> Smart Event
             </div>
             <nav className="mainNavigationItems">
               <ul>
