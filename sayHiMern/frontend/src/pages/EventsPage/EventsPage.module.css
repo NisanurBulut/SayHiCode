@@ -8,9 +8,10 @@
 }
 .EventForm {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
   justify-content: center;
 }
 .EventForm > * {
   margin: 5px !important;
+  width: 100% !important;
 }
