@@ -15,28 +15,10 @@ With this application, the use of react hooks and context api has been implement
 
   For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
 
-<b>GraphQL</b> REST API yazmak yerine kullanılabilecek bir sorgu dilidir.
-
-- GraphQL hiçbir veritabanı türüne bağlı değildir.
-![Architect](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/architect.png)
-<br>
-
-![Architect](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/restApiLimits.png)
-<br>
-
-<b>Query</b> içerisine yazılabilecek sorgulama işlemlerini tanımlıyoruz. buraya yazdığımız tanımlamalar dışında herhangi birşey çalıştıramayız.
-
-![query](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/query.png)
-<br>
-
-<b>Mutation</b>Veri oluşturma, silme ve güncelleme işlemleri için bu alanı kullanıyoruz.
-<b>Subscriptionlar</b> server tarafında belirli bir event gerçekletiğinde WebSoket kullanarak belirtilen datayı gerçek zamanlı olarak client’a gönderir.
-
-![operationTypes](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/images/operationTypes.png)
-
-### GraphQL Bileşenleri
-Projemizde client ve server taraflarında ayrı tanımlamalar yapmamızı sağlar. Client tarafında bunlar Queries,Mutation, Fragment
-Server tarafında ise Type Definition, Query Definition, Mutation Definition, Resolvers, Composition, Schema olarak ayırmak mümkün.
+### SayHiMERN
+GraphQL api and MongoDb database are used in this application.User object performs booking and home event operations with GraphQl API.the user subscribes to the application and logs on. It receives token data at the login process. With this token information, the application can be online.
+* React-material is used in interface designs.
+- If the user is not the owner of the event, he / she cannot see the detail information.
 
 ### Installation
 - npm install --save express body-parser
