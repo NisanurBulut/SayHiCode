@@ -6,7 +6,7 @@ import EventItem from '../EventItem/EventItem';
 const EventList = (props) => {
     const eventList=props.events.map((event) => {
         return (
-         <EventItem key={event._id} eventId={event._id} title={event.title} />
+         <EventItem key={event._id} eventId={event._id} title={event.title} description={event.description} />
         );
       });
     return (

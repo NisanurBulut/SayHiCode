@@ -12,7 +12,7 @@ const EventItem = (props) => {
     <ListItemIcon>
     <EmojiEventsOutlinedIcon />
   </ListItemIcon>
-  <ListItemText primary={props.title} />
+  <ListItemText primary={props.title} secondary={props.description} />
 </ListItem>
   );
 };
