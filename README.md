@@ -15,11 +15,12 @@ With this application, the use of react hooks and context api has been implement
 
   For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
 
-## SayHiMERN
 
-- Authorization kontrolü yapılır
-- kullanıcı, rezervasyon ve plan takvimi yapılır
-
+### SayHiMERN
+GraphQL api and MongoDb database are used in this application.User object performs booking and home event operations with GraphQl API.the user subscribes to the application and logs on. It receives token data at the login process. With this token information, the application can be online.
+* React-material is used in interface designs.
+- If the user is not the owner of the event, he / she cannot see the detail information.
+- inserted react-material-spinner for waiting to response of api
 
 ### Installation
 - npm install --save express body-parser

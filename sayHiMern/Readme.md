@@ -25,3 +25,5 @@ Server tarafında ise Type Definition, Query Definition, Mutation Definition, Re
 - npm install --save express body-parser
 - npm install --save-dev nodemon
 - npm install --save jsonwebtoken
+- npm install --save react-router-dom
+
