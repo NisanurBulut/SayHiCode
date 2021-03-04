@@ -1,8 +1,16 @@
-.eventsControl{
-    text-align: center;
-    border: 2px solid #924D75;
-    padding: 3rem;
-    margin: 10rem auto;
-    width: 30rem;
-    max-width: 80%;
+.eventsControl {
+  text-align: center;
+  border: 2px solid #924d75;
+  padding: 3rem;
+  margin: 10rem auto;
+  width: 30rem;
+  max-width: 80%;
+}
+.EventForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.EventForm > * {
+  margin: 5px !important;
 }
