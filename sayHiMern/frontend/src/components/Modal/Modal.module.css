@@ -1,10 +1,10 @@
 .modal {
   width: 90%;
-  background-color: #fff;
-  box-shadow: 0 2px 8px #ddd;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   position: fixed;
   top: 20vh;
-  left: 5.5;
+  left: 5%;
 }
 .modalActions{
     display: flex;

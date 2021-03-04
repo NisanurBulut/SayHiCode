@@ -24,8 +24,13 @@ body {
   border-radius: 3px;
   padding: 0.25rem 1rem;
   margin-right: 1rem;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
   cursor: pointer;
+  border: none;
+  outline: none;
+}
+.secondary{
+  background-color:#C51162 ;
+    color: #fff;
 }
 
 .form-actions .btnSignUp:hover,
