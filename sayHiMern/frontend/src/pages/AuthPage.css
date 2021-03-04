@@ -17,18 +17,10 @@
 }
 
 .form-actions button {
-    background-color: teal;
     font:inherit;
     outline: none;
     border-radius: 5px;
     padding:  0.25rem 1rem;
     margin-right:  1rem;
-    color: #fff;
     cursor: pointer;
-}
-
-.form-actions button:hover,
-.form-actions button:active,
-.form-actions button.active{
-    opacity: 0.6;
 }

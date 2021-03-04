@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './AuthPage.css';
 import AuthContext from '../context/auth-context';
-
+import {Button,TextField} from '@material-ui/core';
 export class AuthPage extends Component {
   state = {
     isLogin: true,
@@ -30,7 +30,7 @@ export class AuthPage extends Component {
           }
         `,
     };
-    debugger;
+
     if (!this.state.isLogin) {
       requestBody = {
         query: `
@@ -75,19 +75,19 @@ export class AuthPage extends Component {
       <form className="auth-form">
         <div className="form-control">
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" ref={this.emailEl} />
+          <TextField type="email" id="email" ref={this.emailEl} variant="standard" />
         </div>
         <div className="form-control">
           <label htmlFor="email">Password</label>
-          <input type="password" id="password" ref={this.passwordEl} />
+          <TextField type="password" id="password" ref={this.passwordEl} variant="standard" />
         </div>
         <div className="form-actions">
-          <button type="button" onClick={this.submitHandler}>
+          <Button variant="outlined" color="secondary" onClick={this.submitHandler}>
             Sign Up
-          </button>
-          <button type="button" onClick={this.submitHandler}>
+          </Button>
+          <Button variant="outlined" color="primary" onClick={this.submitHandler}>
             Sign In
-          </button>
+          </Button>
         </div>
       </form>
     );
