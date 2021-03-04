@@ -75,11 +75,11 @@ export class AuthPage extends Component {
       <form className="auth-form">
         <div className="form-control">
           <label htmlFor="email">Email</label>
-          <TextField type="email" id="email" ref={this.emailEl} variant="standard" />
+          <TextField type="email" id="email" inputRef={this.emailEl} variant="standard" />
         </div>
         <div className="form-control">
           <label htmlFor="email">Password</label>
-          <TextField type="password" id="password" ref={this.passwordEl} variant="standard" />
+          <TextField type="password" id="password" inputRef={this.passwordEl} variant="standard" />
         </div>
         <div className="form-actions">
           <Button variant="outlined" color="secondary" onClick={this.submitHandler}>
