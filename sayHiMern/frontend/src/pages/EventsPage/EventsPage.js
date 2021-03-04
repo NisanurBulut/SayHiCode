@@ -5,7 +5,11 @@ import {
   InputLabel,
   FormHelperText,
   Input,
+  List,
+  ListItem,
+  ListItemText,ListItemIcon
 } from '@material-ui/core';
+import EmojiEventsOutlinedIcon from '@material-ui/icons/EmojiEventsOutlined';
 import Modal from '../../components/Modal/Modal';
 import Backdrop from '../../components/Backdrop/Backdrop';
 import AuthContext from '../../context/auth-context';
@@ -18,9 +22,14 @@ export class EventsPage extends Component {
     this.dateElRef = React.createRef();
     this.descriptionElRef = React.createRef();
   }
+  componentDidMount() {
+    this.fetchEvents();
+  }
+
   static contextType = AuthContext;
   state = {
     creating: false,
+    events: [],
   };
   startCreateEventHandler = () => {
     this.setState({ creating: true });
@@ -59,7 +68,7 @@ export class EventsPage extends Component {
               }
             }
           }
-        `
+        `,
     };
 
     const token = this.context.token;
@@ -69,25 +78,76 @@ export class EventsPage extends Component {
       body: JSON.stringify(requestBody),
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + token
-      }
+        Authorization: 'Bearer ' + token,
+      },
     })
-      .then(res => {
+      .then((res) => {
         if (res.status !== 200 && res.status !== 201) {
           throw new Error('Failed!');
         }
         return res.json();
       })
-      .then(resData => {
+      .then((resData) => {
         this.fetchEvents();
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
+  fetchEvents() {
+    const requestBody = {
+      query: `
+          query {
+            events {
+              _id
+              title
+              description
+              date
+              price
+              creator {
+                _id
+                email
+              }
+            }
+          }
+        `,
+    };
+
+    fetch('http://localhost:8000/graphql', {
+      method: 'POST',
+      body: JSON.stringify(requestBody),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => {
+        if (res.status !== 200 && res.status !== 201) {
+          throw new Error('Failed!');
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        const events = resData.data.events;
+        this.setState({ events: events });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   render() {
+    const eventList = this.state.events.map((event) => {
+      return (
+        <ListItem  className={classes.eventListItem} button key={event._id}>
+            <ListItemIcon>
+            <EmojiEventsOutlinedIcon />
+          </ListItemIcon>
+          <ListItemText primary={event.title} />
+        </ListItem>
+      );
+    });
     return (
-      <React.Fragment>
+      <div className={classes.eventPage}>
         {this.state.creating && (
           <React.Fragment>
             <Backdrop />
@@ -125,15 +185,20 @@ export class EventsPage extends Component {
             </Modal>
           </React.Fragment>
         )}
-      {this.context.token &&   <div className={classes.eventsControl}>
-          <button
-            onClick={this.startCreateEventHandler}
-            className="btn secondary"
-          >
-            Create event
-          </button>
-        </div>}
-      </React.Fragment>
+        {this.context.token && (
+          <div className={classes.eventsControl}>
+            <button
+              onClick={this.startCreateEventHandler}
+              className="btn secondary"
+            >
+              Create event
+            </button>
+          </div>
+        )}
+         <List className={classes.eventList} component="nav">
+          {eventList}
+        </List>
+      </div>
     );
   }
 }
