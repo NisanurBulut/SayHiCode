@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.form-control label,
+.form-control input {
+  width: 100%;
+  display: block;
+}
+
+.form-control label {
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.form-actions button,
+.btn {
+  font: inherit;
+  border-radius: 3px;
+  padding: 0.25rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.secondary{
+  background-color:#C51162 ;
+    color: #fff;
+}
+
+.form-actions .btnSignUp:hover,
+.form-actions .btnSignUp:active,
+.btn:hover,
+.btn:active {
+
+}
