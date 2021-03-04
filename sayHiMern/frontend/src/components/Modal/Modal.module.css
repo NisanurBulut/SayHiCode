@@ -6,6 +6,11 @@
   top: 20vh;
   left: 5.5;
 }
+.modalActions{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
 .modalHeader{
     padding: 1rem;
     background-color:#C51162 ;
@@ -18,11 +23,7 @@
 .modalContent{
     padding: 1rem;
 }
-.modalActions{
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-}
+
 @media (min-width: 768px) {
   .modal {
     width: 30rem;
