@@ -36,6 +36,7 @@
 .mainNavigation a {
     text-decoration: none;
     color:#fff;
+    margin-right: 2rem;
 }
 
 .mainNavigation a:hover
