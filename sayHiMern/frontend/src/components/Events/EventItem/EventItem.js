@@ -16,12 +16,14 @@ const EventItem = (props) => {
         <EmojiEventsOutlinedIcon />
       </ListItemIcon>
       <ListItemText
-        primary={props.eventTitlePrice}
-        secondary={props.description}
+        primary={props.title}
+        secondary={props.eventPriceDate}
       />
-      {props.userId === props.creatorId ? (
-        <ListItemSecondaryAction>
-          <VisibilityOutlinedIcon button color="secondary" />
+      {console.log(props.userId,props.creatorId)}
+      {
+      props.userId === props.creatorId ? (
+        <ListItemSecondaryAction onClick={props.onDetail.bind(props.eventId)}>
+          <VisibilityOutlinedIcon button color="secondary"/>
         </ListItemSecondaryAction>
       ) : null}
     </ListItem>

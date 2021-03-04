@@ -88,6 +88,7 @@ export class EventsPage extends Component {
       })
       .then((resData) => {
         this.setState((prevState) => {
+          console.log(resData.data);
           const updatedEvents = [...prevState.events];
           updatedEvents.push({
             _id: resData.data.createEvent._id,

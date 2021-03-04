@@ -4,12 +4,13 @@ import { List } from '@material-ui/core';
 import EventItem from '../EventItem/EventItem';
 const EventList = (props) => {
   const eventList = props.events.map((event) => {
-      const eventTitlePrice= `${event.title} ${event.price.toString()} ₺`;
+      const eventPriceDate= `${new Date(event.date).toLocaleDateString()} ${event.price.toString()} ₺`;
     return (
       <EventItem
         key={event._id}
         eventId={event._id}
-        eventTitlePrice={eventTitlePrice}
+        title={event.title}
+        eventPriceDate={eventPriceDate}
         description={event.description}
         userId={props.authUserId}
         creatorId={event.creator._id}

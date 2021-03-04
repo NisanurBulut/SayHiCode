@@ -17,7 +17,9 @@
   justify-content: center;
 }
 .Spinner{
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .EventForm > * {
   margin: 5px !important;

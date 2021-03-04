@@ -59,6 +59,7 @@ export class AuthPage extends Component {
       })
       .then((resData) => {
         if (resData.data.login.token) {
+          console.log(resData.data.login);
           this.context.login(
             resData.data.login.token,
             resData.data.login.userId,
