@@ -20,12 +20,3 @@
   margin: 5px !important;
   width: 100% !important;
 }
-.eventList{
-max-width: 90%;
-list-style: none;
-}
-
-.eventListItem{
-  border-left: 4px solid #924D75 !important;
-  margin-top: 0.5rem !important;
-}

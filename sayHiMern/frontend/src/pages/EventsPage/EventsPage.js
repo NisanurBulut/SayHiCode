@@ -4,15 +4,12 @@ import {
   FormControl,
   InputLabel,
   FormHelperText,
-  Input,
-  List,
-  ListItem,
-  ListItemText,ListItemIcon
+  Input
 } from '@material-ui/core';
-import EmojiEventsOutlinedIcon from '@material-ui/icons/EmojiEventsOutlined';
 import Modal from '../../components/Modal/Modal';
 import Backdrop from '../../components/Backdrop/Backdrop';
 import AuthContext from '../../context/auth-context';
+import EventList from '../../components/Events/EventList/EventList';
 
 export class EventsPage extends Component {
   constructor(props) {
@@ -44,7 +41,6 @@ export class EventsPage extends Component {
     const description = this.descriptionElRef.current.value;
     const price = +this.priceElRef.current.value;
     const date = this.dateElRef.current.value;
-    const event = { title, price, date, description };
     if (
       title.trim().length === 0 ||
       description.trim().length === 0 ||
@@ -136,16 +132,7 @@ export class EventsPage extends Component {
       });
   }
   render() {
-    const eventList = this.state.events.map((event) => {
-      return (
-        <ListItem  className={classes.eventListItem} button key={event._id}>
-            <ListItemIcon>
-            <EmojiEventsOutlinedIcon />
-          </ListItemIcon>
-          <ListItemText primary={event.title} />
-        </ListItem>
-      );
-    });
+
     return (
       <div className={classes.eventPage}>
         {this.state.creating && (
@@ -178,7 +165,7 @@ export class EventsPage extends Component {
                   <InputLabel htmlFor="date">Description</InputLabel>
                   <Input id="description" inputRef={this.descriptionElRef} />
                   <FormHelperText id="description">
-                    Event!s Description
+                    Event's Description
                   </FormHelperText>
                 </FormControl>
               </form>
@@ -195,9 +182,8 @@ export class EventsPage extends Component {
             </button>
           </div>
         )}
-         <List className={classes.eventList} component="nav">
-          {eventList}
-        </List>
+        <EventList events={this.state.events} />
+
       </div>
     );
   }
