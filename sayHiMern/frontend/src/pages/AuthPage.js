@@ -82,10 +82,10 @@ export class AuthPage extends Component {
           <TextField type="password" id="password" inputRef={this.passwordEl} variant="standard" />
         </div>
         <div className="form-actions">
-          <Button variant="outlined" color="secondary" onClick={this.submitHandler}>
+          <Button className="btnSignUp" variant="outlined" color="secondary" onClick={this.submitHandler}>
             Sign Up
           </Button>
-          <Button variant="outlined" color="primary" onClick={this.submitHandler}>
+          <Button className="btnSignIn" variant="outlined" color="primary" onClick={this.submitHandler}>
             Sign In
           </Button>
         </div>
