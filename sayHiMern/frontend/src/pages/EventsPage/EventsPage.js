@@ -5,7 +5,9 @@ import {
   InputLabel,
   FormHelperText,
   Input,
+  CircularProgress,
 } from '@material-ui/core';
+
 import Modal from '../../components/Modal/Modal';
 import Backdrop from '../../components/Backdrop/Backdrop';
 import AuthContext from '../../context/auth-context';
@@ -27,6 +29,7 @@ export class EventsPage extends Component {
   state = {
     creating: false,
     events: [],
+    isLoading: false,
   };
   startCreateEventHandler = () => {
     this.setState({ creating: true });
@@ -104,6 +107,7 @@ export class EventsPage extends Component {
       });
   };
   fetchEvents() {
+    this.setState({ isLoading: true });
     const requestBody = {
       query: `
           query {
@@ -136,12 +140,11 @@ export class EventsPage extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         const events = resData.data.events;
-        this.setState({ events: events });
+        this.setState({ events: events, isLoading: false });
       })
       .catch((err) => {
-        console.log(err);
+        this.setState({ isLoading: false });
       });
   }
   render() {
@@ -194,10 +197,14 @@ export class EventsPage extends Component {
             </button>
           </div>
         )}
-        <EventList
-          events={this.state.events}
-          authUserId={this.context.userId}
-        />
+        {this.state.isLoading ? (
+          <CircularProgress className={classes.Spinner} color="secondary" />
+        ) : (
+          <EventList
+            events={this.state.events}
+            authUserId={this.context.userId}
+          />
+        )}
       </div>
     );
   }
