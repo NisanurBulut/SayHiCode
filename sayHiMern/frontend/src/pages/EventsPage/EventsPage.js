@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as classes from './EventsPage.module.css';
 import Button from '@material-ui/core/Button';
-import Modal from '../components/Modal/Modal';
+import Modal from '../../components/Modal/Modal';
 export class EventsPage extends Component {
   render() {
     return (

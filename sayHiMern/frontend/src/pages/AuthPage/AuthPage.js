@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './AuthPage.css';
-import AuthContext from '../context/auth-context';
+import AuthContext from '../../context/auth-context';
 import {Button,TextField} from '@material-ui/core';
+
 export class AuthPage extends Component {
   state = {
     isLogin: true,
