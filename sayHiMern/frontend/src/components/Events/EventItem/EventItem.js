@@ -10,9 +10,6 @@ import {
 import EmojiEventsOutlinedIcon from '@material-ui/icons/EmojiEventsOutlined';
 import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
 const EventItem = (props) => {
-  {
-    console.log(props);
-  }
   return (
     <ListItem className={classes.eventListItem} button key={props.eventId}>
       <ListItemIcon>

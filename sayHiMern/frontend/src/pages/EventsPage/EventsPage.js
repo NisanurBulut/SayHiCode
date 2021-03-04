@@ -4,7 +4,7 @@ import {
   FormControl,
   InputLabel,
   FormHelperText,
-  Input
+  Input,
 } from '@material-ui/core';
 import Modal from '../../components/Modal/Modal';
 import Backdrop from '../../components/Backdrop/Backdrop';
@@ -84,7 +84,20 @@ export class EventsPage extends Component {
         return res.json();
       })
       .then((resData) => {
-        this.fetchEvents();
+        this.setState((prevState) => {
+          const updatedEvents = [...prevState.events];
+          updatedEvents.push({
+            _id: resData.data.createEvent._id,
+            title: resData.data.createEvent.title,
+            description: resData.data.createEvent.description,
+            date: resData.data.createEvent.date,
+            price: resData.data.createEvent.price,
+            creator: {
+              _id: this.context.userId,
+            },
+          });
+          return { events: updatedEvents };
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -132,7 +145,6 @@ export class EventsPage extends Component {
       });
   }
   render() {
-
     return (
       <div className={classes.eventPage}>
         {this.state.creating && (
@@ -182,8 +194,10 @@ export class EventsPage extends Component {
             </button>
           </div>
         )}
-        <EventList events={this.state.events} authUserId={this.context.userId}/>
-
+        <EventList
+          events={this.state.events}
+          authUserId={this.context.userId}
+        />
       </div>
     );
   }

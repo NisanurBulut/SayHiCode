@@ -5,7 +5,6 @@ import EventItem from '../EventItem/EventItem';
 const EventList = (props) => {
   const eventList = props.events.map((event) => {
       const eventTitlePrice= `${event.title} ${event.price.toString()} ₺`;
-      console.log(event);
     return (
       <EventItem
         key={event._id}
