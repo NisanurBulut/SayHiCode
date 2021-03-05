@@ -4,7 +4,12 @@ import BookingItem from '../BookingItem/BookingItem';
 const BookingList = (props) => {
   const bookingList = props.bookings.map((booking) => {
     return (
-      <BookingItem createdAt={booking.createdAt} />
+      <BookingItem
+        key={booking._id}
+        bookingId={booking._id}
+        createdAt={booking.createdAt}
+        onDelete={props.onDelete}
+      />
     );
   });
   return (

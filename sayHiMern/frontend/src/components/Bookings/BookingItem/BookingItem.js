@@ -18,7 +18,7 @@ const BookingItem = (props) => {
         primary={props.title}
         secondary={new Date(props.createdAt).toLocaleDateString()}
       />
-      <ListItemSecondaryAction>
+      <ListItemSecondaryAction onClick={props.onDelete.bind(this, props.bookingId)}>
           <CancelScheduleSendOutlinedIcon button color="secondary"/>
         </ListItemSecondaryAction>
     </ListItem>
