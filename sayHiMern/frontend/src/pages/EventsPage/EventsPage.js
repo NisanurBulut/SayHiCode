@@ -13,7 +13,6 @@ import Backdrop from '../../components/Backdrop/Backdrop';
 import AuthContext from '../../context/auth-context';
 import EventList from '../../components/Events/EventList/EventList';
 
-
 export class EventsPage extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +24,10 @@ export class EventsPage extends Component {
   componentDidMount() {
     this.fetchEvents();
   }
-
+  componentWillUnmount(){
+    this.isActive=false;
+  }
+  isActive = true;
   static contextType = AuthContext;
   state = {
     creating: false,
@@ -54,7 +56,7 @@ export class EventsPage extends Component {
              updatedAt
             }
           }
-        `
+        `,
     };
 
     fetch('http://localhost:8000/graphql', {
@@ -62,24 +64,23 @@ export class EventsPage extends Component {
       body: JSON.stringify(requestBody),
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + this.context.token
-      }
+        Authorization: 'Bearer ' + this.context.token,
+      },
     })
-      .then(res => {
+      .then((res) => {
         if (res.status !== 200 && res.status !== 201) {
           throw new Error('Failed!');
         }
         return res.json();
       })
-      .then(resData => {
+      .then((resData) => {
         console.log(resData);
         this.setState({ selectedEvent: null });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
-
 
   showDetailHandler = (eventId) => {
     this.setState((prevState) => {
@@ -191,10 +192,14 @@ export class EventsPage extends Component {
       })
       .then((resData) => {
         const events = resData.data.events;
-        this.setState({ events: events, isLoading: false });
+        if(this.isActive){
+          this.setState({ events: events, isLoading: false });
+        }
       })
       .catch((err) => {
-        this.setState({ isLoading: false });
+        if(this.isActive){
+          this.setState({ isLoading: false });
+        }
       });
   }
   render() {
