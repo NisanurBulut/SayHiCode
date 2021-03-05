@@ -36,7 +36,15 @@ export class EventsPage extends Component {
   };
 
   modalCancelHandler = () => {
-    this.setState({ creating: false });
+    this.setState({ creating: false, selectedEvent:null });
+  };
+  bookEventHandler = () => {};
+
+  showDetailHandler = eventId => {
+    this.setState(prevState => {
+      const selectedEvent = prevState.events.find(e => e._id === eventId);
+      return { selectedEvent: selectedEvent };
+    });
   };
   modalConfirmHandler = () => {
     this.setState({ creating: false });
@@ -151,9 +159,8 @@ export class EventsPage extends Component {
   render() {
     return (
       <div className={classes.eventPage}>
+        {(this.state.creating || this.state.selectedEvent) && <Backdrop />}
         {this.state.creating && (
-          <React.Fragment>
-            <Backdrop />
             <Modal
               title="Add event"
               canCancel
@@ -186,7 +193,6 @@ export class EventsPage extends Component {
                 </FormControl>
               </form>
             </Modal>
-          </React.Fragment>
         )}
         {this.context.token && (
           <div className={classes.eventsControl}>
@@ -198,12 +204,30 @@ export class EventsPage extends Component {
             </button>
           </div>
         )}
+        {this.state.selectedEvent && (
+          <Modal
+            title={this.state.selectedEvent.title}
+            canCancel
+            canConfirm
+            onCancel={this.modalCancelHandler}
+            onConfirm={this.bookEventHandler}
+            confirmText="Book"
+          >
+            <h1>{this.state.selectedEvent.title}</h1>
+            <h2>
+              {this.state.selectedEvent.price}₺ -{' '}
+              {new Date(this.state.selectedEvent.date).toLocaleDateString()}
+            </h2>
+            <p>{this.state.selectedEvent.description}</p>
+          </Modal>
+        )}
         {this.state.isLoading ? (
           <CircularProgress className={classes.Spinner} color="secondary" />
         ) : (
           <EventList
             events={this.state.events}
             authUserId={this.context.userId}
+            onViewDetail={this.showDetailHandler}
           />
         )}
       </div>
