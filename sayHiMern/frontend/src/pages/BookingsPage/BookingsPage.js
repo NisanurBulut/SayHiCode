@@ -45,6 +45,7 @@ export class BookingsPage extends Component {
         return res.json();
       })
       .then((resData) => {
+        console.log(resData.data);
         const bookings = resData.data.bookings;
         this.setState({ bookings: bookings, isLoading: false });
       })

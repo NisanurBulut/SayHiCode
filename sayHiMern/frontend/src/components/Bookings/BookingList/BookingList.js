@@ -6,6 +6,7 @@ const BookingList = (props) => {
     return (
       <BookingItem
         key={booking._id}
+        title={booking.event.title}
         bookingId={booking._id}
         createdAt={booking.createdAt}
         onDelete={props.onDelete}
