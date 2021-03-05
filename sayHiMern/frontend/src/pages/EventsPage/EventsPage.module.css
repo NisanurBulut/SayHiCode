@@ -1,5 +1,4 @@
 .eventPage{
-  display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
@@ -8,19 +7,15 @@
 .eventsControl {
   border-bottom: 2px solid #924d75;
   padding: 3rem;
-  margin-top: 10rem;
-  width: 100%;
+  margin-top: 5rem;
+  width: 80%;
 }
 .EventForm {
   display: flex;
   flex-wrap:wrap;
   justify-content: center;
 }
-.Spinner{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .EventForm > * {
   margin: 5px !important;
   width: 100% !important;

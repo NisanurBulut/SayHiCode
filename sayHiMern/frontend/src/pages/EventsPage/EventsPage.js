@@ -24,8 +24,8 @@ export class EventsPage extends Component {
   componentDidMount() {
     this.fetchEvents();
   }
-  componentWillUnmount(){
-    this.isActive=false;
+  componentWillUnmount() {
+    this.isActive = false;
   }
   isActive = true;
   static contextType = AuthContext;
@@ -49,17 +49,20 @@ export class EventsPage extends Component {
     }
     const requestBody = {
       query: `
-          mutation {
-            bookEvent(eventId: "${this.state.selectedEvent._id}") {
+          mutation Bookevent($id: ID!){
+            bookEvent(eventId: $id) {
               _id
              createdAt
              updatedAt
             }
           }
         `,
+      variables: {
+        id: this.state.selectedEvent._id,
+      },
     };
 
-    fetch('http://localhost:8000/graphql', {
+    fetch('http://localhost:8000/smartBookingApi', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -104,8 +107,8 @@ export class EventsPage extends Component {
     }
     const requestBody = {
       query: `
-          mutation {
-            createEvent(eventInput: {title: "${title}", description: "${description}", price: ${price}, date: "${date}"}) {
+          mutation CreateEvent($title: String!, $description: String!, $price:Float!, $date: String! ){
+            createEvent(eventInput: {title: $title, description: $description, price: $price, date: $date}) {
               _id
               title
               description
@@ -118,11 +121,17 @@ export class EventsPage extends Component {
             }
           }
         `,
+      variables: {
+        title: title,
+        description: description,
+        date: date,
+        price: price,
+      },
     };
 
     const token = this.context.token;
 
-    fetch('http://localhost:8000/graphql', {
+    fetch('http://localhost:8000/smartBookingApi', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -177,7 +186,7 @@ export class EventsPage extends Component {
         `,
     };
 
-    fetch('http://localhost:8000/graphql', {
+    fetch('http://localhost:8000/smartBookingApi', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -192,12 +201,12 @@ export class EventsPage extends Component {
       })
       .then((resData) => {
         const events = resData.data.events;
-        if(this.isActive){
+        if (this.isActive) {
           this.setState({ events: events, isLoading: false });
         }
       })
       .catch((err) => {
-        if(this.isActive){
+        if (this.isActive) {
           this.setState({ isLoading: false });
         }
       });
@@ -213,7 +222,7 @@ export class EventsPage extends Component {
             canConfirm
             onCancel={this.modalCancelHandler}
             onConfirm={this.modalConfirmHandler}
-            confirmText={"Confirm"}
+            confirmText={'Confirm'}
           >
             <form className={classes.EventForm}>
               <FormControl>
@@ -258,7 +267,7 @@ export class EventsPage extends Component {
             canConfirm
             onCancel={this.modalCancelHandler}
             onConfirm={this.bookEventHandler}
-            confirmText={this.context.token ? "Book" : "Confirm"}
+            confirmText={this.context.token ? 'Book' : 'Confirm'}
           >
             <h1>{this.state.selectedEvent.title}</h1>
             <h2>

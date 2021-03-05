@@ -10,7 +10,7 @@ import BookmarksOutlinedIcon from '@material-ui/icons/BookmarksOutlined';
 const BookingItem = (props) => {
   {console.log(props)}
   return (
-    <ListItem className="ListItem" button key={props.eventId}>
+    <ListItem className="ListItemBooking" button key={props.eventId}>
       <ListItemIcon>
         <BookmarksOutlinedIcon />
       </ListItemIcon>
