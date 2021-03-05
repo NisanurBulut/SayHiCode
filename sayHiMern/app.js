@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(
-  '/graphql',
+  '/smartBookingApi',
   graphqlHTTP({
     schema: grapqlSchema,
     rootValue: graphqlResolvers,

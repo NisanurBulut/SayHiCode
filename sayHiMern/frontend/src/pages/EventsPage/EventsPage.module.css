@@ -1,27 +1,22 @@
 .eventPage{
-  display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  max-width: 80%;
+  width: 100%;
 }
 .eventsControl {
   border-bottom: 2px solid #924d75;
-  padding: 3rem;
-  margin-top: 10rem;
-  width: 100%;
+  padding-bottom: 1rem;
 }
 .EventForm {
   display: flex;
   flex-wrap:wrap;
   justify-content: center;
 }
-.Spinner{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+h2{
+  font-weight: lighter !important;
 }
 .EventForm > * {
-  margin: 5px !important;
+  margin: 2px !important;
   width: 100% !important;
 }

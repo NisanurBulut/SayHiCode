@@ -24,25 +24,70 @@ export class EventsPage extends Component {
   componentDidMount() {
     this.fetchEvents();
   }
-
+  componentWillUnmount() {
+    this.isActive = false;
+  }
+  isActive = true;
   static contextType = AuthContext;
   state = {
     creating: false,
     events: [],
     isLoading: false,
+    selectedEvent: null,
   };
   startCreateEventHandler = () => {
     this.setState({ creating: true });
   };
 
   modalCancelHandler = () => {
-    this.setState({ creating: false, selectedEvent:null });
+    this.setState({ creating: false, selectedEvent: null });
   };
-  bookEventHandler = () => {};
+  bookEventHandler = () => {
+    if (!this.context.token) {
+      this.setState({ selectedEvent: null });
+      return;
+    }
+    const requestBody = {
+      query: `
+          mutation Bookevent($id: ID!){
+            bookEvent(eventId: $id) {
+              _id
+             createdAt
+             updatedAt
+            }
+          }
+        `,
+      variables: {
+        id: this.state.selectedEvent._id,
+      },
+    };
 
-  showDetailHandler = eventId => {
-    this.setState(prevState => {
-      const selectedEvent = prevState.events.find(e => e._id === eventId);
+    fetch('http://localhost:8000/smartBookingApi', {
+      method: 'POST',
+      body: JSON.stringify(requestBody),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + this.context.token,
+      },
+    })
+      .then((res) => {
+        if (res.status !== 200 && res.status !== 201) {
+          throw new Error('Failed!');
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState({ selectedEvent: null });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  showDetailHandler = (eventId) => {
+    this.setState((prevState) => {
+      const selectedEvent = prevState.events.find((e) => e._id === eventId);
       return { selectedEvent: selectedEvent };
     });
   };
@@ -62,8 +107,8 @@ export class EventsPage extends Component {
     }
     const requestBody = {
       query: `
-          mutation {
-            createEvent(eventInput: {title: "${title}", description: "${description}", price: ${price}, date: "${date}"}) {
+          mutation CreateEvent($title: String!, $description: String!, $price:Float!, $date: String! ){
+            createEvent(eventInput: {title: $title, description: $description, price: $price, date: $date}) {
               _id
               title
               description
@@ -76,11 +121,17 @@ export class EventsPage extends Component {
             }
           }
         `,
+      variables: {
+        title: title,
+        description: description,
+        date: date,
+        price: price,
+      },
     };
 
     const token = this.context.token;
 
-    fetch('http://localhost:8000/graphql', {
+    fetch('http://localhost:8000/smartBookingApi', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -135,7 +186,7 @@ export class EventsPage extends Component {
         `,
     };
 
-    fetch('http://localhost:8000/graphql', {
+    fetch('http://localhost:8000/smartBookingApi', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -150,10 +201,14 @@ export class EventsPage extends Component {
       })
       .then((resData) => {
         const events = resData.data.events;
-        this.setState({ events: events, isLoading: false });
+        if (this.isActive) {
+          this.setState({ events: events, isLoading: false });
+        }
       })
       .catch((err) => {
-        this.setState({ isLoading: false });
+        if (this.isActive) {
+          this.setState({ isLoading: false });
+        }
       });
   }
   render() {
@@ -161,38 +216,39 @@ export class EventsPage extends Component {
       <div className={classes.eventPage}>
         {(this.state.creating || this.state.selectedEvent) && <Backdrop />}
         {this.state.creating && (
-            <Modal
-              title="Add event"
-              canCancel
-              canConfirm
-              onCancel={this.modalCancelHandler}
-              onConfirm={this.modalConfirmHandler}
-            >
-              <form className={classes.EventForm}>
-                <FormControl>
-                  <InputLabel htmlFor="title">Title</InputLabel>
-                  <Input id="title" inputRef={this.titleElRef} />
-                  <FormHelperText id="title">Event's Title</FormHelperText>
-                </FormControl>
-                <FormControl>
-                  <InputLabel htmlFor="price">Price</InputLabel>
-                  <Input id="price" type="number" inputRef={this.priceElRef} />
-                  <FormHelperText id="price">Event's Price</FormHelperText>
-                </FormControl>
-                <FormControl m={1}>
-                  <InputLabel htmlFor="date"></InputLabel>
-                  <Input id="date" type="date" inputRef={this.dateElRef} />
-                  <FormHelperText id="date">Event's Date</FormHelperText>
-                </FormControl>
-                <FormControl>
-                  <InputLabel htmlFor="date">Description</InputLabel>
-                  <Input id="description" inputRef={this.descriptionElRef} />
-                  <FormHelperText id="description">
-                    Event's Description
-                  </FormHelperText>
-                </FormControl>
-              </form>
-            </Modal>
+          <Modal
+            title="Add event"
+            canCancel
+            canConfirm
+            onCancel={this.modalCancelHandler}
+            onConfirm={this.modalConfirmHandler}
+            confirmText={'Confirm'}
+          >
+            <form className={classes.EventForm}>
+              <FormControl>
+                <InputLabel htmlFor="title">Title</InputLabel>
+                <Input id="title" inputRef={this.titleElRef} />
+                <FormHelperText id="title">Event's Title</FormHelperText>
+              </FormControl>
+              <FormControl>
+                <InputLabel htmlFor="price">Price</InputLabel>
+                <Input id="price" type="number" inputRef={this.priceElRef} />
+                <FormHelperText id="price">Event's Price</FormHelperText>
+              </FormControl>
+              <FormControl m={1}>
+                <InputLabel htmlFor="date"></InputLabel>
+                <Input id="date" type="date" inputRef={this.dateElRef} />
+                <FormHelperText id="date">Event's Date</FormHelperText>
+              </FormControl>
+              <FormControl>
+                <InputLabel htmlFor="date">Description</InputLabel>
+                <Input id="description" inputRef={this.descriptionElRef} />
+                <FormHelperText id="description">
+                  Event's Description
+                </FormHelperText>
+              </FormControl>
+            </form>
+          </Modal>
         )}
         {this.context.token && (
           <div className={classes.eventsControl}>
@@ -211,11 +267,9 @@ export class EventsPage extends Component {
             canConfirm
             onCancel={this.modalCancelHandler}
             onConfirm={this.bookEventHandler}
-            confirmText="Book"
+            confirmText={this.context.token ? 'Book' : 'Confirm'}
           >
-            <h1>{this.state.selectedEvent.title}</h1>
             <h2>
-              {this.state.selectedEvent.price}₺ -{' '}
               {new Date(this.state.selectedEvent.date).toLocaleDateString()}
             </h2>
             <p>{this.state.selectedEvent.description}</p>
