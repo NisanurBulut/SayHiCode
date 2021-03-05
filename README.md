@@ -28,7 +28,7 @@ GraphQL api and MongoDb database are used in this application.User object perfor
 - Each user can see their own event list.
 - The user can cancel the reservation.
 
-![SayHiGithub](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SmartBook.gif)
+![SayHiMERN](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SmartBook.gif)
 
 ## SmartBook API
 
