@@ -19,7 +19,7 @@ const EventItem = (props) => {
         primary={props.title}
         secondary={props.eventPriceDate}
       />
-      {console.log(props.userId,props.creatorId)}
+
       {
       props.userId === props.creatorId ? (
         <ListItemSecondaryAction>
