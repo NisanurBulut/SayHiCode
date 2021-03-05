@@ -21,7 +21,8 @@ GraphQL api and MongoDb database are used in this application.User object perfor
 * React-material is used in interface designs.
 - If the user is not the owner of the event, he / she cannot see the detail information.
 - inserted react-material-spinner for waiting to response of api
-
+- The user views event detail in popup
+- The user can make the reservation via popup.
 ### Installation
 - npm install --save express body-parser
 - npm install --save-dev nodemon

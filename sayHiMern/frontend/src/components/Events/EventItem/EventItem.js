@@ -22,9 +22,8 @@ const EventItem = (props) => {
       {console.log(props.userId,props.creatorId)}
       {
       props.userId === props.creatorId ? (
-        // onClick={props.onDetail.bind(props.eventId)}
-        <ListItemSecondaryAction >
-          <VisibilityOutlinedIcon button color="secondary"/>
+        <ListItemSecondaryAction>
+          <VisibilityOutlinedIcon button color="secondary" onClick={props.onDetail.bind(this,props.eventId)}/>
         </ListItemSecondaryAction>
       ) : null}
     </ListItem>
