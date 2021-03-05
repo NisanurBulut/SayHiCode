@@ -8,15 +8,14 @@
   border-bottom: 2px solid #924d75;
   padding-bottom: 1rem;
 }
-.eventsControl p{
-  font-family: cursive;
-}
 .EventForm {
   display: flex;
   flex-wrap:wrap;
   justify-content: center;
 }
-
+h2{
+  font-weight: lighter !important;
+}
 .EventForm > * {
   margin: 2px !important;
   width: 100% !important;

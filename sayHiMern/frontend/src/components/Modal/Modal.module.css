@@ -25,7 +25,9 @@
 .modalContent{
     padding: 1rem;
 }
-
+.modalContent p{
+  font-family: cursive;
+}
 @media (min-width: 768px) {
   .modal {
     width: 30rem;

@@ -15,7 +15,7 @@ const EventItem = (props) => {
       </ListItemIcon>
       <ListItemText
         primary={props.title}
-        secondary={props.eventPriceDate}
+        secondary={props.date}
       />
 
       {

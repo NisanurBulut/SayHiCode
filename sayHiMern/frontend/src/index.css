@@ -45,6 +45,7 @@ body {
   margin-top: 0.5rem !important;
   display: flex;
   justify-content: space-between;
+  font-weight: bolder !important;
 }
 .ListItemBooking{
   border-bottom: 4px solid #924D75 !important;
