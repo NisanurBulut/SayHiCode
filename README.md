@@ -27,9 +27,11 @@ GraphQL api and MongoDb database are used in this application.User object perfor
 - Each user can see their own booking list.
 - Each user can see their own event list.
 - The user can cancel the reservation.
-### Installation
+
+### Getting Started
 - npm install --save express body-parser
 - npm install --save-dev nodemon
+- npm install --save dataloader
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)
