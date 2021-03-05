@@ -8,6 +8,9 @@
   border-bottom: 2px solid #924d75;
   padding-bottom: 1rem;
 }
+.eventsControl p{
+  font-family: cursive;
+}
 .EventForm {
   display: flex;
   flex-wrap:wrap;
