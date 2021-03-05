@@ -4,7 +4,7 @@ import {
   CircularProgress,
 } from '@material-ui/core';
 import * as classes from './BookingsPage.module.css';
-
+import BookingList from '../../components/Bookings/BookingList/BookingList';
 export class BookingsPage extends Component {
   static contextType = AuthContext;
   state = {
@@ -48,7 +48,6 @@ export class BookingsPage extends Component {
       })
       .then((resData) => {
         const bookings = resData.data.bookings;
-        console.log(bookings);
         this.setState({ bookings: bookings, isLoading: false });
       })
       .catch((err) => {
@@ -62,11 +61,7 @@ export class BookingsPage extends Component {
         {this.state.isLoading ? (
           <CircularProgress className={classes.Spinner} color="secondary" />
         ) : (
-          <ul>
-            {this.state.bookings.map((booking) => {
-              return <li key={booking._id}>{booking.createdAt}</li>;
-            })}
-          </ul>
+          <BookingList bookings={this.state.bookings} />
         )}
       </React.Fragment>
     );

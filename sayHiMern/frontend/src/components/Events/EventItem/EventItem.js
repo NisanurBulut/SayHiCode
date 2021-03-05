@@ -1,17 +1,15 @@
 import React from 'react';
-import * as classes from './EventItem.module.css';
 import {
   ListItem,
   ListItemText,
   ListItemIcon,
-  ListItemSecondaryAction,
-  Button,
+  ListItemSecondaryAction
 } from '@material-ui/core';
 import EmojiEventsOutlinedIcon from '@material-ui/icons/EmojiEventsOutlined';
 import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
 const EventItem = (props) => {
   return (
-    <ListItem className={classes.eventListItem} button key={props.eventId}>
+    <ListItem className="ListItem" button key={props.eventId}>
       <ListItemIcon>
         <EmojiEventsOutlinedIcon />
       </ListItemIcon>

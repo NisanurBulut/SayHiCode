@@ -1,5 +1,4 @@
 import React from 'react';
-import * as classes from './EventList.module.css';
 import { List } from '@material-ui/core';
 import EventItem from '../EventItem/EventItem';
 const EventList = (props) => {
@@ -19,7 +18,7 @@ const EventList = (props) => {
     );
   });
   return (
-    <List className={classes.eventList} component="nav">
+    <List className="List" component="nav">
       {eventList}
     </List>
   );

@@ -32,10 +32,13 @@ body {
   background-color:#C51162 ;
     color: #fff;
 }
-
-.form-actions .btnSignUp:hover,
-.form-actions .btnSignUp:active,
-.btn:hover,
-.btn:active {
-
+.List{
+  max-width: 90%;
+  list-style: none;
+  }
+.ListItem{
+  border-left: 4px solid #924D75 !important;
+  margin-top: 0.5rem !important;
+  display: flex;
+  justify-content: space-between;
 }
