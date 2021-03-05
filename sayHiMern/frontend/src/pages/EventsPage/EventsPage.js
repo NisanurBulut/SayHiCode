@@ -213,6 +213,7 @@ export class EventsPage extends Component {
             canConfirm
             onCancel={this.modalCancelHandler}
             onConfirm={this.modalConfirmHandler}
+            confirmText={"Confirm"}
           >
             <form className={classes.EventForm}>
               <FormControl>
@@ -257,7 +258,7 @@ export class EventsPage extends Component {
             canConfirm
             onCancel={this.modalCancelHandler}
             onConfirm={this.bookEventHandler}
-            confirmText={this.context.token ? 'Book' : 'Confirm'}
+            confirmText={this.context.token ? "Book" : "Confirm"}
           >
             <h1>{this.state.selectedEvent.title}</h1>
             <h2>
