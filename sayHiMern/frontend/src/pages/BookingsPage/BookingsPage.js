@@ -98,7 +98,7 @@ export class BookingsPage extends Component {
   };
   render() {
     return (
-      <React.Fragment>
+      <div className={classes.bookingPage}>
         {this.state.isLoading ? (
           <CircularProgress className={classes.Spinner} color="secondary" />
         ) : (
@@ -107,7 +107,7 @@ export class BookingsPage extends Component {
             onDelete={this.deleteBookingHandler}
           />
         )}
-      </React.Fragment>
+      </div>
     );
   }
 }
