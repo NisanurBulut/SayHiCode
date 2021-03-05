@@ -25,7 +25,7 @@ const EventItem = (props) => {
         <ListItemSecondaryAction>
           <VisibilityOutlinedIcon button color="secondary" onClick={props.onDetail.bind(this,props.eventId)}/>
         </ListItemSecondaryAction>
-      ) : null}
+      ) : ""}
     </ListItem>
   );
 };
