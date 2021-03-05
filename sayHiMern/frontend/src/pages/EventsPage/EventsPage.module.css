@@ -2,13 +2,11 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  max-width: 80%;
+  width: 100%;
 }
 .eventsControl {
   border-bottom: 2px solid #924d75;
-  padding: 3rem;
-  margin-top: 5rem;
-  width: 80%;
+  padding-bottom: 1rem;
 }
 .EventForm {
   display: flex;
@@ -17,6 +15,6 @@
 }
 
 .EventForm > * {
-  margin: 5px !important;
+  margin: 2px !important;
   width: 100% !important;
 }

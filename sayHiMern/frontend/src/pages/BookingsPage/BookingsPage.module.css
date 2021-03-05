@@ -7,7 +7,5 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  max-width: 80%;
-  padding: 3rem;
-  margin-top: 5rem;
+  width: 100%;
 }
