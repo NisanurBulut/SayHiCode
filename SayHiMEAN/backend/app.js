@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const config = require('./config/config.json');
 const { graphqlHTTP } = require('express-graphql');
-
+const graphqlSchema = require('../backend/grahql/schema');
+const graphqlResolver = require('../backend/grahql/resolver');
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -15,8 +16,8 @@ app.use(cors());
 app.use(
   '/api',
   graphqlHTTP({
-    schema: '',
-    rootValue: '',
+    schema: graphqlSchema,
+    rootValue: graphqlResolver,
     graphiql: true,
   })
 );
