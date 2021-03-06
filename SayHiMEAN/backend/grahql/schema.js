@@ -9,10 +9,18 @@ type Quote {
 type QuoteData {
     quotes: [Quote!]!
 }
+type QuoteInputData {
+    quote: String!
+    author: string!
+}
 type RootQuery {
     quotes: QuoteData!
 }
+type RootMutation {
+    createQuote(quoteInput: QuoteInputData): Quote!
+}
 Schema {
-    query: RootQuery
+    query: RootQuery,
+    mutation: RootMutation
 }
 `)
