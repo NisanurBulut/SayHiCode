@@ -4,17 +4,21 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const config = require('./config/config.json');
 const { graphqlHTTP } = require('express-graphql');
-const graphqlSchema = require('../backend/grahql/schema');
-const graphqlResolver = require('../backend/grahql/resolver');
+
+const graphqlSchema = require('./grahql/appSchema');
+const graphqlResolver = require('./grahql/appResolver');
 const app = express();
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+
 app.use(cors());
 
 // grahql
 
+app.use(bodyParser.json());
+
+app.use(cors());
+
 app.use(
-  '/api',
+  '/graphql',
   graphqlHTTP({
     schema: graphqlSchema,
     rootValue: graphqlResolver,
@@ -23,11 +27,14 @@ app.use(
 );
 
 mongoose
-  .connect(`mongodb://127.0.0.1:27017/${config.MONGO_DB}?retryWrites=true&w=majority`, {
-    useNewUrlParser: true,
-    useCreateIndex:true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    `mongodb://127.0.0.1:27017/${config.MONGO_DB}?retryWrites=true&w=majority`,
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useCreateIndex: true,
+    }
+  )
   .then(() => {
     app.listen(8000, console.log('Connected to port 8000'));
   })

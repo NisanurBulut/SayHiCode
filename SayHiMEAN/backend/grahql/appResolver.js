@@ -7,7 +7,7 @@ module.exports = {
       quotes: quotes.map((q) => {
         return {
           ...q._doc,
-          id: q._id.toString(),
+          _id: q._id.toString(),
         };
       }),
     };
@@ -19,8 +19,8 @@ module.exports = {
     });
     const createdQuote = await quote.save();
     return {
-        ...createdQuote._doc,
-        _id:createdQuote._id.toString()
-    }
+      ...createdQuote._doc,
+      _id: createdQuote._id.toString(),
+    };
   },
 };
