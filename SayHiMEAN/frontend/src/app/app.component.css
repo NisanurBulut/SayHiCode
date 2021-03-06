@@ -1,7 +1,10 @@
-.mainForm{
+.mainform{
     display: flex;
     flex-direction: column;
-    max-width: 600px;
-    background-color: olive;
-    width: 100%;
+    justify-content: center;
+    width: 600px;
+    height: 300px;
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 5px;
 }

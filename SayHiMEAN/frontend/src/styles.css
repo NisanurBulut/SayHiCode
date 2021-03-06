@@ -1,11 +1,9 @@
 body{
-    padding: 0;
-    margin: 0;
     background-image: url('./assets/backImage.jpg');
+    background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  align-items: center;
+  justify-content: center;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%;     width: 100%;}
+body { margin:auto; font-family: Roboto, "Helvetica Neue", sans-serif; }
