@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MatFormFieldModule, MatInputModule, MatButtonModule } from "@angular/material";
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule, MatInputModule, MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

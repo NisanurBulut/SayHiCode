@@ -2,6 +2,10 @@ body{
     padding: 0;
     margin: 0;
     background-image: url('./assets/backImage.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
