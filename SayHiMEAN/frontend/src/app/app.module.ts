@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MatInputModule, MatButtonModule } from "@angular/material";
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatListModule, MatIconModule } from "@angular/material";
 import { GeneralService } from './services/general.service';
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { GeneralService } from './services/general.service';
     GraphQLModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatFormFieldModule, MatInputModule, MatButtonModule
+    MatFormFieldModule, MatInputModule, MatButtonModule, MatListModule,MatIconModule
   ],
   providers: [GeneralService],
   bootstrap: [AppComponent]

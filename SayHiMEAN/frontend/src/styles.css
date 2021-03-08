@@ -2,8 +2,8 @@ body{
     background-image: url('./assets/backImage.jpg');
     background-repeat: no-repeat;
     display: flex;
-  align-items: center;
-  justify-content: center;
+    justify-content: center;
+    padding-top: 5%;
 }
 html, body { height: 100%;     width: 100%;}
 body { margin:auto; font-family: Roboto, "Helvetica Neue", sans-serif; }
