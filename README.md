@@ -31,6 +31,10 @@ GraphQL api and MongoDb database are used in this application.User object perfor
 
 ### SayHiMEAN
 <hr>
+In this study, practice of grahql, apollo and angular has been done.
+
+- Accesses mongodb database with GraphQl API.
+- Angular FW is used on the frontend side.
 
 ![SayHiMEAN](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiMean.gif)
 
