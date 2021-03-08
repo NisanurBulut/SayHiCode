@@ -24,6 +24,7 @@ GraphQL api and MongoDb database are used in this application.User object perfor
 - inserted react-material-spinner for waiting to response of api
 - The user views event detail in popup
 - The user can make the reservation via popup.
+
 ### Installation
 - npm install --save express body-parser
 - npm install --save-dev nodemon
@@ -31,6 +32,7 @@ GraphQL api and MongoDb database are used in this application.User object perfor
 ### SayHiMEAN
 <hr>
 
+![SayHiMEAN](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiMean.gif)
 
 ### Installation
 - npm i express express-graphql graphql mongoose body-parser cors
