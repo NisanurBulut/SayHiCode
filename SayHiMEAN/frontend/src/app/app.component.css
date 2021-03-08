@@ -1,18 +1,21 @@
 .main {
-  background-color: rgba(238,238,238,0.7) !important;
-  width: 800px;
+  background-color: rgba(245,190,1,0.4) !important;
+  width: 900px;
   border-radius: 15px;
-  height: 300px;
+  height: auto;
   display: flex;
   justify-content: flex-start;
 }
 input{
     text-align: center;
+    font-weight:500 ;
+    font-style: oblique;
 }
 .matIconQuote{
 color:#673AB7 !important;
 font-size: xx-large;
 }
+
 h3{
     font-style: italic;
 }
@@ -22,7 +25,7 @@ button{
     color:#fff;
 }
 .columnForm {
-  width: 50%;
+  width: 35%;
   float: left;
   display: flex;
   margin: 15px;
@@ -30,13 +33,16 @@ button{
   justify-content: flex-start;
 }
 .columnList {
-  width: 50%;
+  width: 65%;
   display: flex;
   float: right;
   justify-content: space-between;
   margin: 5px;
   border-radius: 15px;
+  flex-wrap: wrap;
+
 }
 mat-nav-list{
+  color: #fff;
     width: 100% !important;
 }
