@@ -17,6 +17,7 @@ With this application, the use of react hooks and context api has been implement
 
 
 ### SayHiMERN
+<hr>
 GraphQL api and MongoDb database are used in this application.User object performs booking and home event operations with GraphQl API.the user subscribes to the application and logs on. It receives token data at the login process. With this token information, the application can be online.
 * React-material is used in interface designs.
 - If the user is not the owner of the event, he / she cannot see the detail information.
@@ -42,10 +43,22 @@ GraphQL api and MongoDb database are used in this application.User object perfor
 - [Cancel Booking](http://localhost:8000/smartBookingApi/nisanurbulut/cancelBooking)
 
 [for GraphQL Documentation](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/Readme.md)
-### Getting Started
+
+### Installation
 - npm install --save express body-parser
 - npm install --save-dev nodemon
 - npm install --save dataloader
 
+### SayHiMEAN
+<hr>
+In this study, practice of grahql, apollo and angular has been done.
+
+- Accesses mongodb database with GraphQl API.
+- Angular FW is used on the frontend side.
+
+![SayHiMEAN](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiMean.gif)
+
+### Installation
+- npm i express express-graphql graphql mongoose body-parser cors
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)

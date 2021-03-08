@@ -1,0 +1,33 @@
+
+  <div class="main">
+    <div class="columnForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Quote</mat-label>
+        <input matInput placeholder="Quote" #quote>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Author</mat-label>
+        <input matInput placeholder="Author" #author>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="create(quote.value, author.value)">Save</button>
+    </div>
+    <div class="columnList">
+
+<mat-nav-list>
+	<a mat-list-item *ngFor="let quote of quotes | async"  [disableRipple]="true">
+    <mat-icon class="matIconQuote" matListAvatar>format_quote</mat-icon>
+
+    <h3 matLine> {{quote.author}}</h3>
+		<p matLine>
+			{{quote.quote}}
+		</p>
+    <button class="material-icons" mat-icon-button (click)="delete(quote._id)">
+      <mat-icon> delete_forever</mat-icon>
+    </button>
+	</a>
+</mat-nav-list>
+
+
+    </div>
+  </div>

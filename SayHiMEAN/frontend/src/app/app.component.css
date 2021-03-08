@@ -1,0 +1,48 @@
+.main {
+  background-color: rgba(245,190,1,0.5) !important;
+  width: 900px;
+  border-radius: 15px;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+input{
+    text-align: center;
+    font-weight:500 ;
+    font-style: oblique;
+}
+.matIconQuote{
+color:#673AB7 !important;
+font-size: xx-large;
+}
+
+h3{
+    font-style: italic;
+}
+button{
+    margin:15px;
+    background-color: #673AB7;
+    color:#fff;
+}
+.columnForm {
+  width: 35%;
+  float: left;
+  display: flex;
+  margin: 15px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.columnList {
+  width: 65%;
+  display: flex;
+  float: right;
+  justify-content: space-between;
+  margin: 5px;
+  border-radius: 15px;
+  flex-wrap: wrap;
+
+}
+mat-nav-list{
+  color: #fff;
+    width: 100% !important;
+}
