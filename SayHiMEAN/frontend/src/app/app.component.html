@@ -16,12 +16,13 @@
 
 <mat-nav-list>
 	<a mat-list-item *ngFor="let quote of quotes | async"  [disableRipple]="true">
-		<mat-icon matListAvatar>''</mat-icon>
+    <mat-icon class="matIconQuote" matListAvatar>format_quote</mat-icon>
+
     <h3 matLine> {{quote.author}}</h3>
 		<p matLine>
-			quote.quote
+			{{quote.quote}}
 		</p>
-    <button mat-icon-button (click)="delete(quote._id)">
+    <button class="material-icons" mat-icon-button (click)="delete(quote._id)">
       <mat-icon> delete_forever</mat-icon>
     </button>
 	</a>

@@ -1,5 +1,5 @@
 .main {
-  background-color: #eee !important;
+  background-color: rgba(238,238,238,0.7) !important;
   width: 800px;
   border-radius: 15px;
   height: 300px;
@@ -8,6 +8,18 @@
 }
 input{
     text-align: center;
+}
+.matIconQuote{
+color:#673AB7 !important;
+font-size: xx-large;
+}
+h3{
+    font-style: italic;
+}
+button{
+    margin:15px;
+    background-color: #673AB7;
+    color:#fff;
 }
 .columnForm {
   width: 50%;
@@ -23,7 +35,6 @@ input{
   float: right;
   justify-content: space-between;
   margin: 5px;
-  background-color:#ddd;
   border-radius: 15px;
 }
 mat-nav-list{
