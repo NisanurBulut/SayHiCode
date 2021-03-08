@@ -24,10 +24,30 @@ GraphQL api and MongoDb database are used in this application.User object perfor
 - inserted react-material-spinner for waiting to response of api
 - The user views event detail in popup
 - The user can make the reservation via popup.
+- Avoided fetching data if components are inactive.
+- Each user can see their own booking list.
+- Each user can see their own event list.
+- The user can cancel the reservation.
+
+![SayHiMERN](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SmartBook.gif)
+
+## SmartBook API
+
+- [Root Endpoint](http://localhost:8000/smartBookingApi)
+- [Get Events](http://localhost:8000/smartBookingApi/events)
+- [Get Bookings](http://localhost:8000/smartBookingApi/bookings)
+- [Login](http://localhost:8000/smartBookingApi/nisanurbulut/login)
+- [Create Event](http://localhost:8000/smartBookingApi/nisanurbulut/createEvent)
+- [Create User](http://localhost:8000/smartBookingApi/nisanurbulut/createUser)
+- [Get Book Event](http://localhost:8000/smartBookingApi/nisanurbulut/bookEvent)
+- [Cancel Booking](http://localhost:8000/smartBookingApi/nisanurbulut/cancelBooking)
+
+[for GraphQL Documentation](https://github.com/NisanurBulut/SayHiCode/blob/master/sayHiMern/Readme.md)
 
 ### Installation
 - npm install --save express body-parser
 - npm install --save-dev nodemon
+- npm install --save dataloader
 
 ### SayHiMEAN
 <hr>

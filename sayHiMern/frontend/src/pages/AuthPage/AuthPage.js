@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './AuthPage.css';
 import AuthContext from '../../context/auth-context';
-import {Button,TextField} from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 
 export class AuthPage extends Component {
   state = {
@@ -22,29 +22,37 @@ export class AuthPage extends Component {
     }
     let requestBody = {
       query: `
-          query {
-            login(email: "${email}", password: "${password}") {
+          query Login($email: String!, $password: String!) {
+            login(email: $email, password: $password) {
               userId
               token
               tokenExpiration
             }
           }
         `,
+      variables: {
+        email: email,
+        password: password,
+      },
     };
 
     if (!this.state.isLogin) {
       requestBody = {
         query: `
-          mutation {
-            createUser(userInput: {email: "${email}", password: "${password}"}) {
+          mutation CreateUser($email: String!, $password: String!) {
+            createUser(userInput: {email: $email, password: $password}) {
               _id
               email
             }
           }
         `,
+        variables: {
+          email: email,
+          password: password,
+        },
       };
     }
-    fetch('http://localhost:8000/graphql', {
+    fetch('http://localhost:8000/smartBookingApi', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -77,17 +85,37 @@ export class AuthPage extends Component {
       <form className="auth-form">
         <div className="form-control">
           <label htmlFor="email">Email</label>
-          <TextField type="email" id="email" inputRef={this.emailEl} variant="standard" />
+          <TextField
+            type="email"
+            id="email"
+            inputRef={this.emailEl}
+            variant="standard"
+          />
         </div>
         <div className="form-control">
           <label htmlFor="email">Password</label>
-          <TextField type="password" id="password" inputRef={this.passwordEl} variant="standard" />
+          <TextField
+            type="password"
+            id="password"
+            inputRef={this.passwordEl}
+            variant="standard"
+          />
         </div>
         <div className="form-actions">
-          <Button className="btnSignUp" variant="outlined" color="secondary" onClick={this.submitHandler}>
+          <Button
+            className="btnSignUp"
+            variant="outlined"
+            color="secondary"
+            onClick={this.submitHandler}
+          >
             Sign Up
           </Button>
-          <Button className="btnSignIn" variant="outlined" color="primary" onClick={this.submitHandler}>
+          <Button
+            className="btnSignIn"
+            variant="outlined"
+            color="primary"
+            onClick={this.submitHandler}
+          >
             Sign In
           </Button>
         </div>
