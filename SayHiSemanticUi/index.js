@@ -1,37 +1,11 @@
 // dependencies
 const { ApolloServer } = require('apollo-server');
-const gql = require('graphql-tag');
 const mongoose = require('mongoose');
 
 // relative imports
 const { MONGO_DB } = require('./config.js');
-const PostBook = require('./models/PostBook');
-
-const typeDefs = gql`
-  type PostBook {
-    id:ID!
-    author: String!
-    name: String!
-    username: String!
-    createdAt: String!
-  }
-  type Query {
-    getBookPosts:[PostBook]
-  }
-`;
-
-const resolvers = {
-  Query: {
-    async getBookPosts() {
-      try {
-        const bookPosts = await PostBook.find();
-        return bookPosts;
-      } catch (err) {
-        throw new Error(err);
-      }
-    },
-  },
-};
+const resolvers = require('./graphql/resolvers/index');
+const typeDefs = require('./graphql/typeDefs');
 
 const server = new ApolloServer({
   typeDefs,
