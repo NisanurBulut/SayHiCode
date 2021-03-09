@@ -1,7 +1,7 @@
 const { ApolloServer } = require('apollo-server');
 const gql = require('graphql-tag');
 const mongoose = require('mongoose');
-
+const { MONGO_DB } = require('./config.js');
 const typeDefs = gql`
   type Query {
     sayHi: String!
@@ -23,7 +23,7 @@ const server = new ApolloServer({
 
 mongoose
   .connect(
-    `mongodb://127.0.0.1:27017/${config.MONGO_DB}?retryWrites=true&w=majority`,
+    `mongodb://127.0.0.1:27017/${MONGO_DB}?retryWrites=true&w=majority`,
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,
