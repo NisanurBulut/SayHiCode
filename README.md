@@ -60,6 +60,5 @@ In this study, practice of grahql, apollo and angular has been done.
 
 ### Installation
 - npm i express express-graphql graphql mongoose body-parser cors
-- npm install bcryptjs jsonwebtoken
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)
