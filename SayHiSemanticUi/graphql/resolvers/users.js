@@ -22,6 +22,10 @@ module.exports = {
   Mutation: {
     async login(_, { username, password }) {
       const { errors, valid } = validateLoginInput(username, password);
+
+      if(!valid){
+        throw new UserInputError('Errors', { errors });
+      }
       const user = await User.findOne({ username });
       if (!user) {
         errors.general = 'User is not found';
@@ -35,6 +39,11 @@ module.exports = {
       }
 
       const token = generateToken(user);
+      return {
+        ...user._doc,
+        id: user._id,
+        token
+      };
     },
     async register(
       parent,
