@@ -1,14 +1,14 @@
-const {gql} = require('graphql-tag');
+const  gql  = require('graphql-tag');
 
 module.exports = gql`
   type PostBook {
-    id:ID!
+    id: ID!
     author: String!
     name: String!
     username: String!
     createdAt: String!
   }
   type Query {
-    getBookPosts:[PostBook]
+    getBookPosts: [PostBook]
   }
 `;
