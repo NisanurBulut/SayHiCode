@@ -46,7 +46,7 @@ module.exports = {
       };
     },
     async register(
-      parent,
+      _,
       { registerInput: { username, email, password, confirmPassword } },
       context,
       info
