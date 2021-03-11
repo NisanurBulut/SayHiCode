@@ -1,12 +1,25 @@
 const gql = require('graphql-tag');
 
 module.exports = gql`
-  type PostBook {
+  type BookPost {
     id: ID!
     author: String!
     name: String!
     username: String!
     createdAt: String!
+    comments: [Comment]!
+    likes: [Like]!
+  }
+  type Comment {
+    id: ID!
+    createdAt: String!
+    username: String!
+    body: String!
+  }
+  type Like {
+    id: ID!
+    createdAt: String!
+    username: String!
   }
   type User {
     id: ID!
@@ -22,13 +35,16 @@ module.exports = gql`
     email: String!
   }
   type Query {
-    getBookPosts: [PostBook],
-    getBookPost(postId: ID!): PostBook
+    getBookPosts: [BookPost],
+    getBookPost(postId: ID!): BookPost
   }
   type Mutation {
     register(registerInput: RegisterInput): User!
     login(username: String!, password: String!): User!
-    createBookPost(author: String!, name: String!): PostBook!
+    createBookPost(author: String!, name: String!): BookPost!
     deleteBookPost(postId: ID!): String!
+    createComment(postId: String!, body:String):BookPost!
+    deleteComment(postId: String!, commentId:ID!):BookPost!
+    likeBookPost(postId: ID!):BookPost!
   }
 `;

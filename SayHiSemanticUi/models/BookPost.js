@@ -1,6 +1,6 @@
 const { model, Schema } = require('mongoose');
 
-const PostBookSchema = new Schema({
+const BookPostSchema = new Schema({
   author: String,
   name: String,
   username: String, // who posted it
@@ -24,4 +24,4 @@ const PostBookSchema = new Schema({
   },
 });
 
-module.exports = model('PostBook', PostBookSchema);
+module.exports = model('BookPost', BookPostSchema);

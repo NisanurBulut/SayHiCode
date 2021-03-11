@@ -1,13 +1,13 @@
 const { AuthenticationError } = require('apollo-server');
 
-const PostBook = require('../../models/PostBook');
+const BookPost = require('../../models/BookPost');
 const checkAuth = require('../../util/check-auth');
 
 module.exports = {
   Query: {
     async getBookPosts() {
       try {
-        const bookPosts = await PostBook.find().sort({ createdAt: -1 });
+        const bookPosts = await BookPost.find().sort({ createdAt: -1 });
         return bookPosts;
       } catch (err) {
         throw new Error(err);
@@ -15,9 +15,9 @@ module.exports = {
     },
     async getBookPost(_, { postId }) {
       try {
-        const postBook = await PostBook.findById(postId);
-        if (postBook) {
-          return postBook;
+        const BookPost = await BookPost.findById(postId);
+        if (BookPost) {
+          return BookPost;
         } else {
           throw new Error('Post Book not found !');
         }
@@ -31,7 +31,7 @@ module.exports = {
       try {
         const user = checkAuth(context);
         console.log(user);
-        const newBookPost = new PostBook({
+        const newBookPost = new BookPost({
           author,
           name,
           user: user.id,
@@ -39,8 +39,8 @@ module.exports = {
           createdAt: new Date().toISOString(),
         });
 
-        const postBook = await newBookPost.save();
-        return postBook;
+        const BookPost = await newBookPost.save();
+        return BookPost;
       } catch (err) {
         throw new Error(err);
       }
@@ -48,7 +48,7 @@ module.exports = {
     async deleteBookPost(_, { postId }, context) {
       const user = checkAuth(context);
       try {
-        const post = await PostBook.findById(postId);
+        const post = await BookPost.findById(postId);
         if (user.username === post.username) {
           await post.delete();
           return 'Post Book deleted successfully !';
