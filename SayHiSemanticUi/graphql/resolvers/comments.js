@@ -18,9 +18,9 @@ module.exports = {
         bookPostItem.comments.unshift({
           body,
           username,
-          createdat: new Date().toISOString(),
+          createdAt: new Date().toISOString(),
         });
-        await (await bookPostItem).save();
+        await bookPostItem.save();
         return bookPostItem;
       } else {
         throw new UserInputError('Book post is not found');
@@ -44,6 +44,6 @@ module.exports = {
       }else{
         throw new AuthenticationError('Book post is not found');
       }
-    },
+    }
   },
 };
