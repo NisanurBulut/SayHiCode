@@ -29,6 +29,6 @@ module.exports = gql`
     register(registerInput: RegisterInput): User!
     login(username: String!, password: String!): User!
     createPostBook(author: String!, name: String!): PostBook!
-    deletePostBook(postId: ID!):string!
+    deletePostBook(postId: ID!): String!
   }
 `;
