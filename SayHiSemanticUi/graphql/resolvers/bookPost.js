@@ -6,7 +6,7 @@ module.exports = {
   Query: {
     async getBookPosts() {
       try {
-        const bookPosts = await PostBook.find();
+        const bookPosts = await PostBook.find().sort({ createdAt: -1 });
         return bookPosts;
       } catch (err) {
         throw new Error(err);
@@ -35,12 +35,11 @@ module.exports = {
           name,
           user: user.id,
           username: user.username,
-          createdAt: new Date().toISOString()
+          createdAt: new Date().toISOString(),
         });
 
         const postBook = await newBookPost.save();
         return postBook;
-
       } catch (err) {
         throw new Error(err);
       }
