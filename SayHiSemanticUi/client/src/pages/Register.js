@@ -2,36 +2,29 @@ import React, { useState } from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
-
+import { useForm } from '../util/hooks';
 function Register(props) {
   const [errors, setErrors] = useState({});
-  const [values, setValues] = useState({
+
+  const { onChange, onSubmit, values } = useForm(registerUser, {
     username: '',
     password: '',
     email: '',
     confirmPassword: '',
   });
-  const onChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
-  };
-
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
     update(_, result) {
       console.log(result);
-      props.history.push('/')
+      props.history.push('/');
     },
     onError(err) {
-      console.log(err.graphQLErrors[0].extensions.exception.errors);
       setErrors(err.graphQLErrors[0].extensions.exception.errors);
     },
     variables: values,
   });
-
-  const onSubmit = (event) => {
-    event.preventDefault();
+  function registerUser() {
     addUser();
-  };
-
+  }
   return (
     <div className="form-container">
       <Form onSubmit={onSubmit} noValidate className={loading ? 'loading' : ''}>
@@ -43,7 +36,7 @@ function Register(props) {
           value={values.username}
           onChange={onChange}
           type="text"
-          error={errors.username ? true :false}
+          error={errors.username ? true : false}
         />
         <Form.Input
           label="email"
@@ -52,7 +45,7 @@ function Register(props) {
           value={values.email}
           onChange={onChange}
           type="email"
-          error={errors.email ? true :false}
+          error={errors.email ? true : false}
         />
         <Form.Input
           label="Password"
@@ -61,7 +54,7 @@ function Register(props) {
           value={values.password}
           onChange={onChange}
           type="password"
-          error={errors.password ? true :false}
+          error={errors.password ? true : false}
         />
         <Form.Input
           label="ConfirmPassword"
@@ -70,7 +63,7 @@ function Register(props) {
           value={values.confirmPassword}
           onChange={onChange}
           type="password"
-          error={errors.confirmPassword ? true :false}
+          error={errors.confirmPassword ? true : false}
         />
         <Button type="submit" primary>
           Register
