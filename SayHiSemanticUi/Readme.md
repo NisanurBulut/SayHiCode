@@ -5,10 +5,10 @@
 - Created files&folders structure
 - After login action user has token
 
-
 ### Entities
+
 | BookPost              | Comment           | Like               | User              |RegisterInput             |
-| :---        |    :----:   |          ---: |                    | :---              |    :----:                |
+|-----------------------|:-----------------:|:------------------:|:-----------------:|-------------------------:|
 | id: ID!               | id: ID!           | id: ID!            | id: ID!           | username: String!        |
 | author: String!       | createdAt: String!| createdAt: String! | email: String!    | password: String!        |
 | name: String!         | username: String! | username: String!  | token: String!    | confirmPassword: String! |
