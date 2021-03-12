@@ -11,8 +11,8 @@ function Home() {
   } = useQuery(FETCH_BOOKPOSTS_QUERY);
   return (
     <Grid columns={3} divided>
-      <Grid.Row>
-        <h1>Recent Book posts</h1>
+      <Grid.Row className="page-title">
+        <h1>Recent Book Posts</h1>
       </Grid.Row>
       <Grid.Row>
         {loading ? (
