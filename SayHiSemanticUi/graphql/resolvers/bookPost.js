@@ -84,11 +84,11 @@ module.exports = {
       } else {
         throw new UserInputError('Book post not found');
       }
-    },
-    Subscription: {
-      newBookPost: {
-        subscribe: (_, __, { pubsub }) => pubsub.asyncIterator('NEW_BOOKPOST'),
-      },
+    }
+  },
+  Subscription: {
+    newBookPost: {
+      subscribe: (_, __, { pubsub }) => pubsub.asyncIterator('NEW_BOOKPOST'),
     },
   },
 };
