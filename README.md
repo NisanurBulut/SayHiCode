@@ -100,6 +100,9 @@ In this study, practice of grahql, apollo and angular has been done.
 ### Installation
 - npm install apollo-server grahql mongoose
 - npm install bcryptjs jsonwebtoken
+- npm install @apollo/react-hooks apollo-cache-inmemory
+- npm install semantic-ui-css semantic-ui-react
+- npm install react-router-dom
 
 
 ## Helpfull Websites
