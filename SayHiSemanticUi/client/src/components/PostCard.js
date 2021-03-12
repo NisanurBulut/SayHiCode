@@ -26,7 +26,7 @@ function PostCard({
         />
         <Card.Header>{username}</Card.Header>
         <Card.Meta>{moment(createdAt).fromNow(true)}</Card.Meta>
-        <Card.Description as={Link} to={`/bookPosts/${id}`}>
+        <Card.Description>
           {name}-{author}
         </Card.Description>
       </Card.Content>
