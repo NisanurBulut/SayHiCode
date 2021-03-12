@@ -40,7 +40,7 @@ function PostCard({
           </Label>
         </Button>
         <Button as="div" labelPosition="right" onClick={commentOnPost}>
-          <Button basic color="blue">
+          <Button color="blue">
             <Icon name="comments" />
           </Button>
           <Label as="a" basic color="blue" pointing="left">
