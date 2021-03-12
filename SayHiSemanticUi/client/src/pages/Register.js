@@ -41,6 +41,7 @@ function Register() {
           value={values.username}
           onChange={onChange}
           type="text"
+          error={errors.username ? true :false}
         />
         <Form.Input
           label="email"
@@ -49,6 +50,7 @@ function Register() {
           value={values.email}
           onChange={onChange}
           type="email"
+          error={errors.email ? true :false}
         />
         <Form.Input
           label="Password"
@@ -57,6 +59,7 @@ function Register() {
           value={values.password}
           onChange={onChange}
           type="password"
+          error={errors.password ? true :false}
         />
         <Form.Input
           label="ConfirmPassword"
@@ -65,6 +68,7 @@ function Register() {
           value={values.confirmPassword}
           onChange={onChange}
           type="password"
+          error={errors.confirmPassword ? true :false}
         />
         <Button type="submit" primary>
           Register
