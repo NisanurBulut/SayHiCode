@@ -23,3 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 */node_modules
 */backend/node_modules/*/
+*/config.js
