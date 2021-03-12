@@ -30,7 +30,14 @@ module.exports = {
     async createBookPost(_, { author, name }, context) {
       try {
         const user = checkAuth(context);
-        console.log(user);
+
+        if(author.trim()===''){
+          return new Error('Author must not be empty');
+        }
+        if(name.trim()===''){
+          return new Error('Book name mut not be happy');
+        }
+
         const newBookPost = new BookPost({
           author,
           name,
