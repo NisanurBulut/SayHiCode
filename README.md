@@ -68,6 +68,7 @@ In this study, practice of grahql, apollo and angular has been done.
 - Created files&folders structure
 - After login action user has token
 - Showed error messages
+- Used loading component for waiting processes
 
 ### Entities
 
