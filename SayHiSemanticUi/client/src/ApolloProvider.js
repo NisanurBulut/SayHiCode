@@ -3,10 +3,10 @@ import App from './App';
 import ApolloClient from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { createHttpLink } from 'apollo-link-http';
-import { ApolloProvider, HttpLink } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/react-hooks';
 
 const httpLink = new createHttpLink({
-  uri: 'http://localhost:8000/',
+  uri: 'http://localhost:8000',
 });
 
 const client = new ApolloClient({

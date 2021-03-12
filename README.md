@@ -102,7 +102,8 @@ In this study, practice of grahql, apollo and angular has been done.
 - npm install bcryptjs jsonwebtoken
 - npm install @apollo/react-hooks apollo-cache-inmemory
 - npm install semantic-ui-css semantic-ui-react
-- npm install react-router-dom
+- npm install react-router-dom moment
+- npm install graphql graphql-tag
 
 
 ## Helpfull Websites
