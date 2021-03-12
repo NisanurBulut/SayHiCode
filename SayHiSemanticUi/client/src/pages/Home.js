@@ -21,7 +21,7 @@ function Home() {
           bookPosts &&
           bookPosts.map((bpost) => {
             return (
-              <Grid.Column key={bpost.id}>
+              <Grid.Column key={bpost.id} style={{marginBottom:20}}>
                 <PostCard bookPost={bpost} />;
               </Grid.Column>
             );
