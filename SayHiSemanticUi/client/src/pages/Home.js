@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Transition } from 'semantic-ui-react';
 import PostCard from '../components/PostCard';
 
 function Home() {
@@ -10,22 +10,22 @@ function Home() {
     data: { getBookPosts: bookPosts },
   } = useQuery(FETCH_BOOKPOSTS_QUERY);
   return (
-    <Grid columns={3} divided>
+    <Grid columns={3}>
       <Grid.Row className="page-title">
-        <h1>Recent Book Posts</h1>
+        <h1>Recent Posts</h1>
       </Grid.Row>
       <Grid.Row>
         {loading ? (
-          <h1>Loading...</h1>
+          <h1>Loading posts..</h1>
         ) : (
-          bookPosts &&
-          bookPosts.map((bpost) => {
-            return (
-              <Grid.Column key={bpost.id} style={{ marginBottom: 20 }}>
-                <PostCard bookPost={bpost} />
-              </Grid.Column>
-            );
-          })
+          <Transition.Group>
+            {bookPosts &&
+              bookPosts.map((bpost) => (
+                <Grid.Column key={bpost.id} style={{ marginBottom: 20 }}>
+                  <PostCard bookPost={bpost} />
+                </Grid.Column>
+              ))}
+          </Transition.Group>
         )}
       </Grid.Row>
     </Grid>
