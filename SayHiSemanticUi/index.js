@@ -1,5 +1,5 @@
 // dependencies
-const { ApolloServer } = require('apollo-server');
+const { ApolloServer, PubSub } = require('apollo-server');
 const mongoose = require('mongoose');
 
 // relative imports
@@ -7,10 +7,12 @@ const { MONGO_DB } = require('./config.js');
 const resolvers = require('./graphql/resolvers/index');
 const typeDefs = require('./graphql/typeDefs');
 
+const pubsub = new PubSub();
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => ({ req })
+  context: ({ req }) => ({ req, pubsub })
 });
 
 mongoose

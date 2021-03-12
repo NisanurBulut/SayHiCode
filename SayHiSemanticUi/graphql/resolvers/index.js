@@ -10,5 +10,8 @@ module.exports = {
     ...usersResolvers.Mutation,
     ...bookPostResolvers.Mutation,
     ...commentsResolvers.Mutation
+  },
+  Susbcription: {
+    ...bookPostResolvers.Susbcription
   }
 };

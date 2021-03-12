@@ -39,8 +39,13 @@ module.exports = {
           createdAt: new Date().toISOString(),
         });
 
-        const BookPost = await newBookPost.save();
-        return BookPost;
+        const posted = await newBookPost.save();
+
+        context.pubsub.publish('NEW_BOOKPOST', {
+          newBookPost: posted
+        });
+
+        return posted;
       } catch (err) {
         throw new Error(err);
       }
@@ -59,24 +64,31 @@ module.exports = {
         throw new Error(err);
       }
     },
-    async likeBookPost(_,{postId},context){
+    async likeBookPost(_, { postId }, context) {
       const { username } = checkAuth(context);
       const bookPostItem = await BookPost.findById(postId);
       if (bookPostItem) {
-          if (bookPostItem.likes.find(a=>a.username === username)) {
-            bookPostItem.likes = bookPostItem.likes.filter(a=>a.username !== username);
-            await bookPostItem.save();
-          } else {
-            bookPostItem.likes.push({
-                username,
-                createdAt:new Date().toISOString()
-            })
-          }
+        if (bookPostItem.likes.find((a) => a.username === username)) {
+          bookPostItem.likes = bookPostItem.likes.filter(
+            (a) => a.username !== username
+          );
           await bookPostItem.save();
-          return bookPostItem;
-        }else{
-            throw new UserInputError('Book post not found');
+        } else {
+          bookPostItem.likes.push({
+            username,
+            createdAt: new Date().toISOString(),
+          });
         }
-  }
+        await bookPostItem.save();
+        return bookPostItem;
+      } else {
+        throw new UserInputError('Book post not found');
+      }
+    },
+    Subscription: {
+      newBookPost: {
+        subscribe: (_, __, { pubsub }) => pubsub.asyncIterator('NEW_BOOKPOST'),
+      },
+    },
   },
 };
