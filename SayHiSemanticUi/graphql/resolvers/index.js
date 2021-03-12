@@ -12,6 +12,6 @@ module.exports = {
     ...commentsResolvers.Mutation
   },
   Susbcription: {
-    ...bookPostResolvers.Susbcription
+    ...bookPostResolvers.Subscription
   }
 };
