@@ -67,6 +67,7 @@ In this study, practice of grahql, apollo and angular has been done.
 - Implemented apollo custom errors
 - Created files&folders structure
 - After login action user has token
+- Showed error messages
 
 ### Entities
 
