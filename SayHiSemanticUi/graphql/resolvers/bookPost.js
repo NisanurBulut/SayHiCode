@@ -35,7 +35,7 @@ module.exports = {
           return new Error('Author must not be empty');
         }
         if(name.trim()===''){
-          return new Error('Book name mut not be happy');
+          return new Error('Book name must not be happy');
         }
 
         const newBookPost = new BookPost({
