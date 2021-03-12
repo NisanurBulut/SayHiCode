@@ -66,6 +66,7 @@ In this study, practice of grahql, apollo and angular has been done.
 
 - Implemented apollo custom errors
 - Created files&folders structure
+- Users register with the application
 - After login action user has token
 - Showed error messages
 - Used loading component for waiting processes
