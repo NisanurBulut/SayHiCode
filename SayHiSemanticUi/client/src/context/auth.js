@@ -32,16 +32,15 @@ function AuthProvider(props) {
     });
   }
 
-  function logout(userData) {
+  function logout() {
     dispatch({
       type: 'LOGOUT',
     });
   }
 
   return (
-    <AuthContext.Provider value={{ user: state.user, login, logout }}>
-      {...props}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={{ user: state.user, login, logout }}  {...props} />
+
   );
 }
 

@@ -1,21 +1,26 @@
-import React, { useState } from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import React, { useState, useContext } from 'react';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
+
+import { AuthContext } from '../context/auth';
+import { Button, Form } from 'semantic-ui-react';
 import { useForm } from '../util/hooks';
+import { attachConnectorsToContext } from 'graphql-tools';
 
 const Login = (props) => {
+  const context = useContext(AuthContext);
   const [errors, setErrors] = useState({});
   const { onChange, onSubmit, values } = useForm(loginUserCallBack, {
     username: '',
-    password: ''
+    password: '',
   });
-  function loginUserCallBack () {
+  function loginUserCallBack() {
     loginUser();
-  };
+  }
   const [loginUser, { loading }] = useMutation(LOGIN_USER, {
-    update(_, result) {
-      console.log(result);
+    update(_, { data: { login: userData } }) {
+      console.log(userData);
+      context.login(userData);
       props.history.push('/');
     },
     onError(err) {
@@ -23,7 +28,6 @@ const Login = (props) => {
     },
     variables: values,
   });
-
 
   return (
     <div className="form-container">
@@ -65,14 +69,8 @@ const Login = (props) => {
 };
 
 const LOGIN_USER = gql`
-  mutation register(
-    $username: String!
-    $password: String!
-  ) {
-    login(
-        username: $username
-        password: $password
-    ) {
+  mutation register($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
       id
       email
       username
