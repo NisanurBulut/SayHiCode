@@ -17,7 +17,7 @@ function MenuBar() {
       <Menu.Item name={context.user.username} as={Link} to="/">
       <Image src={context.user.imageUrl} size="mini" />
       </Menu.Item>
-      <Menu.Item name="logout" onClick={context.logout}/>
+      <Menu.Item position="right" name="logout" onClick={context.logout}/>
       </Menu>):(
           <Menu pointing inverted className="ui green" size="massive">
           <Menu.Item
