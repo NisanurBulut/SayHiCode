@@ -3,7 +3,6 @@ const { model, Schema } = require('mongoose');
 const BookPostSchema = new Schema({
   author: String,
   name: String,
-  username: String, // who posted it
   createdAt: String,
   comments: [
     {

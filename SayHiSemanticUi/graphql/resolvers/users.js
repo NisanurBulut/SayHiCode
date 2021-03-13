@@ -47,7 +47,7 @@ module.exports = {
     },
     async register(
       _,
-      { registerInput: { username, email, password, confirmPassword } },
+      { registerInput: { username, email, password, confirmPassword, imageUrl } },
       context,
       info
     ) {
@@ -56,7 +56,8 @@ module.exports = {
         username,
         email,
         password,
-        confirmPassword
+        confirmPassword,
+        imageUrl
       );
       if (!valid) {
         throw new UserInputError('Errors', { errors });
@@ -78,6 +79,7 @@ module.exports = {
         username,
         password,
         createdAt: new Date().toISOString(),
+        imageUrl
       });
       const res = await newUser.save();
       const token = generateToken(newUser);

@@ -61,12 +61,22 @@ In this study, practice of grahql, apollo and angular has been done.
 ### Installation
 - npm i express express-graphql graphql mongoose body-parser cors
 
+
 ### SayHiSemanticUi
 <hr>
 
-- Implemented apollo custom errors
+- Implemented apollo custom errors form form validation
 - Created files&folders structure
 - After login action user has token
+- User can add book post
+- User delete book post
+- User can like other user's book posts
+- User can comment on other users' book posts
+- Users register with the application
+- After login action user has token
+- Showed error messages
+- Used loading component for waiting processes
+- Implemented custom hooks
 
 ### Entities
 
@@ -75,9 +85,9 @@ In this study, practice of grahql, apollo and angular has been done.
 | id: ID!               | id: ID!           | id: ID!            | id: ID!           | username: String!        |
 | author: String!       | createdAt: String!| createdAt: String! | email: String!    | password: String!        |
 | name: String!         | username: String! | username: String!  | token: String!    | confirmPassword: String! |
-| username: String!     | id: ID!           |                    | username: String! | email: String!           |
-| createdAt: String!    | body: String!     |                    | createdAt: String!|                          |
-| comments: [Comment]!  |                   |                    |                   |                          |
+| user: User!           | id: ID!           |                    | username: String! | email: String!           |
+| createdAt: String!    | body: String!     |                    | createdAt: String!| imageUrl: String!        |
+| comments:[Comment]!   |                   |                    | imageUrl: String! |                          |
 | likes: [Like]!        |                   |                    |                   |                          |
 | likeCount: Int!       |                   |                    |                   |                          |
 | commentCount: Int!    |                   |                    |                   |                          |
@@ -100,7 +110,8 @@ In this study, practice of grahql, apollo and angular has been done.
 ### Installation
 - npm install apollo-server grahql mongoose
 - npm install bcryptjs jsonwebtoken
-
+- npm install @apollo/react-hooks apollo-cache-inmemory apollo-link-http apollo-client
+- npm install --save dataloader
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)
