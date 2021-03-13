@@ -38,3 +38,4 @@
 - npm install apollo-server grahql mongoose
 - npm install bcryptjs jsonwebtoken
 - npm install @apollo/react-hooks apollo-cache-inmemory apollo-link-http apollo-client
+- npm install --save dataloader

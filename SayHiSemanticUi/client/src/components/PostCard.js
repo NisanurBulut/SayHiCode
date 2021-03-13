@@ -8,7 +8,7 @@ function PostCard({
     author,
     createdAt,
     id,
-    username,
+    user,
     likeCount,
     commentCount,
     likes,
@@ -22,9 +22,9 @@ function PostCard({
         <Image
           floated="right"
           size="mini"
-          src="https://react.semantic-ui.com/images/avatar/large/molly.png"
+          src={user.imageUrl}
         />
-        <Card.Header>{username}</Card.Header>
+        <Card.Header>{user.username}</Card.Header>
         <Card.Meta>{moment(createdAt).fromNow(true)}</Card.Meta>
         <Card.Description>
           {name}-{author}

@@ -4,11 +4,13 @@ import gql from 'graphql-tag';
 import { Grid, Transition } from 'semantic-ui-react';
 import PostCard from '../components/PostCard';
 
-function Home() {
+const Home = (props) => {
+  debugger;
   const {
     loading,
     data: { getBookPosts: bookPosts },
   } = useQuery(FETCH_BOOKPOSTS_QUERY);
+  console.log(bookPosts);
   return (
     <Grid columns={3}>
       <Grid.Row className="page-title">
@@ -30,7 +32,7 @@ function Home() {
       </Grid.Row>
     </Grid>
   );
-}
+};
 const FETCH_BOOKPOSTS_QUERY = gql`
   {
     getBookPosts {
@@ -38,7 +40,10 @@ const FETCH_BOOKPOSTS_QUERY = gql`
       author
       name
       createdAt
-      username
+      user {
+        username
+        imageUrl
+      }
       likeCount
       likes {
         username

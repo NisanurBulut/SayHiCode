@@ -1,5 +1,5 @@
 const { AuthenticationError, UserInputError } = require('apollo-server');
-
+const {transformBooking} =require('../merge');
 const BookPost = require('../../models/BookPost');
 const checkAuth = require('../../util/check-auth');
 
@@ -8,7 +8,9 @@ module.exports = {
     async getBookPosts() {
       try {
         const bookPosts = await BookPost.find().sort({ createdAt: -1 });
-        return bookPosts;
+        return bookPosts.map((bPost)=>{
+          return transformBooking(bPost);
+        });
       } catch (err) {
         throw new Error(err);
       }
@@ -17,7 +19,7 @@ module.exports = {
       try {
         const BookPost = await BookPost.findById(postId);
         if (BookPost) {
-          return BookPost;
+          return transformBooking(BookPost);;
         } else {
           throw new Error('Post Book not found !');
         }
@@ -42,7 +44,6 @@ module.exports = {
           author,
           name,
           user: user.id,
-          username: user.username,
           createdAt: new Date().toISOString(),
         });
 

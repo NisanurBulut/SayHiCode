@@ -3,7 +3,8 @@ import { Button, Form } from 'semantic-ui-react';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 import { useForm } from '../util/hooks';
-function Register(props) {
+
+const Register = (props) => {
   const [errors, setErrors] = useState({});
 
   const { onChange, onSubmit, values } = useForm(registerUser, {
@@ -11,6 +12,7 @@ function Register(props) {
     password: '',
     email: '',
     confirmPassword: '',
+    imageUrl: '',
   });
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
     update(_, result) {
@@ -65,6 +67,15 @@ function Register(props) {
           type="password"
           error={errors.confirmPassword ? true : false}
         />
+        <Form.Input
+          label="imageUrl"
+          placeholder="imageUrl..."
+          name="imageUrl"
+          value={values.imageUrl}
+          onChange={onChange}
+          type="imageUrl"
+          error={errors.confirmPassword ? true : false}
+        />
         <Button type="submit" primary>
           Register
         </Button>
@@ -80,7 +91,7 @@ function Register(props) {
       )}
     </div>
   );
-}
+};
 
 const REGISTER_USER = gql`
   mutation register(
@@ -88,6 +99,7 @@ const REGISTER_USER = gql`
     $email: String!
     $password: String!
     $confirmPassword: String!
+    $imageUrl: String!
   ) {
     register(
       registerInput: {
@@ -95,6 +107,7 @@ const REGISTER_USER = gql`
         email: $email
         password: $password
         confirmPassword: $confirmPassword
+        imageUrl: $imageUrl
       }
     ) {
       id
@@ -102,6 +115,7 @@ const REGISTER_USER = gql`
       username
       createdAt
       token
+      imageUrl
     }
   }
 `;
