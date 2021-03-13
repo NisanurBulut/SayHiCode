@@ -30,20 +30,20 @@ function PostCard({
           {name}-{author}
         </Card.Description>
       </Card.Content>
-      <Card.Content extra>
-        <Button as="div" labelPosition="right" onClick={likePost}>
-          <Button color="red">
+      <Card.Content extra className="btn-group">
+        <Button size="mini" as="div" labelPosition="right" onClick={likePost}>
+          <Button size="mini" color="red">
             <Icon name="heart" />
           </Button>
-          <Label as="a" basic color="red" pointing="left">
+          <Label size="mini" as="a" basic color="red" pointing="left">
             {likeCount}
           </Label>
         </Button>
-        <Button as="div" labelPosition="right" onClick={commentOnPost}>
-          <Button color="blue">
+        <Button floated="right" size="mini" as="div" labelPosition="right" onClick={commentOnPost}>
+          <Button size="mini" color="blue">
             <Icon name="comments" />
           </Button>
-          <Label as="a" basic color="blue" pointing="left">
+          <Label size="mini" as="a" basic color="blue" pointing="left">
             {commentCount}
           </Label>
         </Button>

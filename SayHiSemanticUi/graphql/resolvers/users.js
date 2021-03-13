@@ -13,6 +13,7 @@ function generateToken(user) {
       id: user.id,
       email: user.email,
       username: user.username,
+      imageUrl: user.imageUrl
     },
     SECRET_KEY,
     { expiresIn: '1h' }

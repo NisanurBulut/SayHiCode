@@ -14,6 +14,7 @@
 - Showed error messages
 - Used loading component for waiting processes
 - Implemented custom hooks
+- Implemented Custom routing. The token is checked when its user refreshes the page. If there is a token, the user will not log in again.
 
 ### Entities
 
@@ -49,6 +50,7 @@
 - npm install bcryptjs jsonwebtoken
 - npm install @apollo/react-hooks apollo-cache-inmemory apollo-link-http apollo-client
 - npm install --save dataloader
+- npm install jwt-decode
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)
