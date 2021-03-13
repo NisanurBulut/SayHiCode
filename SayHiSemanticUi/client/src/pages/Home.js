@@ -5,7 +5,6 @@ import { Grid, Transition } from 'semantic-ui-react';
 import PostCard from '../components/PostCard';
 
 const Home = (props) => {
-  debugger;
   const {
     loading,
     data: { getBookPosts: bookPosts },

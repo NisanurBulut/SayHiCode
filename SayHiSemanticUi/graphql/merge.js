@@ -3,14 +3,13 @@ const User = require('../models/User');
 
 const dateToString = (date) => new Date(date).toISOString();
 
-const userLoader = new DataLoader(userId => {
-    return User.find({_id: userId });
-  });
-
+const userLoader = async (userId)=>{
+  return User.findOne({_id: userId});
+}
 
   const user = async userId => {
     try {
-      const user = await userLoader.load(userId.toString());
+      const user = await userLoader(userId.toString());
       return {
         ...user._doc,
         _id: user.id
@@ -21,6 +20,7 @@ const userLoader = new DataLoader(userId => {
   };
 
   const transformBooking = booking => {
+    console.log(booking._doc.user);
     return {
       ...booking._doc,
       id: booking.id,
