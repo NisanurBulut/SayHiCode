@@ -5,7 +5,6 @@ import { useMutation } from '@apollo/react-hooks';
 import { AuthContext } from '../context/auth';
 import { Button, Form } from 'semantic-ui-react';
 import { useForm } from '../util/hooks';
-import { attachConnectorsToContext } from 'graphql-tools';
 
 const Login = (props) => {
   const context = useContext(AuthContext);

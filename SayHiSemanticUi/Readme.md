@@ -49,6 +49,7 @@
 - npm install bcryptjs jsonwebtoken
 - npm install @apollo/react-hooks apollo-cache-inmemory apollo-link-http apollo-client
 - npm install --save dataloader
+- npm install jwt-decode
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)
