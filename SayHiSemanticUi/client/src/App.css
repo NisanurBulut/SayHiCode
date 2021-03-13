@@ -8,3 +8,8 @@
     width: 40%;
     margin: auto;
 }
+
+MenuItem{
+    font-weight: 700 !important;
+    font-size: medium !important;
+}
