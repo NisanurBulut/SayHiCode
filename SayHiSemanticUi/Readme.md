@@ -14,6 +14,7 @@
 - Showed error messages
 - Used loading component for waiting processes
 - Implemented custom hooks
+- Implemented Custom routing. The token is checked when its user refreshes the page. If there is a token, the user will not log in again.
 
 ### Entities
 
