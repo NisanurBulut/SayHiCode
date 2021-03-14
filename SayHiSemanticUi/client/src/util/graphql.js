@@ -50,3 +50,17 @@ export const CREATE_BOOKPOST_MUTATION = gql`
     }
   }
 `;
+
+
+export const LIKE_BOOKPOST_MUTATION = gql`
+  mutation likePost($postId: ID!) {
+    likePost(postId: $postId) {
+      id
+      likes {
+        id
+        username
+      }
+      likeCount
+    }
+  }
+`;
