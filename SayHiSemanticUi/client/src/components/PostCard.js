@@ -1,6 +1,9 @@
-import React from 'react';
-import { Card, Icon, Label, Image, Button } from 'semantic-ui-react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
+import { AuthContext } from '../context/auth';
+import { Card, Icon, Label, Image, Button } from 'semantic-ui-react';
+import LikeButton from '../components/LikeButton';
 
 function PostCard({
   bookPost: {
@@ -14,16 +17,30 @@ function PostCard({
     likes,
   },
 }) {
+  const context = useContext(AuthContext);
+  const localUser = context.user;
+  const header =  (localUser && localUser.username === user.username)=== true ? (
+    <Icon
+      style={{float:"right"}}
+      size="large"
+      color="red"
+      name="trash"
+      onClick={() => alert('siliniyor')}
+    />
+  ):<Icon
+  style={{float:"right"}}
+  size="large"
+  color="red"
+  name=""
+  onClick={() => alert('siliniyor')}
+/>;
+
   const likePost = () => {};
-  const commentOnPost = () => {};
   return (
     <Card fluid>
+      <Card.Content header={header}></Card.Content>
       <Card.Content>
-        <Image
-          floated="right"
-          size="mini"
-          src={user.imageUrl}
-        />
+        <Image floated="right" size="mini" src={user.imageUrl} />
         <Card.Header>{user.username}</Card.Header>
         <Card.Meta>{moment(createdAt).fromNow(true)}</Card.Meta>
         <Card.Description>
@@ -31,6 +48,7 @@ function PostCard({
         </Card.Description>
       </Card.Content>
       <Card.Content extra className="btn-group">
+        <LikeButton user={localUser} bookPost={id, likes, likeCount} />
         <Button size="mini" as="div" labelPosition="right" onClick={likePost}>
           <Button size="mini" color="red">
             <Icon name="heart" />
@@ -39,7 +57,14 @@ function PostCard({
             {likeCount}
           </Label>
         </Button>
-        <Button floated="right" size="mini" as="div" labelPosition="right" onClick={commentOnPost}>
+        <Button
+          floated="right"
+          size="mini"
+          as="div"
+          labelPosition="right"
+          as={Link}
+          to={`/bookposts/${id}`}
+        >
           <Button size="mini" color="blue">
             <Icon name="comments" />
           </Button>
