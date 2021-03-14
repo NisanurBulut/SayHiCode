@@ -18,7 +18,6 @@ function BookPostForm() {
         query: FETCH_BOOKPOSTS_QUERY,
       });
       data.getBookPosts = [result.data.createBookPost, ...data.getBookPosts];
-      proxy.writeQuery({ query: FETCH_BOOKPOSTS_QUERY, data });
       values.name = '';
       values.author = '';
     },
@@ -45,7 +44,7 @@ function BookPostForm() {
         />
       </Form.Field>
       <Button type="submit" color="teal">
-        Submit
+        Save
       </Button>
     </Form>
   );
