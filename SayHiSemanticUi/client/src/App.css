@@ -13,3 +13,8 @@ MenuItem{
     font-weight: 700 !important;
     font-size: medium !important;
 }
+
+.ui.red.button:focus,
+.ui.red.buttons .button:focus {
+    background-color: brown;
+}

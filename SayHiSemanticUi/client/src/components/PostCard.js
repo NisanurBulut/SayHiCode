@@ -35,7 +35,6 @@ function PostCard({
   onClick={() => alert('siliniyor')}
 />;
 
-  const likePost = () => {};
   return (
     <Card fluid>
       <Card.Content header={header}></Card.Content>
@@ -48,15 +47,7 @@ function PostCard({
         </Card.Description>
       </Card.Content>
       <Card.Content extra className="btn-group">
-        <LikeButton user={localUser} bookPost={id, likes, likeCount} />
-        <Button size="mini" as="div" labelPosition="right" onClick={likePost}>
-          <Button size="mini" color="red">
-            <Icon name="heart" />
-          </Button>
-          <Label size="mini" as="a" basic color="red" pointing="left">
-            {likeCount}
-          </Label>
-        </Button>
+        <LikeButton user={localUser} id={id} likes={likes} likeCount={likeCount} />
         <Button
           floated="right"
           size="mini"
