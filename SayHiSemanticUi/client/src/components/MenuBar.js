@@ -12,13 +12,13 @@ function MenuBar() {
 
   const handleItemClick = (e, { name }) => setActiveItem(name);
 
-  const MenuBar =context.user?(
+  const MenuBar = context.user ? (
     <Menu size="tiny" pointing inverted className="ui green">
       <Menu.Item name={context.user.username} as={Link} to="/">
       <Image src={context.user.imageUrl} size="mini" />
       </Menu.Item>
       <Menu.Item position="right" name="logout" onClick={context.logout}/>
-      </Menu>):(
+      </Menu> ):(
           <Menu pointing inverted className="ui green" size="massive">
           <Menu.Item
             name="home"
@@ -41,13 +41,6 @@ function MenuBar() {
               onClick={handleItemClick}
               as={Link}
               to="/register"
-            />
-            <Menu.Item
-              name="logout"
-              active={activeItem === 'logout'}
-              onClick={handleItemClick}
-              as={Link}
-              to="/logout"
             />
           </Menu.Menu>
         </Menu>

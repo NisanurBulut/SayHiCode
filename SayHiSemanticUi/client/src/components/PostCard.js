@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Icon, Label, Image, Button } from 'semantic-ui-react';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
+
 function PostCard({
   bookPost: {
     name,

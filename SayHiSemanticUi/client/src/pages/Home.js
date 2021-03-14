@@ -1,21 +1,33 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
+
+import { AuthContext } from "../context/auth";
 import { Grid, Transition } from 'semantic-ui-react';
 import PostCard from '../components/PostCard';
+import BookPostForm from '../components/BookPostForm';
+import { FETCH_BOOKPOSTS_QUERY } from '../util/graphql';
 
 const Home = (props) => {
   const {
     loading,
-    data: { getBookPosts: bookPosts },
+    data,
   } = useQuery(FETCH_BOOKPOSTS_QUERY);
-  console.log(bookPosts);
+  console.log(data);
+  const bookPosts=data["getBookPosts"];
+  const {user} = useContext(AuthContext)
+
+
   return (
     <Grid columns={3}>
       <Grid.Row className="page-title">
         <h1>Recent Posts</h1>
       </Grid.Row>
       <Grid.Row>
+        { user && (
+          <Grid.Column>
+            <BookPostForm />
+          </Grid.Column>
+        )}
         {loading ? (
           <h1>Loading posts..</h1>
         ) : (
@@ -32,29 +44,5 @@ const Home = (props) => {
     </Grid>
   );
 };
-const FETCH_BOOKPOSTS_QUERY = gql`
-  {
-    getBookPosts {
-      id
-      author
-      name
-      createdAt
-      user {
-        username
-        imageUrl
-      }
-      likeCount
-      likes {
-        username
-      }
-      commentCount
-      comments {
-        id
-        username
-        createdAt
-        body
-      }
-    }
-  }
-`;
+
 export default Home;
