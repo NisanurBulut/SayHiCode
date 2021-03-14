@@ -1,10 +1,9 @@
 import React from 'react';
-import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 
 import { Button, Form } from 'semantic-ui-react';
 import { useForm } from '../util/hooks';
-import { FETCH_BOOKPOSTS_QUERY } from '../util/graphql';
+import { FETCH_BOOKPOSTS_QUERY, CREATE_BOOKPOST_MUTATION } from '../util/graphql';
 
 function BookPostForm() {
   const { values, onChange, onSubmit } = useForm(createPostCallBack, {
@@ -51,29 +50,5 @@ function BookPostForm() {
     </Form>
   );
 }
-
-const CREATE_BOOKPOST_MUTATION = gql`
-  mutation createBookPost($name: String!, $author: String!) {
-    createBookPost(name: $name, author: $author) {
-        id
-        name
-        author
-      createdAt
-      likes {
-        id
-        username
-        createdAt
-      }
-      likeCount
-      comments {
-        id
-        body
-        username
-        createdAt
-      }
-      commentCount
-    }
-  }
-`;
 
 export default BookPostForm;
