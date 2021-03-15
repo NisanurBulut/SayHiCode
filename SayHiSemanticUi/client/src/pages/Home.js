@@ -8,7 +8,8 @@ import BookPostForm from '../components/BookPostForm';
 import { FETCH_BOOKPOSTS_QUERY } from '../util/graphql';
 
 const Home = (props) => {
-  const { user } = useContext(AuthContext);
+  const { localUser } = useContext(AuthContext);
+
   const { loading, error, data: { getBookPosts: posts } = {} } = useQuery(FETCH_BOOKPOSTS_QUERY);
 
   return (
@@ -17,7 +18,7 @@ const Home = (props) => {
         <h1>Recent Posts</h1>
       </Grid.Row>
       <Grid.Row>
-        {user && (
+        {localUser && (
           <Grid.Column>
             <BookPostForm />
           </Grid.Column>
@@ -29,7 +30,7 @@ const Home = (props) => {
             {posts &&
               posts.map((post) => (
                 <Grid.Column key={post.id} style={{ marginBottom: 20 }}>
-                  <PostCard bookPost={post} />
+                  <PostCard key={post.id} bookPost={post} />
                 </Grid.Column>
               ))}
           </Transition.Group>

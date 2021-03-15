@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
 import { Button, Label, Icon } from 'semantic-ui-react';
 import { LIKE_BOOKPOST_MUTATION } from '../util/graphql';
+import GeneralPopup from "../util/GeneralPopup";
 const LikeButton = ({user, id, likes, likeCount}) => {
-  console.log({user, id, likes, likeCount});
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
@@ -33,8 +33,8 @@ const [likePost] = useMutation(LIKE_BOOKPOST_MUTATION, {
     </Button>
   );
   return (
-    <Button size="mini" as="div" labelPosition="right" onClick={likePost}>{likeButton}
-    {/* <MyPopup content={liked ? 'Unlike' : 'Like'}>{likeButton}</MyPopup> */}
+    <Button size="mini" as="div" labelPosition="right" onClick={likePost}>
+    <GeneralPopup content={liked ? 'Unlike' : 'Like'}>{likeButton}</GeneralPopup>
     <Label basic color="red" pointing="left">
       {likeCount}
     </Label>

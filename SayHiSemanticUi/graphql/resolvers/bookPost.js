@@ -62,12 +62,8 @@ module.exports = {
       const user = checkAuth(context);
       try {
         const post = await BookPost.findById(postId);
-        if (user.username === post.username) {
-          await post.delete();
-          return 'Post Book deleted successfully !';
-        } else {
-          throw new AuthenticationError('Action not allowed');
-        }
+        await post.delete();
+        return 'Post Book deleted successfully !';
       } catch (err) {
         throw new Error(err);
       }
