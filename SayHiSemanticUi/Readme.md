@@ -17,7 +17,7 @@ This work is a MERNG application. Users share book status.The database is MongoD
 - Used loading component for waiting processes
 - Implemented custom hooks
 
-![SaySemanticUi](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SaySemanticUi.gif)
+![SaySemanticUi](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiSemanticUi.gif)
 
 ### Entities
 
