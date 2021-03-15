@@ -23,7 +23,6 @@ function BookPost(props) {
   const commentInputRef = useRef(null);
 
   const [comment, setComment] = useState('');
-debugger;
   const { data: { getBookPost: post } = {} } = useQuery(FETCH_BOOKPOST_QUERY, {
     variables: {
       postId,
@@ -65,14 +64,14 @@ debugger;
     postMarkup = (
       <Grid>
         <Grid.Row>
-          <Grid.Column width={2}>
+          <Grid.Column width={4}>
             <Image
               src={user.imageUrl}
-              size="small"
+              size="large"
               float="right"
             />
           </Grid.Column>
-          <Grid.Column width={10}>
+          <Grid.Column width={12}>
             <Card fluid>
               <Card.Content>
               <Card.Content header={header}></Card.Content>
@@ -87,12 +86,13 @@ debugger;
                   <Button
                     as="div"
                     labelPosition="right"
+                    size="mini"
                     onClick={() => console.log('Comment on post')}
                   >
-                    <Button basic color="blue">
+                    <Button size="mini" basic color="blue">
                       <Icon name="comments" />
                     </Button>
-                    <Label basic color="blue" pointing="left">
+                    <Label size="mini" basic color="blue" pointing="left">
                       {commentCount}
                     </Label>
                   </Button>
