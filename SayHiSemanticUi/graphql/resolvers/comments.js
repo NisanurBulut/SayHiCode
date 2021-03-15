@@ -27,7 +27,7 @@ module.exports = {
         return post;
       } else throw new UserInputError('Post not found');
     },
-    async deleteComment(_, { postId, commentId }, context) {
+    deleteComment:async (_, { postId, commentId }, context)=>{
       const { username } = checkAuth(context);
 
       const post = await BookPost.findById(postId);
