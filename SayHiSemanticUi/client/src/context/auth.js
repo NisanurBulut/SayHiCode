@@ -5,15 +5,13 @@ import jwtDecode from 'jwt-decode';
 const initialState = {
   localUser: null,
 };
-
+console.log(localStorage.getItem('jwtToken'));
 if (localStorage.getItem('jwtToken')) {
-  const decodedToken = jwtDecode(localStorage.getItem('jwtToken'));
-
+  const decodedToken = {...jwtDecode(localStorage.getItem('jwtToken'))};
   if (decodedToken.exp * 1000 < Date.now()) {
     localStorage.removeItem('jwtToken');
   } else {
-    debugger;
-    initialState.localUser = decodedToken;
+    initialState.localUser = {...decodedToken};
   }
 }
 const AuthContext = createContext({
@@ -21,7 +19,7 @@ const AuthContext = createContext({
   login: (userData) => {},
   logout: () => {},
 });
-
+console.log(initialState);
 function authReducer(state, action) {
   switch (action.type) {
     case 'LOGIN':
