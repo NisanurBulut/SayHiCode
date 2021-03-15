@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <AuthRoute exact path="/login" component={Login} />
           <AuthRoute exact path="/register" component={Register} />
-          <Route exact path="/posts/:postId" component={BookPost} />
+          <Route exact path="/bookposts/:postId" component={BookPost} />
           </Switch>
         </Container>
       </Router>

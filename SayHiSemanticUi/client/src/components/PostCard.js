@@ -37,14 +37,14 @@ function PostCard({
       <Card.Content>
         <Image floated="right" size="mini" src={user.imageUrl} />
         <Card.Header>{user.username}</Card.Header>
-        <Card.Meta as={Link} to={`/posts/${id}`}>
+        <Card.Meta as={Link} to={`/bookposts/${id}`}>
           {moment(createdAt).fromNow(true)}
         </Card.Meta>
         <Card.Description>
           {name}-{author}
         </Card.Description>
       </Card.Content>
-      <Card.Content extra className="btn-group">
+      <Card.Content extra >
         <LikeButton
           user={localUser}
           id={id}

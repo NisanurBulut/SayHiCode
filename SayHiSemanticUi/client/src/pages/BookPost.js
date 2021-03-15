@@ -84,6 +84,7 @@ function BookPost(props) {
                 <LikeButton user={localUser} id={id} likes={likes} likeCount={likeCount} />
                 <GeneralPopup content="Comment on post">
                   <Button
+                  floated="right"
                     as="div"
                     labelPosition="right"
                     size="mini"
@@ -97,9 +98,6 @@ function BookPost(props) {
                     </Label>
                   </Button>
                 </GeneralPopup>
-                {localUser && localUser.username === user.username && (
-                  <DeleteButton postId={id} callback={deletePostCallback} />
-                )}
               </Card.Content>
             </Card>
             {localUser && (
