@@ -7,6 +7,7 @@
 - After login action user has token
 - User can add book post
 - User delete book post
+- User delete his/her comment
 - User can like other user's book posts
 - User can comment on other users' book posts
 - Users register with the application
@@ -14,7 +15,8 @@
 - Showed error messages
 - Used loading component for waiting processes
 - Implemented custom hooks
-- Implemented Custom routing. The token is checked when its user refreshes the page. If there is a token, the user will not log in again.
+
+![SaySemanticUi](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SaySemanticUi.gif)
 
 ### Entities
 
@@ -50,9 +52,6 @@
 - npm install bcryptjs jsonwebtoken
 - npm install @apollo/react-hooks apollo-cache-inmemory apollo-link-http apollo-client
 - npm install --save dataloader
-- npm install jwt-decode
-- npm install apollo-link-context
-- npm i apollo-link-error
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)
