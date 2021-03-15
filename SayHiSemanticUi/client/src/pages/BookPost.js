@@ -9,7 +9,7 @@ import {
   Grid,
   Image,
   Icon,
-  Label,
+  Label,Dimmer, Loader
 } from 'semantic-ui-react';
 
 import { AuthContext } from '../context/auth';
@@ -47,7 +47,9 @@ function BookPost(props) {
 
   let postMarkup;
   if (!post) {
-    postMarkup = <p>Loading post..</p>;
+    postMarkup = <Dimmer active>
+    <Loader content='Loading' />
+  </Dimmer>;
   } else {
     const {
       id,
