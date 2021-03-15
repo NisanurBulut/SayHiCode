@@ -63,6 +63,7 @@ In this study, practice of grahql, apollo and angular has been done.
 
 
 ### SayHiSemanticUi
+This work is a MERNG application. Users share book status.The database is MongoDb and the backend is GraphQL.The user interface has been developed with ReactJs and SemanticUI components.
 <hr>
 
 - Implemented apollo custom errors form form validation
@@ -70,6 +71,7 @@ In this study, practice of grahql, apollo and angular has been done.
 - After login action user has token
 - User can add book post
 - User delete book post
+- User delete his/her comment
 - User can like other user's book posts
 - User can comment on other users' book posts
 - Users register with the application
@@ -77,6 +79,8 @@ In this study, practice of grahql, apollo and angular has been done.
 - Showed error messages
 - Used loading component for waiting processes
 - Implemented custom hooks
+
+![SaySemanticUi](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SaySemanticUi.gif)
 
 ### Entities
 

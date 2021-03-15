@@ -1,5 +1,6 @@
 
 ### SayHiSemanticUi
+This work is a MERNG application. Users share book status.The database is MongoDb and the backend is GraphQL.The user interface has been developed with ReactJs and SemanticUI components.
 <hr>
 
 - Implemented apollo custom errors form form validation
@@ -7,6 +8,7 @@
 - After login action user has token
 - User can add book post
 - User delete book post
+- User delete his/her comment
 - User can like other user's book posts
 - User can comment on other users' book posts
 - Users register with the application
@@ -14,7 +16,8 @@
 - Showed error messages
 - Used loading component for waiting processes
 - Implemented custom hooks
-- Implemented Custom routing. The token is checked when its user refreshes the page. If there is a token, the user will not log in again.
+
+![SaySemanticUi](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SaySemanticUi.gif)
 
 ### Entities
 
@@ -50,7 +53,6 @@
 - npm install bcryptjs jsonwebtoken
 - npm install @apollo/react-hooks apollo-cache-inmemory apollo-link-http apollo-client
 - npm install --save dataloader
-- npm install jwt-decode
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)

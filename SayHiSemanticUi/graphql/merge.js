@@ -20,7 +20,6 @@ const userLoader = async (userId)=>{
   };
 
   const transformBooking = booking => {
-    console.log(booking._doc.user);
     return {
       ...booking._doc,
       id: booking.id,

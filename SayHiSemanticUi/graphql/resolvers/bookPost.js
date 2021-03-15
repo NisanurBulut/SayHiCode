@@ -17,9 +17,9 @@ module.exports = {
     },
     async getBookPost(_, { postId }) {
       try {
-        const BookPost = await BookPost.findById(postId);
-        if (BookPost) {
-          return transformBooking(BookPost);;
+        const bookPost = await BookPost.findById(postId);
+        if (bookPost) {
+          return transformBooking(bookPost);;
         } else {
           throw new Error('Post Book not found !');
         }
@@ -62,12 +62,8 @@ module.exports = {
       const user = checkAuth(context);
       try {
         const post = await BookPost.findById(postId);
-        if (user.username === post.username) {
-          await post.delete();
-          return 'Post Book deleted successfully !';
-        } else {
-          throw new AuthenticationError('Action not allowed');
-        }
+        await post.delete();
+        return 'Post Book deleted successfully !';
       } catch (err) {
         throw new Error(err);
       }

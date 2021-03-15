@@ -1,29 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
 import { Grid, Transition } from 'semantic-ui-react';
+
+import { AuthContext } from '../context/auth';
 import PostCard from '../components/PostCard';
+import BookPostForm from '../components/BookPostForm';
+import CustomLoader from '../components/Loader';
+import { FETCH_BOOKPOSTS_QUERY } from '../util/graphql';
 
 const Home = (props) => {
-  const {
-    loading,
-    data: { getBookPosts: bookPosts },
-  } = useQuery(FETCH_BOOKPOSTS_QUERY);
-  console.log(bookPosts);
+  const { localUser } = useContext(AuthContext);
+
+  const { loading, error, data: { getBookPosts: posts } = {} } = useQuery(FETCH_BOOKPOSTS_QUERY);
+
   return (
     <Grid columns={3}>
       <Grid.Row className="page-title">
-        <h1>Recent Posts</h1>
+        <h1><i>Recent Book Posts</i></h1>
       </Grid.Row>
       <Grid.Row>
+        {localUser && (
+          <Grid.Column>
+            <BookPostForm />
+          </Grid.Column>
+        )}
         {loading ? (
-          <h1>Loading posts..</h1>
+          <CustomLoader />
         ) : (
           <Transition.Group>
-            {bookPosts &&
-              bookPosts.map((bpost) => (
-                <Grid.Column key={bpost.id} style={{ marginBottom: 20 }}>
-                  <PostCard bookPost={bpost} />
+            {posts &&
+              posts.map((post) => (
+                <Grid.Column key={post.id} style={{ marginBottom: 20 }}>
+                  <PostCard key={post.id} bookPost={post} />
                 </Grid.Column>
               ))}
           </Transition.Group>
@@ -32,29 +40,5 @@ const Home = (props) => {
     </Grid>
   );
 };
-const FETCH_BOOKPOSTS_QUERY = gql`
-  {
-    getBookPosts {
-      id
-      author
-      name
-      createdAt
-      user {
-        username
-        imageUrl
-      }
-      likeCount
-      likes {
-        username
-      }
-      commentCount
-      comments {
-        id
-        username
-        createdAt
-        body
-      }
-    }
-  }
-`;
+
 export default Home;
