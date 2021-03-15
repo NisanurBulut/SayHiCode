@@ -116,7 +116,7 @@ function BookPost(props) {
                       />
                       <button
                         type="submit"
-                        className="ui button teal"
+                        className="ui button green"
                         disabled={comment.trim() === ''}
                         onClick={submitComment}
                       >
