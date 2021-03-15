@@ -17,9 +17,9 @@ module.exports = {
     },
     async getBookPost(_, { postId }) {
       try {
-        const BookPost = await BookPost.findById(postId);
-        if (BookPost) {
-          return transformBooking(BookPost);;
+        const bookPost = await BookPost.findById(postId);
+        if (bookPost) {
+          return transformBooking(bookPost);;
         } else {
           throw new Error('Post Book not found !');
         }

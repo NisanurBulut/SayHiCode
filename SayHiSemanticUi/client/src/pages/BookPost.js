@@ -23,7 +23,7 @@ function BookPost(props) {
   const commentInputRef = useRef(null);
 
   const [comment, setComment] = useState('');
-
+debugger;
   const { data: { getBookPost: post } = {} } = useQuery(FETCH_BOOKPOST_QUERY, {
     variables: {
       postId,
