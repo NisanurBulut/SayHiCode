@@ -8,14 +8,14 @@ import {
   Form,
   Grid,
   Image,
-  Icon,
-  Label,Dimmer, Loader
+  Icon,Label
 } from 'semantic-ui-react';
 
 import { AuthContext } from '../context/auth';
 import LikeButton from '../components/LikeButton';
 import DeleteButton from '../components/DeleteButton';
 import GeneralPopup from '../util/GeneralPopup';
+import CustomLoader from '../components/Loader';
 
 function BookPost(props) {
   const postId = props.match.params.postId;
@@ -47,9 +47,7 @@ function BookPost(props) {
 
   let postMarkup;
   if (!post) {
-    postMarkup = <Dimmer active>
-    <Loader content='Loading' />
-  </Dimmer>;
+    postMarkup = <CustomLoader />
   } else {
     const {
       id,
