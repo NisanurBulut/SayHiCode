@@ -5,6 +5,7 @@ import { Grid, Transition } from 'semantic-ui-react';
 import { AuthContext } from '../context/auth';
 import PostCard from '../components/PostCard';
 import BookPostForm from '../components/BookPostForm';
+import CustomLoader from '../components/Loader';
 import { FETCH_BOOKPOSTS_QUERY } from '../util/graphql';
 
 const Home = (props) => {
@@ -15,7 +16,7 @@ const Home = (props) => {
   return (
     <Grid columns={3}>
       <Grid.Row className="page-title">
-        <h1>Recent Posts</h1>
+        <h1><i>Recent Book Posts</i></h1>
       </Grid.Row>
       <Grid.Row>
         {localUser && (
@@ -24,7 +25,7 @@ const Home = (props) => {
           </Grid.Column>
         )}
         {loading ? (
-          <h1>Loading posts..</h1>
+          <CustomLoader />
         ) : (
           <Transition.Group>
             {posts &&
