@@ -40,10 +40,6 @@ function BookPost(props) {
     },
   });
 
-  function deletePostCallback() {
-    props.history.push('/');
-  }
-
   let postMarkup;
   if (!post) {
     postMarkup = <CustomLoader />
@@ -82,7 +78,7 @@ function BookPost(props) {
               <hr />
               <Card.Content extra>
                 <LikeButton user={localUser} id={id} likes={likes} likeCount={likeCount} />
-                <GeneralPopup content="Comment on post">
+                <GeneralPopup size="small" content="Comment on post">
                   <Button
                   floated="right"
                     as="div"

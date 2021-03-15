@@ -1,6 +1,7 @@
-const BookPost = require('../../models/BookPost');
+const { AuthenticationError, UserInputError } = require('apollo-server');
+
 const checkAuth = require('../../util/check-auth');
-const { UserInputError, AuthenticationError } = require('apollo-server');
+const BookPost = require('../../models/BookPost');
 
 module.exports = {
   Mutation: {
@@ -9,41 +10,41 @@ module.exports = {
       if (body.trim() === '') {
         throw new UserInputError('Empty comment', {
           errors: {
-            body: 'Comment body must not body',
-          },
+            body: 'Comment body must not empty'
+          }
         });
       }
-      const bookPostItem = await BookPost.findById(postId);
-      if (bookPostItem) {
-        bookPostItem.comments.unshift({
+
+      const post = await BookPost.findById(postId);
+
+      if (post) {
+        post.comments.unshift({
           body,
           username,
-          createdAt: new Date().toISOString(),
+          createdAt: new Date().toISOString()
         });
-        await bookPostItem.save();
-        return bookPostItem;
-      } else {
-        throw new UserInputError('Book post is not found');
-      }
+        await post.save();
+        return post;
+      } else throw new UserInputError('Post not found');
     },
     async deleteComment(_, { postId, commentId }, context) {
       const { username } = checkAuth(context);
-      const bookPostItem = await BookPost.findById(postId);
 
-      if (bookPostItem) {
-        const commentIndex = bookPostItem.comments.findIndex(
-          (a) => a.id === commentId
-        );
-        if (bookPostItem.comments[commentIndex].username === username) {
-          bookPostItem.comments.splice(commentIndex, 1);
-          await bookPostItem.save();
-          return bookPostItem;
+      const post = await BookPost.findById(postId);
+
+      if (post) {
+        const commentIndex = post.comments.findIndex((c) => c.id === commentId);
+
+        if (post.comments[commentIndex].username === username) {
+          post.comments.splice(commentIndex, 1);
+          await post.save();
+          return post;
         } else {
           throw new AuthenticationError('Action not allowed');
         }
-      }else{
-        throw new AuthenticationError('Book post is not found');
+      } else {
+        throw new UserInputError('Post not found');
       }
     }
-  },
+  }
 };

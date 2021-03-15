@@ -4,10 +4,10 @@ import jwtDecode from 'jwt-decode';
 const initialState = {
   user: null
 };
-
+console.log(localStorage.getItem('jwtToken'));
 if (localStorage.getItem('jwtToken')) {
   const decodedToken = jwtDecode(localStorage.getItem('jwtToken'));
-  console.log(localStorage.getItem('jwtToken'));
+
   if (decodedToken.exp * 10000 < Date.now()) {
     localStorage.removeItem('jwtToken');
   } else {

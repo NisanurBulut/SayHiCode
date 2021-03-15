@@ -52,6 +52,7 @@
 - npm install --save dataloader
 - npm install jwt-decode
 - npm install apollo-link-context
+- npm i apollo-link-error
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)

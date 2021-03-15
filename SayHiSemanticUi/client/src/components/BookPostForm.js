@@ -16,16 +16,26 @@ function BookPostForm() {
   });
 
   const [createBookPost, { loading }] = useMutation(CREATE_BOOKPOST_MUTATION, {
+    variables: values,
     update(proxy, result) {
-      values.name = '';
-      values.author = '';
+      const data = proxy.readQuery({
+        query: FETCH_BOOKPOSTS_QUERY,
+      });
+      proxy.writeQuery({
+        query: FETCH_BOOKPOSTS_QUERY,
+        data: {
+          getBookPosts: [result.data.createBookPost, ...data.getBookPosts],
+        },
+      });
+      values.name = "";
+      values.author = "";
     },
     onError(err) {
-      setErrors(err.graphQLErrors[0].extensions.exception.errors);
-      console.log(errors);
+      return err;
     },
-    variables: values,
   });
+
+
   function createPostCallBack() {
     createBookPost();
   }
