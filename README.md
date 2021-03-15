@@ -63,6 +63,7 @@ In this study, practice of grahql, apollo and angular has been done.
 
 
 ### SayHiSemanticUi
+This work is a MERNG application. Users share book status.The database is MongoDb and the backend is GraphQL.The user interface has been developed with ReactJs and SemanticUI components.
 <hr>
 
 - Implemented apollo custom errors form form validation
