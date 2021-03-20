@@ -49,7 +49,7 @@ This work is a MERNG application. Users share book status.The database is MongoD
 
 
 ### Installation
-- npm install apollo-server grahql mongoose
+- npm install apollo-server graphql mongoose
 - npm install bcryptjs jsonwebtoken
 - npm install @apollo/react-hooks apollo-cache-inmemory apollo-link-http apollo-client
 - npm install --save dataloader
