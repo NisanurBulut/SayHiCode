@@ -11,6 +11,8 @@ height:100%;
 
 button {
     border-radius:0 0 10px 10px;
+    color:#802C6E;
+    font-weight:bold;
 }
 &:hover button {
     background-color:#802C6E;
