@@ -16,7 +16,7 @@ const Item: React.FC<Props>=({item, handleAddToCart})=>(
         <div>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
-            <h3>{item.price} TL</h3>
+            <h3>{item.price} ₺</h3>
         </div>
        <Button onClick={()=>handleAddToCart(item)}>Add To Cart</Button>
     </Wrapper>
