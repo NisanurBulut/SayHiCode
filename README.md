@@ -136,4 +136,4 @@ This study demonstrates the use of the React-Jquery library.In addition, the use
 ![SayHiReactQuery](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiReactQuery.gif)
 
 ## Helpfull Websites
-  [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)[React-Query-Anlatım](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [FakeStoreAPI](https://fakestoreapi.herokuapp.com/)
+  [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [FakeStoreAPI](https://fakestoreapi.herokuapp.com/)
