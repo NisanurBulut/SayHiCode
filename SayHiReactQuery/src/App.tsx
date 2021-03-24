@@ -4,15 +4,15 @@ import { useQuery } from 'react-query';
 import Drawer from '@material-ui/core/Drawer';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Grid from '@material-ui/core/Grid';
-import AddShoppingCart from '@material-ui/icons/AddShoppingCart';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Badge from '@material-ui/core/Badge';
-import Toolbar from '@material-ui/core/Toolbar';
 import Item from './Item/Item';
 // styles
-import { Wrapper } from './App.style';
+import { Wrapper, StyledButton } from './App.style';
 // Types
 import { CartItemType } from './Types/CartItemType';
 import AppToolBar from './AppToolBar/AppToolBar';
+import { AddShoppingCartOutlined } from '@material-ui/icons';
 
 const getProducts = async (): Promise<CartItemType[]> => {
   return await (
@@ -20,16 +20,17 @@ const getProducts = async (): Promise<CartItemType[]> => {
   ).json();
 };
 
-const getTotalItems = () => null;
-const handleAddToCart = (clickedItem:CartItemType) => null;
-const handleRemoveFromCart = () => null;
+
 const App = () => {
   const [cartOpen, setCartOpen]=useState(false);
-  const[cartItems,setCartItems]=useState([] as CartItemType[])
-;  const { isLoading, error, data } = useQuery<CartItemType[]>(
+  const[cartItems,setCartItems]=useState([] as CartItemType[]);
+  const { isLoading, error, data } = useQuery<CartItemType[]>(
     'products',
     getProducts
   );
+  const getTotalItems = (items:CartItemType[]) => null;
+  const handleAddToCart = (clickedItem:CartItemType) => null;
+  const handleRemoveFromCart = () => null;
   if (isLoading) return <LinearProgress color="primary"  />;
   if (error) return <p>Error {error}</p>;
 
@@ -39,6 +40,11 @@ const App = () => {
       <Drawer anchor='right' open={cartOpen} onClose={()=>setCartOpen(false)}>
         Cart details
       </Drawer>
+      <StyledButton onClick={()=>setCartOpen(true)}>
+        <Badge badgeContent={getTotalItems(cartItems)} color="default">
+          <AddShoppingCartIcon fontSize="large"/>
+        </Badge>
+      </StyledButton>
       <Grid style={{"padding":"0.5rem"}} container spacing={4}>
         {data?.map((item=> (
           <Grid item key={item.id} xs={3} md={4} sm={3}>
