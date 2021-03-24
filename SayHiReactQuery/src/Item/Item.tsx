@@ -12,7 +12,6 @@ type Props = {
 
 const Item: React.FC<Props>=({item, handleAddToCart})=>(
     <Wrapper>
-        {console.log(item)}
         <img src={item.image.replace('fakestoreapi','fakestoreapi.herokuapp')} alt={item.title} />
         <div>
             <h3>{item.title}</h3>

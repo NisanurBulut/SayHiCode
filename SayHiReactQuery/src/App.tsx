@@ -24,7 +24,9 @@ const getTotalItems = () => null;
 const handleAddToCart = (clickedItem:CartItemType) => null;
 const handleRemoveFromCart = () => null;
 const App = () => {
-  const { isLoading, error, data } = useQuery<CartItemType[]>(
+  const [cartOpen, setCartOpen]=useState(false);
+  const[cartItems,setCartItems]=useState([] as CartItemType[])
+;  const { isLoading, error, data } = useQuery<CartItemType[]>(
     'products',
     getProducts
   );
@@ -34,9 +36,9 @@ const App = () => {
   return (
     <Wrapper>
       <AppToolBar />
-      <Grid container spacing={4}>
+      <Grid style={{"padding":"0.5rem"}} container spacing={4}>
         {data?.map((item=> (
-          <Grid item key={item.id} xs={12} md={4} sm={3}>
+          <Grid item key={item.id} xs={3} md={4} sm={3}>
            <Item item={item} handleAddToCart={handleAddToCart} />
             </Grid>
         )))}
