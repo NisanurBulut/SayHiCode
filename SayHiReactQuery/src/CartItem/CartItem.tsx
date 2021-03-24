@@ -1,5 +1,5 @@
 import Button from '@material-ui/core/Button';
-import { Wrapper } from '../App.style';
+import { Wrapper } from './CartItem.style';
 
 import { CartItemType } from '../Types/CartItemType';
 type Props = {
@@ -17,8 +17,9 @@ const CartItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => {
           <p>Total: {(item.amount * item.price).toFixed(2)}₺</p>
         </div>
         <div className="buttons">
-        <p>{item.amount}</p>
           <Button
+
+          color="secondary"
             size="small"
             disableElevation
             variant="contained"
@@ -28,16 +29,16 @@ const CartItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => {
           </Button>
           <p>{item.amount}</p>
           <Button
-            size="small"
+           color="primary"
             disableElevation
             variant="contained"
             onClick={() => addToCart(item)}
           >
-            +
+            <p>+</p>
           </Button>
         </div>
       </div>
-      <img src={item.image} alt={item.title} />
+      <img src={item.image.replace('fakestoreapi','fakestoreapi.herokuapp')} alt={item.title} />
     </Wrapper>
   );
 };

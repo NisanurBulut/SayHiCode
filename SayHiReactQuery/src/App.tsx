@@ -30,7 +30,21 @@ const App = () => {
   const getTotalItems = (items: CartItemType[]) => {
     return items.reduce((ack: number, item) => ack + item.amount, 0);
   };
-  const handleAddToCart = (clickedItem: CartItemType) => null;
+  const handleAddToCart = (clickedItem: CartItemType) => {
+    setCartItems((prev) => {
+      // 1. is the item already exist added in the cart ?
+      const isItemIncart = prev.find((item) => item.id === clickedItem.id);
+      if (isItemIncart) {
+        return prev.map((item) =>
+          item.id === clickedItem.id
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        );
+      }
+      // first time the item is added
+      return [...prev, { ...clickedItem, amount: 1 }];
+    });
+  };
   const handleRemoveFromCart = () => null;
   if (isLoading) return <LinearProgress color="primary" />;
   if (error) return <p>Error {error}</p>;
@@ -39,7 +53,11 @@ const App = () => {
     <Wrapper>
       <AppToolBar />
       <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
-        <Cart cartItems={cartItems} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} />
+        <Cart
+          cartItems={cartItems}
+          addToCart={handleAddToCart}
+          removeFromCart={handleRemoveFromCart}
+        />
       </Drawer>
       <StyledButton onClick={() => setCartOpen(true)}>
         <Badge badgeContent={getTotalItems(cartItems)} color="default">
