@@ -26,14 +26,14 @@ const App = () => {
     'products',
     getProducts
   );
-  if (isLoading) return <LinearProgress color="primary" />;
+  if (isLoading) return <LinearProgress color="primary"  />;
   if (error) return <p>Error {error}</p>;
 
   return (
     <Wrapper>
       <Grid container spacing={4}>
         {data?.map((item=> (
-          <Grid item key={item.id} xs={12} md={6} sm={2}>
+          <Grid item key={item.id} xs={12} md={4} sm={3}>
            <Item item={item} handleAddToCart={handleAddToCart} />
             </Grid>
         )))}
