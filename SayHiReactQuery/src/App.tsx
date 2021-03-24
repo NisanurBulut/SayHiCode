@@ -36,6 +36,9 @@ const App = () => {
   return (
     <Wrapper>
       <AppToolBar />
+      <Drawer anchor='right' open={cartOpen} onClose={()=>setCartOpen(false)}>
+        Cart details
+      </Drawer>
       <Grid style={{"padding":"0.5rem"}} container spacing={4}>
         {data?.map((item=> (
           <Grid item key={item.id} xs={3} md={4} sm={3}>

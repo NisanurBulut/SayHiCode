@@ -8,9 +8,6 @@ const AppToolBar=()=>{
         <div>
           <AppBar color="primary" position="static">
             <Toolbar>
-              <IconButton edge="end" color="inherit" aria-label="menu">
-                <MenuIcon />
-              </IconButton>
             </Toolbar>
           </AppBar>
         </div>
