@@ -6,11 +6,13 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import Grid from '@material-ui/core/Grid';
 import AddShoppingCart from '@material-ui/icons/AddShoppingCart';
 import Badge from '@material-ui/core/Badge';
+import Toolbar from '@material-ui/core/Toolbar';
 import Item from './Item/Item';
 // styles
 import { Wrapper } from './App.style';
 // Types
 import { CartItemType } from './Types/CartItemType';
+import AppToolBar from './AppToolBar/AppToolBar';
 
 const getProducts = async (): Promise<CartItemType[]> => {
   return await (
@@ -31,6 +33,7 @@ const App = () => {
 
   return (
     <Wrapper>
+      <AppToolBar />
       <Grid container spacing={4}>
         {data?.map((item=> (
           <Grid item key={item.id} xs={12} md={4} sm={3}>
