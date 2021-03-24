@@ -10,9 +10,12 @@ border-radius:15px;
 height:100%;
 
 button {
-    border-radius:0 0 20px 20px;
+    border-radius:0 0 10px 10px;
 }
-
+&:hover button {
+    background-color:#802C6E;
+    color:#fff;
+  }
 img {
     max-height:250px;
     object-fit:cover;
