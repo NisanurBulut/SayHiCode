@@ -2,12 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { QueryClient, QueryClientProvider } from 'react-query';
-
+import {
+  createMuiTheme,
+  makeStyles,
+  createStyles,
+  Theme as AugmentedTheme,
+  ThemeProvider,
+} from '@material-ui/core/styles'
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#af52bf',
+      main: '#9c27b0',
+      dark: '#6d1b7b',
+      contrastText: '#fff',
+    }
+  },
+});
 const client = new QueryClient();
 
 ReactDOM.render(
-  <QueryClientProvider client={client}>
+  <ThemeProvider theme={theme}>
+     <QueryClientProvider client={client}>
     <App />
-  </QueryClientProvider>,
+  </QueryClientProvider>
+    </ThemeProvider>,
   document.getElementById('root')
 );
