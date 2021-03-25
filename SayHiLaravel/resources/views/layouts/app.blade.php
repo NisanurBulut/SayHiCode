@@ -11,8 +11,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-red-200">
-    <nav class="p-6 text-white flex items-center justify-between flex-wrap bg-red-500 p-6 mb-6">
+<body class="bg-red-100">
+    <nav class="p-6 text-white flex items-center justify-between flex-wrap bg-red-700 p-6 mb-6">
         <div class="flex items-center flex-no-shrink mr-6">
             <svg class="h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
                 <path
