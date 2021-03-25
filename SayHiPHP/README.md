@@ -11,6 +11,7 @@ Blade aslında bir şablon sistemidir. İçerisine alışık olduğunu PHP kodla
 ### Installation
 - composer global require laravel
 - composer require laravel/ui
+- php artisan migrate // (db migration)
 
 ### Helpfull Resources
 [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/)
