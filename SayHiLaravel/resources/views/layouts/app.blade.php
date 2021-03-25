@@ -39,6 +39,9 @@
                 <a class="p-6" href="">login</a>
             </li>
             <li>
+                <a class="p-6" href="{{route('register')}}">Register</a>
+            </li>
+            <li>
                 <a class="p-6" href="">Logout</a>
             </li>
         </ul>
