@@ -22,7 +22,7 @@
         </div>
         <ul class="flex items-center">
             <li>
-                <a class="p-6" href="">Home</a>
+                <a href="/" class="p-6">Home</a>
             </li>
             <li>
                 <a class="p-6" href="{{route('dashboard')}}">Dashboard</a>
@@ -37,7 +37,9 @@
                 <a class="p-6" href="">Nisanur BULUT</a>
             </li>
             <li>
-                <a class="p-6" href="">Logout</a>
+               <form action="{{route('logout')}}" method="post" class="p-3 inline">
+               @csrf
+               <button type="submit">Logout</button></form>
             </li>
             @endauth
             @guest
