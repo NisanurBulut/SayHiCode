@@ -42,7 +42,7 @@
             @endauth
             @guest
             <li>
-                <a class="p-6" href="">login</a>
+                <a class="p-6" href="{{route('login')}}">login</a>
             </li>
             <li>
                 <a class="p-6" href="{{route('register')}}">Register</a>
