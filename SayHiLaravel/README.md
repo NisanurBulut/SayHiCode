@@ -14,5 +14,8 @@ Blade aslında bir şablon sistemidir. İçerisine alışık olduğunu PHP kodla
 - php artisan serve
 - npm install tailwindcss
 - npm install
+
+### Commands
+- php artisan make:controller RegisterController
 ### Helpfull Resources
 [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/)
