@@ -359,3 +359,48 @@ Did you mean one of these?
 #32 E:\\Projelerim\\SayHiCode\\SayHiPHP\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #33 {main}
 "} 
+[2021-03-25 15:12:26] local.ERROR: The E:\Projelerim\SayHiCode\SayHiPHP\bootstrap\cache directory must be present and writable. {"exception":"[object] (Exception(code: 0): The E:\\Projelerim\\SayHiCode\\SayHiPHP\\bootstrap\\cache directory must be present and writable. at E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php:177)
+[stacktrace]
+#0 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(136): Illuminate\\Foundation\\PackageManifest->write(Array)
+#1 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(106): Illuminate\\Foundation\\PackageManifest->build()
+#2 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(89): Illuminate\\Foundation\\PackageManifest->getManifest()
+#3 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(78): Illuminate\\Foundation\\PackageManifest->config('aliases')
+#4 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterFacades.php(26): Illuminate\\Foundation\\PackageManifest->aliases()
+#5 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterFacades->bootstrap(Object(Illuminate\\Foundation\\Application))
+#6 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(152): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#7 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(136): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#8 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#9 E:\\Projelerim\\SayHiCode\\SayHiPHP\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#10 E:\\Projelerim\\SayHiCode\\SayHiPHP\\server.php(21): require_once('E:\\\\Projelerim\\\\S...')
+#11 {main}
+"} 
+[2021-03-25 15:12:50] local.ERROR: The E:\Projelerim\SayHiCode\SayHiPHP\bootstrap\cache directory must be present and writable. {"exception":"[object] (Exception(code: 0): The E:\\Projelerim\\SayHiCode\\SayHiPHP\\bootstrap\\cache directory must be present and writable. at E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php:177)
+[stacktrace]
+#0 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(136): Illuminate\\Foundation\\PackageManifest->write(Array)
+#1 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(106): Illuminate\\Foundation\\PackageManifest->build()
+#2 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(89): Illuminate\\Foundation\\PackageManifest->getManifest()
+#3 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(78): Illuminate\\Foundation\\PackageManifest->config('aliases')
+#4 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterFacades.php(26): Illuminate\\Foundation\\PackageManifest->aliases()
+#5 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterFacades->bootstrap(Object(Illuminate\\Foundation\\Application))
+#6 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(152): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#7 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(136): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#8 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#9 E:\\Projelerim\\SayHiCode\\SayHiPHP\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#10 E:\\Projelerim\\SayHiCode\\SayHiPHP\\server.php(21): require_once('E:\\\\Projelerim\\\\S...')
+#11 {main}
+"} 
+[2021-03-25 15:13:10] local.ERROR: The E:\Projelerim\SayHiCode\SayHiPHP\bootstrap\cache directory must be present and writable. {"exception":"[object] (Exception(code: 0): The E:\\Projelerim\\SayHiCode\\SayHiPHP\\bootstrap\\cache directory must be present and writable. at E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php:177)
+[stacktrace]
+#0 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(136): Illuminate\\Foundation\\PackageManifest->write(Array)
+#1 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(106): Illuminate\\Foundation\\PackageManifest->build()
+#2 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(89): Illuminate\\Foundation\\PackageManifest->getManifest()
+#3 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(78): Illuminate\\Foundation\\PackageManifest->config('aliases')
+#4 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterFacades.php(26): Illuminate\\Foundation\\PackageManifest->aliases()
+#5 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterFacades->bootstrap(Object(Illuminate\\Foundation\\Application))
+#6 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(152): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#7 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(136): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#8 E:\\Projelerim\\SayHiCode\\SayHiPHP\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#9 E:\\Projelerim\\SayHiCode\\SayHiPHP\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#10 E:\\Projelerim\\SayHiCode\\SayHiPHP\\server.php(21): require_once('E:\\\\Projelerim\\\\S...')
+#11 {main}
+"} 
