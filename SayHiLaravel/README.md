@@ -17,5 +17,6 @@ Blade aslında bir şablon sistemidir. İçerisine alışık olduğunu PHP kodla
 
 ### Commands
 - php artisan make:controller RegisterController
+- php artisan make:controller Dashboard/DashboardController
 ### Helpfull Resources
 [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/)

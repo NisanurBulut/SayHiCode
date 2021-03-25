@@ -25,7 +25,7 @@
                 <a class="p-6" href="">Home</a>
             </li>
             <li>
-                <a class="p-6" href="">Dashboard</a>
+                <a class="p-6" href="{{route('dashboard')}}">Dashboard</a>
             </li>
             <li>
                 <a class="p-6" href="">Post</a>
