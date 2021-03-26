@@ -38,8 +38,9 @@
                         </div>
                     </div>
                 @endforeach
+                {{ $posts->links() }}
             @else
-                <p>There are nno posts</p>
+                <p>There are no posts</p>
             @endif
         </div>
     </div>
