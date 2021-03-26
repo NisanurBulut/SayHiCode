@@ -36,7 +36,7 @@
             </div>
             <div>
                 <button type="submit"
-                    class="bg-red-500 text-white px-4 py-3 rounded font-medium w-full">Login</button>
+                    class="focus:outline-none bg-green-600 text-white px-4 py-3 rounded font-medium w-full">Login</button>
             </div>
         </form>
     </div>
