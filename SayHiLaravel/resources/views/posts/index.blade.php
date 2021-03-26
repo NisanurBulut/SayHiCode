@@ -81,9 +81,7 @@
 
                                         @endif
                                     @endauth
-
-                                 @if ($post->OwnedBy(auth()->user()))
-                                 {
+                                    @can('delete',$post)
                                     <form action={{ route('posts.destroy', $post) }} method="post">
                                         @csrf
                                         @method('DELETE')
@@ -95,9 +93,7 @@
                                             </svg>
                                         </button>
                                     </form>
-                                 }
-
-                                 @endif
+                                    @endcan
                                 </div>
 
                             </div>
