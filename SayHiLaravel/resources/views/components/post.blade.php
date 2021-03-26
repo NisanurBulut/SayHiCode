@@ -54,19 +54,19 @@ transform hover:-translate-y-1 transition-all duration-200">
 
                     @endif
                 @endauth
-                @can('delete', $post)
-                    <form action={{ route('posts.destroy', $post) }} method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button id="deleteBtn" class="focus:outline-none mr-3 inline-flex items-center cursor-pointer">
-                            <svg class="fill-trash text-red-700 inline-block h-7 w-7 trash"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                            </svg>
-                        </button>
-                    </form>
-                @endcan
+                @if(!$post->ownedBy(auth()->user()))
+                <form action={{ route('posts.destroy', $post) }} method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button id="deleteBtn" class="focus:outline-none mr-3 inline-flex items-center cursor-pointer">
+                        <svg class="fill-trash text-red-700 inline-block h-7 w-7 trash"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                    </button>
+                </form>
+                @endif
             </div>
 
         </div>

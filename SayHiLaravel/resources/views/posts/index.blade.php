@@ -21,7 +21,7 @@
                 </div>
                 <div>
                     <button type="submit"
-                    class="focus:outline-none bg-green-600 px-4 py-3 text-white rounded font-medium w-full">Save</button>
+                    class="focus:outline-none bg-green-600 mb-4 px-4 py-3 text-white rounded font-medium w-full">Save</button>
                 </div>
             </form>
             @if ($posts->count())
