@@ -20,7 +20,7 @@
                 </div>
                 <div>
                     <button type="submit"
-                    class="focus:outline-none bg-gren-600 px-4 py-3 text-white rounded font-medium w-full">Save</button>
+                    class="focus:outline-none bg-green-600 px-4 py-3 text-white rounded font-medium w-full">Save</button>
                 </div>
             </form>
             @if ($posts->count())
@@ -82,6 +82,8 @@
                                         @endif
                                     @endauth
 
+                                 @if ($post->OwnedBy(auth()->user()))
+                                 {
                                     <form action={{ route('posts.destroy', $post) }} method="post">
                                         @csrf
                                         @method('DELETE')
@@ -93,6 +95,9 @@
                                             </svg>
                                         </button>
                                     </form>
+                                 }
+
+                                 @endif
                                 </div>
 
                             </div>

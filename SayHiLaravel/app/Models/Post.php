@@ -16,6 +16,10 @@ class Post extends Model
     {
         return $this->likes->contains('user_id',$user->id);
     }
+    public function OwnedBy(User $user)
+    {
+        return $this->id===$user->user_id;
+    }
     public function user()
     {
         return $this->belongsTo(User::class);
