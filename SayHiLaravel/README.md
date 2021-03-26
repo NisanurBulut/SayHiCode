@@ -34,4 +34,4 @@ Blade aslında bir şablon sistemidir. İçerisine alışık olduğunu PHP kodla
 - php artisan make:migration add_soft_deletes_tolikes_table --table=likes
 
 ### Helpfull Resources
-[Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/)
+[Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/) [HeroIcons](https://heroicons.com/)

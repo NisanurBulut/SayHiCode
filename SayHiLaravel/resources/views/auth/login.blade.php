@@ -29,7 +29,7 @@
                 @enderror
             </div>
             <div>
-                <div class="flex items-center">
+                <div class="flex items-center mb-4">
                     <input type="checkbox" name="remember" id="remember" class="mr-2" />
                     <label for="remember">Remember Me</label>
                 </div>
