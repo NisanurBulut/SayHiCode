@@ -9,6 +9,6 @@ class LogoutController extends Controller
 {
     public function store(){
      auth()->logout();
-     return redirect()->route('posts');
+     return redirect()->route('login');
     }
 }
