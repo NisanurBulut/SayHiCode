@@ -7,10 +7,10 @@
                 <div class="mb-4">
                     <label for="body" class="sr-only">Body</label>
                     <textarea name="body" id="body" cols="30" rows="4" class="bg-gray-100 border-2 w-full -p-4 rounded-lg
-                                @error('body')
-                                            border-red-500
-                                @enderror
-                                " placeholder="Say Something!"></textarea>
+                                    @error('body')
+                                                    border-red-500
+                                    @enderror
+                                    " placeholder="Say Something!"></textarea>
                     @error('body')
                         <div class="text-red-500 mt-2 text-sm">
                             {{ $message }}
@@ -27,15 +27,25 @@
                         class="card m-2 cursor-pointer border border-red-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
                         <div class="m-3">
                             <h2 class="text-lg mb-2">{{ $post->user->username }}
-                                <span
-                                    class="text-sm text-teal-800 font-mono bg-teal-100
-                                    inline rounded-full px-2 align-top float-right animate-pulse">
+                                <span class="text-sm text-teal-800 font-mono bg-teal-100
+                                        inline rounded-full px-2 align-top float-right animate-pulse">
                                     {{ $post->created_at->diffForHumans() }}</span>
                             </h2>
                             <p
                                 class="font-light font-mono text-sm text-red-700 hover:text-gray-900 transition-all duration-200">
                                 {{ $post->body }}</p>
                         </div>
+                        <div id="flex items-center">
+                            <form action="">
+                                <button type="submit">⭐</button>
+                                <button type="submit">💔</button>
+                            </form>
+                            <form action="">
+                                <button type="submit">⭐</button>
+                                <button type="submit">💔</button>
+                            </form>
+
+                    </div>
                     </div>
                 @endforeach
                 {{ $posts->links() }}
