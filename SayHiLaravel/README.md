@@ -30,6 +30,7 @@ Blade aslında bir şablon sistemidir. İçerisine alışık olduğunu PHP kodla
 - php artisan make:policy PostPolicy
 - php artisan make:component Post
 - php artisan make:component UserCard
+- php artisan make:mail PostLiked --markdown=emails.posts.post_liked
 
 ### Helpfull Resources
-[Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/)
+[Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/)
