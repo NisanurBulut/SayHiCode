@@ -135,5 +135,27 @@ This study demonstrates the use of the React-Jquery library.In addition, the use
 
 ![SayHiReactQuery](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiReactQuery.gif)
 
+### SayHiLaravel
+<hr>
+With this study, a social media application was made using Laravel Framework at a simple level. Sqlite database has been used.Tailwind CSS is used in frontend design.
+
+The user can become a member of the application.
+The user can log in to the application.
+The user can share posts.
+The user can view other users' posts.
+The user can delete their own post.
+The user can like the post.
+The posts belonging to the user are listed separately.
+The user's email, name, user name, membership period information are displayed.
+When the user likes, an e-mail is sent via mailtrap.
+Spam sending has been blocked.
+The liking is soft-deleting.
+
+## Installation
+- composer global require laravel
+- laravel new projectName
+- php artisan serve
+- npm install tailwindcss
+- npm install
 ## Helpfull Websites
-  [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [FakeStoreAPI](https://fakestoreapi.herokuapp.com/)
+  [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [FakeStoreAPI](https://fakestoreapi.herokuapp.com/)[Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/) [HeroIcons](https://heroicons.com/)
