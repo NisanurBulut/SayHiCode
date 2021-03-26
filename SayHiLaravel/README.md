@@ -25,5 +25,6 @@ Blade aslında bir şablon sistemidir. İçerisine alışık olduğunu PHP kodla
 - php artisan tinker App\Models\Post::factory()->times(200)->create(['user_id'=>2])
 - php artisan make:migration create_likes_table --create=likes
 - php artisan make:model Like
+- php artisan make:controller PostLikeController
 ### Helpfull Resources
 [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/)

@@ -40,25 +40,33 @@
                             <div class="pt-4">
                                 <div class="mb-2">
                                     <div class="flex items-center">
-                                        <span class="mr-3 inline-flex items-center cursor-pointer">
-                                            <svg class="fill-heart text-red-700 inline-block h-7 w-7 heart"
-                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                            </svg>
-                                        </span>
-                                        <span class="mr-3 inline-flex items-center cursor-pointer">
-                                            <svg class="fill-heart text-red-700 inline-block h-7 w-7 heart"
-                                                xmlns="http://www.w3.org/2000/svg" fill="full" viewBox="0 0 24 24"
-                                                stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                            </svg>
-                                        </span>
+                                        @if (!$post->likedBy(auth()->user()))
+                                        <form action={{ route('posts.likes', $post->id) }} method="POST" class="mr-1">
+                                            @csrf
+                                            <button id="likeBtn" type="submit" class="mr-3 inline-flex items-center cursor-pointer">
+                                                <svg class="fill-heart text-red-700 inline-block h-7 w-7 heart"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                        </form>
+                                        @else
+                                        <form>
+                                            <button id="unlikeBtn" class="mr-3 inline-flex items-center cursor-pointer">
+                                                <svg class="fill-heart text-red-700 inline-block h-7 w-7 heart"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                        </form>
+                                        @endif
                                     </div>
                                     <span class="text-gray-600 text-sm font-bold">
-                                        {{ $post->likes->count() }} {{ Str::plural('Like',$posts->likes->count()) }}</span>
+                                        {{ $post->likes->count() }} {{ Str::plural('Like',$post->likes->count()) }}</span>
                                 </div>
                             </div>
                         </div>
