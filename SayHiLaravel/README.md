@@ -29,6 +29,7 @@ Blade aslında bir şablon sistemidir. İçerisine alışık olduğunu PHP kodla
 - composer require barryvdh/laravel-debugbar --dev
 - php artisan make:policy PostPolicy
 - php artisan make:component Post
+- php artisan make:component UserCard
 
 ### Helpfull Resources
 [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/)
