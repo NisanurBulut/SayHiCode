@@ -41,7 +41,7 @@
                                 <div class="mb-2">
                                     <div class="flex items-center">
                                         @if (!$post->likedBy(auth()->user()))
-                                        <form action={{ route('posts.likes', $post->id) }} method="POST" class="mr-1">
+                                        <form action={{ route('posts.likes', $post) }} method="POST" class="mr-1">
                                             @csrf
                                             <button id="likeBtn" type="submit" class="mr-3 inline-flex items-center cursor-pointer">
                                                 <svg class="fill-heart text-red-700 inline-block h-7 w-7 heart"
@@ -53,7 +53,9 @@
                                             </button>
                                         </form>
                                         @else
-                                        <form>
+                                        <form action={{ route('posts.likes', $post) }} method="post">
+                                            @csrf
+                                            @method('DELETE')
                                             <button id="unlikeBtn" class="mr-3 inline-flex items-center cursor-pointer">
                                                 <svg class="fill-heart text-red-700 inline-block h-7 w-7 heart"
                                                     xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24"
