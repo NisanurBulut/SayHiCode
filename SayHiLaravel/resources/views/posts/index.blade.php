@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
     <div class="focus:outline-none flex justify-center">
         <div class="focus:outline-none w-8/12 bg-white p-6 rounded-lg">
             <form action="{{ route('posts') }}" method="POST">

@@ -35,4 +35,10 @@ class PostController extends Controller
         $post->delete();
         return back();
     }
+    public function show(Post $post)
+    {
+        return view('posts.show',[
+            'post'=>$post
+        ]);
+    }
 };
