@@ -3,7 +3,7 @@
 <div class="flex justify-center">
     <div class="w-4/12 bg-white p-6 rounded-lg mt-40">
     @if(session('status'))
-    <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
+    <div class="bg-red-300 p-4 rounded-lg mb-6 text-white text-center">
     {{ session('status')}}</div>
     @endif
         <form action="{{route('login')}}" method="post">
@@ -36,7 +36,7 @@
             </div>
             <div>
                 <button type="submit"
-                    class="bg-red-400 text-white px-4 py-3 rounded font-medium w-full">Login</button>
+                    class="bg-red-500 text-white px-4 py-3 rounded font-medium w-full">Login</button>
             </div>
         </form>
     </div>
