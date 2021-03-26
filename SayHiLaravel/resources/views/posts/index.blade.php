@@ -30,11 +30,12 @@
                         rounded-lg hover:shadow-md hover:border-opacity-0
                         transform hover:-translate-y-1 transition-all duration-200">
                         <div class="m-3">
-                            <h2 class="text-lg mb-2">{{ $post->user->username }}
+                            <a href="{{ route('users.posts',$post->user) }}" class="text-lg mb-2">
+                                <h2>{{ $post->user->username }}</h2>
                                 <span class="text-sm text-teal-800 font-mono bg-teal-100
                                                     inline rounded-full px-2 align-top float-right animate-pulse">
                                     {{ $post->created_at->diffForHumans() }}</span>
-                            </h2>
+                            </a>
 
                             <p
                                 class="font-light font-mono text-sm text-purple-800
