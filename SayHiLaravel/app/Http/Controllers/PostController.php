@@ -27,6 +27,10 @@ class PostController extends Controller
     }
     public function destroy(Post $post)
     {
+        if(!$post->OwnedBy(auth()->user()))
+        {
+            dd('You cant delete another user\'s post');
+        }
         $post->delete();
         return back();
     }
