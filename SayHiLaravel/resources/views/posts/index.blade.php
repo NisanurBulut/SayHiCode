@@ -35,18 +35,29 @@
                                 class="font-light font-mono text-sm text-red-700 hover:text-gray-900 transition-all duration-200">
                                 {{ $post->body }}</p>
                         </div>
-                        <div id="flex items-center">
-                            <form action="">
-                                <button type="submit">⭐</button>
-                                <button type="submit">💔</button>
-                            </form>
-                            <form action="">
-                                <button type="submit">⭐</button>
-                                <button type="submit">💔</button>
-                            </form>
+
+                        <div class="bottom-0 left-0 right-0 pl-4">
+                            <div class="pt-4">
+                                <div class="mb-2">
+                                    <div class="flex items-center">
+                                        <span class="mr-3 inline-flex items-center cursor-pointer">
+                                            <svg class="fill-heart text-red-700 inline-block h-7 w-7 heart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                            </svg>
+                                        </span>
+                                        <span class="mr-3 inline-flex items-center cursor-pointer">
+                                            <svg class="fill-heart text-red-700 inline-block h-7 w-7 heart" xmlns="http://www.w3.org/2000/svg" fill="full" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <span class="text-gray-600 text-sm font-bold">{{ $post->likes->count() }} Likes</span>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
-                    </div>
+
                 @endforeach
                 {{ $posts->links() }}
             @else
