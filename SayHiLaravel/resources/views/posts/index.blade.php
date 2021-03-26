@@ -7,10 +7,10 @@
                 <div class="mb-4">
                     <label for="body" class="sr-only">Body</label>
                     <textarea name="body" id="body" cols="30" rows="4" class="bg-gray-100 border-2 w-full -p-4 rounded-lg
-                            @error('body')
-                                    border-red-500
-                            @enderror
-                            " placeholder="Say Something!"></textarea>
+                                @error('body')
+                                            border-red-500
+                                @enderror
+                                " placeholder="Say Something!"></textarea>
                     @error('body')
                         <div class="text-red-500 mt-2 text-sm">
                             {{ $message }}
@@ -28,7 +28,9 @@
                         <div class="m-3">
                             <h2 class="text-lg mb-2">{{ $post->user->username }}
                                 <span
-                                    class="text-sm text-teal-800 font-mono bg-teal-100 inline rounded-full px-2 align-top float-right animate-pulse">Tag</span>
+                                    class="text-sm text-teal-800 font-mono bg-teal-100
+                                    inline rounded-full px-2 align-top float-right animate-pulse">
+                                    {{ $post->created_at->diffForHumans() }}</span>
                             </h2>
                             <p
                                 class="font-light font-mono text-sm text-red-700 hover:text-gray-900 transition-all duration-200">
