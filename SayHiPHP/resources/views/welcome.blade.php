@@ -22,13 +22,9 @@
         <div class="title m-b-md">
             The Eskişehir's Best Pizzas
         </div>
-
-        <div class="ui segment">
-            <p></p>
-            <div class="ui active dimmer">
-              <div class="ui loader"></div>
-            </div>
-          </div>
+       <div class="links">
+        <a href="{{ route('create') }}">Order a pizza </a>
+       </div>
     </div>
 </div>
 @endsection
