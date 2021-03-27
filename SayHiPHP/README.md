@@ -4,7 +4,7 @@ If you like or are using this project to learn or start your solution, please gi
 <hr>
 Semantic UI is used for frontend design in this application. Mysql is used for the database. The application was coded in PHP programming language and Laravel FrameWork was used. Ajax calls were made with the JQuery library.
 
-![SayHiReactQuery](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiPHP.gif)
+![Trailer_SayHiPHP](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiPHP.gif)
 
 - This application is a pizza ordering application.
 - The user can become a member of the application.
