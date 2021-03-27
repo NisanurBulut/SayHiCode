@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="/css/main.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
     <script src="{{ asset('js/semantic.min.js') }}"></script>
 </head>
