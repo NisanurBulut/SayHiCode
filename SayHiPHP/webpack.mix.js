@@ -12,6 +12,10 @@ const mix = require("laravel-mix");
  */
 
 mix.js("resources/js/app.js", "public/js")
+.copy(
+    "node_modules/jquery/dist/jquery.js",
+    "public/js/jquery.js"
+)
     .copy(
         "node_modules/semantic-ui-css/semantic.min.css",
         "public/css/semantic.min.css"
