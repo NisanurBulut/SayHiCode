@@ -29,7 +29,7 @@
                     </svg>
                 </button>
                 <img src="/img/pizza.png" alt="pizza icon">
-                <h4><a href="/pizzas/{{ $pizza->id }}">{{ $pizza->name }}</a></h4>
+                <h4>{{ $pizza->name }}</a>
             </div>
         @endforeach
 
