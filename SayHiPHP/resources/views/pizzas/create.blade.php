@@ -1,11 +1,12 @@
 @extends('layouts.layout')
 @section('content')
-
-    <div class="flex-center position-ref full-height">
+<div class="wrapper create-pizza">
+    <h1 class="ui dividing header">Ordering Pizza</h1>
+    <div class="flex-center position-ref full-height ">
         <div class="content">
             <form class="ui form large" action="/pizzas" method="POST">
                 @csrf
-                <h4 class="ui dividing header">Ordering Pizza</h4>
+
                 <div class="field">
                     <label for="name">Your name:</label>
                     <input type="text" name="name" id="name" required>
@@ -56,4 +57,5 @@
             </form>
         </div>
     </div>
+</div>
 @endsection
