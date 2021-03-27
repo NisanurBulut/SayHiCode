@@ -15,5 +15,3 @@ Route::post('/pizzas', [PizzaController::class, 'store'])->name('store');
 Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy'])->name('destroy')->middleware('auth');
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
