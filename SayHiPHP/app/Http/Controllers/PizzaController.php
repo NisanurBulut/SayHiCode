@@ -23,8 +23,19 @@ class PizzaController extends Controller
     }
     public function store(Request $request)
     {
-        error_log($request->name);
-        dd($request);
+
+        $this->validate($request,[
+            'name'=>'required',
+            'base'=>'required',
+            'type'=>'required'
+        ]);
+
+       $pizzaEntity = new Pizza();
+       $pizzaEntity -> name = $request->name;
+       $pizzaEntity -> type = $request->type;
+       $pizzaEntity -> base = $request->base;
+       $pizzaEntity -> price = 0;
+       $pizzaEntity->save();
         return redirect('/');
     }
 }
