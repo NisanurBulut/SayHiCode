@@ -10,3 +10,4 @@ Route::get('/', function () {
 });
 Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizzas');
 Route::get('/pizzas/{$id}',[PizzaController::class, 'show']);
+Route::get('/create', [PizzaController::class, 'create']);
