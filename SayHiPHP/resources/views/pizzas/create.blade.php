@@ -4,7 +4,8 @@
 
 <div class="flex-center position-ref full-height">
     <div class="content">
-        <div class="ui form large">
+        <form class="ui form large" action="/pizzas" method="POST">
+            @csrf
             <h4 class="ui dividing header">Ordering Pizza</h4>
             <div class="field">
                 <label for="name">Your name:</label>
@@ -31,7 +32,7 @@
             <button class="ui primary button">
                 Order Pizza
               </button>
-          </div>
+          </form>
     </div>
 </div>
 @endsection
