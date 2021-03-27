@@ -144,7 +144,9 @@ a.back {
   width: 60px;
   display: inline-block;
 }
-
+.pizza-index .pizza-item #btnEye {
+  float: right;
+}
 .pizza-index .pizza-item h4 {
   display: inline-block;
   font-weight: normal;

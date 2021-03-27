@@ -1,28 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="smallBody">
-                    <div>
-                        <!-- the result to be displayed apply here -->
-                    </div>
-                </div>
-            </div>
+{{-- <div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-body" id="orderDetailModalBody">
+
         </div>
     </div>
+  </div> --}}
+  <div class="modal" id="orderDetailModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
     <div class="ui wrapper pizza-index">
         <h1>Pizza Orders</h1>
         @foreach ($pizzas as $pizza)
             <div class="pizza-item">
-                <button class=" btn btn-success btn-sm" id="btnEye" data-toggle="modal" data-target="#smallModal"
+                <button class=" btn btn-success btn-sm" id="btnEye" data-toggle="modal" data-target="#orderDetailModal"
                     data-attr="/pizzas/{{ $pizza->id }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye"
                         viewBox="0 0 16 16">
@@ -39,31 +36,3 @@
     </div>
 
 @endsection
-
-<script>
-  // display a modal (small modal)
-  $(document).on('click', '#btnEye', function(event) {
-      event.preventDefault();
-      let href = $(this).attr('data-attr');
-      $.ajax({
-          url: href,
-          beforeSend: function() {
-
-          },
-          // return the result
-          success: function(result) {
-              $('#smallModal').modal("show");
-              $('#smallBody').html(result).show();
-          },
-          complete: function() {
-              $('#loader').hide();
-          },
-          error: function(jqXHR, testStatus, error) {
-              console.log(error);
-              alert("Page " + href + " cannot open. Error:" + error);
-              $('#loader').hide();
-          },
-          timeout: 8000
-      })
-  });
-  </script>

@@ -10,11 +10,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/semantic.min.js') }}"></script>
+    <script src="{{ asset('js/semantic.min.js') }}"defer ></script>
+    <script src="{{ asset('js/main.js') }}"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
