@@ -22,6 +22,12 @@
         <div class="title m-b-md">
             The Eskişehir's Best Pizzas
         </div>
+        @if (session('message'))
+        <div class="ui label">
+
+            <i class="heart icon"></i> {{ session('message') }}
+          </div>
+        @endif
        <div class="links">
         <a href="{{ route('create') }}">Order a pizza </a>
        </div>
