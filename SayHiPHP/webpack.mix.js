@@ -12,10 +12,7 @@ const mix = require("laravel-mix");
  */
 
 mix.js("resources/js/app.js", "public/js")
-.copy(
-    "node_modules/jquery/dist/jquery.js",
-    "public/js/jquery.js"
-)
+    .copy("node_modules/jquery/dist/jquery.js", "public/js/jquery.js")
     .copy(
         "node_modules/semantic-ui-css/semantic.min.css",
         "public/css/semantic.min.css"
@@ -36,6 +33,8 @@ mix.js("resources/js/app.js", "public/js")
         "node_modules/semantic-ui-css/themes/default/assets/fonts/icons.ttf",
         "public/css/themes/default/assets/fonts/icons.ttf"
     )
-    .postCss("resources/css/app.css", "public/css", [
-        //
-    ]);
+    .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/main.scss', 'public/css');
+    // .postCss("resources/css/app.css", "public/css", [
+    //     //
+    // ]);
