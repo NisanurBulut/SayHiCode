@@ -8,5 +8,5 @@ use App\Http\Controllers\PizzaController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/pizzas', [PizzaController::class, 'index']);
+Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizzas');
 Route::get('/pizzas/{$id}',[PizzaController::class, 'show']);
