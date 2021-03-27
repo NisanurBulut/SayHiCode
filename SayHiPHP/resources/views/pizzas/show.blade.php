@@ -1,8 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
-    <div class="flex-center position-ref full-height">
-        <div class="content">
             <div class="ui card">
                 <div class="content">
                  <form action="{{ route('destroy', $pizza->id) }}" method="POST">
@@ -45,8 +42,7 @@
                     </div>
                 </div>
               </div>
-        </div>
 
-    </div>
-    </div>
+
+
 @endsection
