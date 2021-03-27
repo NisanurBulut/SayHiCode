@@ -24,10 +24,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="ui red navbar navbar-expand-md shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                   SAY Hi PHP!
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -55,6 +55,11 @@
                                 </li>
                             @endif
                         @else
+                        <li>
+                            <a id="orderlink" class="nav-link" href="/create" role="button" aria-haspopup="true" aria-expanded="false">
+                                Order Pizza
+                            </a>
+                        </li>
                         <li>
                             <a id="orderlink" class="nav-link" href="/pizzas" role="button" aria-haspopup="true" aria-expanded="false">
                                 Orders
