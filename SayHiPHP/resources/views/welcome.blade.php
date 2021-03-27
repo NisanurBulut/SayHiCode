@@ -25,7 +25,7 @@
         @if (session('message'))
         <div class="ui label">
 
-            <i class="heart icon"></i> {{ session('message') }}
+            <i class="thumbtack icon"></i> {{ session('message') }}
           </div>
         @endif
        <div class="links">

@@ -3,13 +3,13 @@
 
     <div class="flex-center position-ref full-height">
         <div class="content">
-            <div class="ui card large">
+            <div class="ui card">
                 <div class="content">
                  <form action="{{ route('destroy', $pizza->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="right floated meta">
-                        <i class="trash alternate icon"></i>
+                    <button type="submit" class="right floated">
+                        <i class="red trash alternate icon large"></i>
                       </button>
                  </form>
 
