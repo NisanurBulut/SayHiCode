@@ -34,7 +34,6 @@ class PizzaController extends Controller
        $pizzaEntity -> name = $request->name;
        $pizzaEntity -> type = $request->type;
        $pizzaEntity -> base = $request->base;
-       $pizzaEntity -> price = 0;
        $pizzaEntity->save();
        return redirect('/')->with('message','Thanks for order');
     }
