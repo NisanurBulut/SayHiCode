@@ -22,6 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 */node_modules
+*/*/tests
+*/vendor/*/
 */backend/node_modules/*/
 */vendor/*/
 */config.js
