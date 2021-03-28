@@ -25,4 +25,5 @@ yarn-error.log*
 */*/tests
 */vendor/*/
 */backend/node_modules/*/
+*/vendor/*/
 */config.js
