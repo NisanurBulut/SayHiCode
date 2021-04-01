@@ -7,14 +7,15 @@ class Application
     public Router $router;
     public Request $request;
 
-    public function __contructor ()
+    public function __construct()
     {
-        $this -> request = new Request();
-        $this -> router = new Router($this -> request);
+        $this->request = new Request();
+
+        $this->router = new Router($this -> request);
     }
 
     public function run()
     {
-        $this -> router -> resolve();
+        $this->router->resolve();
     }
 }

@@ -6,6 +6,9 @@ namespace app\core;
 
 class Request
 {
+    public function __contructor()
+    {
+    }
     public function getPath()
     {
         $path = $_SERVER['REQUEST_URI'] ?? '/';
