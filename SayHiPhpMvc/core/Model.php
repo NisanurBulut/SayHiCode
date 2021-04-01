@@ -72,4 +72,9 @@ abstract class Model
     {
         return $this->errors[$attribute] ?? false;
     }
+    public function getFirstError($attribute)
+    {
+        return $this->errors[$attribute][0] ?? false;
+
+    }
 }
