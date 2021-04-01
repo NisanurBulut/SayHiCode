@@ -1,6 +1,7 @@
 <?php
 
 namespace app\core;
+
 class Router
 {
     protected array $routes = [];
@@ -34,13 +35,12 @@ class Router
         if (is_string($callback)) {
             return $this->renderView($callback);
         }
-        if(is_array($callback))
-        {
-            $callback[0] = new $callback[0]();
+        if (is_array($callback)) {
+            Application::$app->controller = new $callback[0]();
         }
-        return call_user_func($callback,$this->request);
+        return call_user_func($callback, $this->request);
     }
-    public function renderView($view, $params=[])
+    public function renderView($view, $params = [])
     {
         $layoutContent = $this->layoutContent();
         $viewContent = $this->renderOnlyView($view, $params);
@@ -48,11 +48,11 @@ class Router
     }
     protected function renderOnlyView($view, $params)
     {
-        foreach($params as $key => $value) {
+        foreach ($params as $key => $value) {
             $$key = $value;
         }
         ob_start();
-        include_once Application::$ROOT_DIR."/views/$view.php";
+        include_once Application::$ROOT_DIR . "/views/$view.php";
         return ob_get_clean();
     }
     public function renderContent($viewContent)
@@ -62,9 +62,9 @@ class Router
     }
     protected function layoutContent()
     {
+        $layout = Application::$app->controller->layout;
         ob_start();
-        include_once Application::$ROOT_DIR."/views/layouts/main.php";
+        include_once Application::$ROOT_DIR . "/views/layouts/$layout.php";
         return ob_get_clean();
     }
-
 }
