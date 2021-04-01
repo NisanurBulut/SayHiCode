@@ -1,6 +1,6 @@
 
 
-<form class="ui form">
+<form class="ui form" method="POST">
   <div class="field">
     <label>First Name</label>
     <input type="text" name="first-name" placeholder="First Name">
