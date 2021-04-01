@@ -135,6 +135,27 @@ This study demonstrates the use of the React-Jquery library.In addition, the use
 
 ![SayHiReactQuery](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiReactQuery.gif)
 
+### SayHiLaravel
+<hr>
+With this study, a social media application was made using Laravel Framework at a simple level. Sqlite database has been used.Tailwind CSS is used in frontend design.
+
+- The user can become a member of the application.
+- The user can log in to the application.
+- The user can share posts.
+- The user can view other users' posts.
+- The user can delete their own post.
+- The user can like the post.
+- The posts belonging to the user are listed separately.
+- The user's email, name, user name, membership period information are displayed.
+- When the user likes, an e-mail is sent via mailtrap.
+- Spam sending has been blocked.
+- The liking is soft-deleting.
+## Installation
+- composer global require laravel
+- laravel new projectName
+- php artisan serve
+- npm install tailwindcss
+- npm install
 ### SayHiPHP
 <hr>
 Semantic UI is used for frontend design in this application. Mysql is used for the database. The application was coded in PHP programming language and Laravel FrameWork was used. Ajax calls were made with the JQuery library.
