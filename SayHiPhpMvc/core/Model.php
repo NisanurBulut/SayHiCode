@@ -23,30 +23,43 @@ abstract class Model
     abstract public function rules(): array;
     public function validate()
     {
-        foreach($this->rules as $attribute => $rules){
+        foreach ($this->rules as $attribute => $rules) {
             $value = $this->{$attribute};
-            foreach($rules as $rule){
+            foreach ($rules as $rule) {
                 $ruleName = $rule;
-                if(!is_string($ruleName)){
-                    $ruleName=$rule[0];
+                if (!is_string($ruleName)) {
+                    $ruleName = $rule[0];
                 }
-                if($ruleName === self::RULE_REQUIRED && !$value) {
+                if ($ruleName === self::RULE_REQUIRED && !$value) {
                     $this->addError($attribute, self::RULE_REQUIRED);
+                }
+                if ($ruleName === self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                    $this->addError($attribute, self::RULE_EMAIL);
+                }
+                if ($ruleName === self::RULE_MIN && strlen($value) < $rule['min']) {
+                    $this->addError($attribute, self::RULE_MIN);
+                }
+                if ($ruleName === self::RULE_MAX && strlen($value) > $rule['max']) {
+                    $this->addError($attribute, self::RULE_MAX);
                 }
             }
         }
+        return empty($this->errors);
     }
-    public function addError(string $attribute, string $rule) {
-        $message = $this->errorMessage()[$rule]??'';
-        $this->errors[$attribute][]=$message;
+    public function addError(string $attribute, string $rule)
+    {
+        $message = $this->errorMessages()[$rule] ?? '';
+        $this->errors[$attribute][] = $message;
     }
-    public function errorMessages(){
+    public function errorMessages()
+    {
 
         return [
             self::RULE_REQUIRED => 'This field is required',
-            self::RULE_EMAIL=>'This field must be valid email address',
-            self::RULE_MATCH=>'This field must be the same as {match}',
-            self::RULE_MIN=>'Min length of this field must be {min}',
-            self::RULE_MAX=>'Max length of this field must be {max}']
+            self::RULE_EMAIL => 'This field must be valid email address',
+            self::RULE_MATCH => 'This field must be the same as {match}',
+            self::RULE_MIN => 'Min length of this field must be {min}',
+            self::RULE_MAX => 'Max length of this field must be {max}'
+        ];
     }
 }
