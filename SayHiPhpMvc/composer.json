@@ -1,0 +1,10 @@
+{
+    "name": "nisanur.bulut/say-hi-php-mvc",
+    "authors": [
+        {
+            "name": "NisanurBulut",
+            "email": "nbulut@sarplojistik.com"
+        }
+    ],
+    "require": {}
+}
