@@ -2,8 +2,6 @@
 
 namespace app\core;
 
-use Response;
-
 
 class Application
 {
