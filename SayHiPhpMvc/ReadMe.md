@@ -1,0 +1,1 @@
+- Composer.json ve index.php aynı seviyede yer alması best practise değildir.
