@@ -30,7 +30,6 @@ class Router
         if ($callback === false) {
             $this->response->setStatusCode(404);
             return $this->renderContent('Not found');
-            exit;
         }
         if (is_string($callback)) {
             return $this->renderView($callback);

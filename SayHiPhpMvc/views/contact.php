@@ -1,5 +1,3 @@
-
-
 <form class="ui form" method="POST">
   <div class="field">
     <label>First Name</label>
