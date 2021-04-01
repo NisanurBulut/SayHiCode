@@ -8,7 +8,7 @@ class HomeController {
 
     public function contact()
     {
-        return - Application::$app->router->renderView('contact');
+        return Application::$app->router->renderView('contact');
     }
     public function handleContact()
     {
