@@ -11,11 +11,11 @@ class Application
     {
         $this->request = new Request();
 
-        $this->router = new Router($this -> request);
+        $this->router = new Router($this->request);
     }
 
     public function run()
     {
-        $this->router->resolve();
+       echo $this->router->resolve();
     }
 }

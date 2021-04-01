@@ -11,6 +11,6 @@ $app->router->get('/', function(){
     return 'Merhaba Nisanur';
 });
 
-$app->router->get('/contact', 'contact');
+$app->router->get('/contact', 'contact/index');
 
 $app->run();
