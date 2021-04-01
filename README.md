@@ -138,6 +138,7 @@ This study demonstrates the use of the React-Jquery library.In addition, the use
 ### SayHiLaravel
 <hr>
 With this study, a social media application was made using Laravel Framework at a simple level. Sqlite database has been used.Tailwind CSS is used in frontend design.
+![Trailer_SayHiLaravel](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiLaravel.gif)
 
 - The user can become a member of the application.
 - The user can log in to the application.
