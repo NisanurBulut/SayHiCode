@@ -15,5 +15,11 @@ class AuthController extends Controller {
         ];
         return $this->render('auth/login', $params);
     }
-
+    public function register()
+    {
+        $params = [
+            'name' => "Selam Nisanur"
+        ];
+        return $this->render('auth/register', $params);
+    }
 }
