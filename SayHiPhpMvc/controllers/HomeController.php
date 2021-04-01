@@ -3,15 +3,23 @@
 namespace app\controllers;
 
 use app\core\Application;
+use app\core\Controller;
 
-class HomeController {
+class HomeController extends Controller {
 
     public function home()
     {
         $params = [
             'name' => "Selam Nisanur"
         ];
-        return Application::$app->router->renderView('home', $params);
+        return $this->render('home', $params);
+    }
+    public function contact()
+    {
+        $params = [
+            'name' => "Selam Nisanur"
+        ];
+        return $this->render('contact', $params);
     }
     public function handleContact()
     {
