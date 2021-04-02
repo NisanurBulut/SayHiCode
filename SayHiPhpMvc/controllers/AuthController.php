@@ -4,13 +4,13 @@ namespace app\controllers;
 
 use app\core\Request;
 use app\core\Controller;
-use app\core\Application;
 use app\models\RegisterModel;
 
 class AuthController extends Controller {
 
     public function login()
     {
+        $this->setLayout('main');
         $params = [
             'name' => "Selam Nisanur"
         ];

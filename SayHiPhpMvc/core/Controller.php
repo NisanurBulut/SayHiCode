@@ -7,6 +7,10 @@ use app\core\Application;
 class Controller
 {
     public string $layout = 'main';
+    public function __construct()
+    {
+
+    }
     public function setLayout($layout)
     {
         $this->layout = $layout;
