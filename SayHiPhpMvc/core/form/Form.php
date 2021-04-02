@@ -8,7 +8,7 @@ class Form
 {
     public static function begin($action, $method)
     {
-        echo sprintf('<form action="%s" method="%s">', $action, $method);
+        echo sprintf('<form style="padding:1.5rem;" action="%s" method="%s">', $action, $method);
         return new Form();
     }
     public static function end()
