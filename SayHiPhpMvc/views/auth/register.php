@@ -1,4 +1,4 @@
-<?php $form=app\core\form\Form::begin('register',"post")?>
+<?php $form=app\core\form\Form::begin('register','post')?>
 <div class="form-row">
     <div class="form-group col-md-6">
         <?php echo $form->field($model, 'firstName','text') ?>

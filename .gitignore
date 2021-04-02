@@ -28,3 +28,4 @@ yarn-error.log*
 */vendor/*/
 */config.js
 */.idea/*/
+SayHiPhpMvc/.env
