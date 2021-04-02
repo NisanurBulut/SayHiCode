@@ -12,7 +12,7 @@ class AuthController extends Controller {
     public function __construct()
     {
         $userEntity = new User();
-       $result = $userEntity->select();
+        $result = $userEntity->select();
     }
     public function login()
     {
@@ -31,6 +31,7 @@ class AuthController extends Controller {
 
             if($registerModel->validate() && $registerModel->save()){
                 Application::$app->response->redirect('/');
+                Application::$app->session->setFlash('success','Thanks for registering');
             }
             return $this->render('auth/register',[
                 'model'=>$registerModel
