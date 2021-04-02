@@ -6,13 +6,19 @@ use app\core\DbModel;
 
 class User extends DbModel
 {
-    public string $firstName ='';
-    public string $lastName='';
-    public string $email='';
-    public string $password='';
-    public string $passwordConfirm='';
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
+    const STATUS_DELETED = 2;
 
-    public function tableName():string{
+    public string $firstName = '';
+    public string $lastName = '';
+    public string $email = '';
+    public string $password = '';
+    public string $passwordConfirm = '';
+    public int $status = self::STATUS_ACTIVE;
+
+    public function tableName(): string
+    {
         return 'users';
     }
 
@@ -27,12 +33,13 @@ class User extends DbModel
             'firstName' => [self::RULE_REQUIRED],
             'lastName' => [self::RULE_REQUIRED],
             'email' => [self::RULE_REQUIRED],
-            'password' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min'=> 1], [self::RULE_MAX, 'max'=> 2]],
+            'password' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 1], [self::RULE_MAX, 'max' => 2]],
             'passwordConfirm' => [self::RULE_REQUIRED, [self::RULE_MATCH, 'match' => 'password']],
         ];
     }
 
-    public function attributes():array {
-        return ['firstName','lastName','email','password'];
+    public function attributes(): array
+    {
+        return ['firstName', 'lastName', 'email', 'password', 'status'];
     }
 }
