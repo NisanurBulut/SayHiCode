@@ -6,15 +6,17 @@ use app\core\Model;
 
 class Form
 {
-    public function begin($action, $method)
+    public static function begin($action, $method)
     {
-        return '<form action="$action" method="$method">';
+        echo sprintf('<form action="%s" method="%s">', $action, $method);
+        return new Form();
     }
-    public function end()
+    public static function end()
     {
         return '</form';
     }
-    public function field(Model $model, $attribute){
-        return new Field($model, $attribute);
+    public function field(Model $model, $attribute, $type)
+    {
+        return new Field($model, $attribute, $type);
     }
 }
