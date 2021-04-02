@@ -57,7 +57,9 @@ class Database
 
         return $statement->fetchAll(\PDO::FETCH_COLUMN);
     }
-
+    public function prepare($sql){
+        return $this->pdo->prepare($sql);
+    }
     public function saveMigrations(array $migrations)
     {
         $str = implode(",", array_map(fn ($m) => "('$m')", $migrations));
