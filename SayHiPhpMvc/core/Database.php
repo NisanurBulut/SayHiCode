@@ -18,11 +18,14 @@ class Database
     public function applyMigration()
     {
         $this->createMigrationsTable();
-        $this->getAppliedMigrations();
+        $appliedMigrations = $this->getAppliedMigrations();
 
         $files=scandir(Application::$ROOT_DIR.'/migrations');
-
-
+        $toApplyMigrations = array_diff($files, $appliedMigrations);
+        echo '<pre>';
+        var_dump($toApplyMigrations);
+        echo '</pre>';
+        exit;
     }
     public function createMigrationsTable()
     {
