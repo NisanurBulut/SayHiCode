@@ -23,18 +23,6 @@ class Field
 
     public function __toString()
     {
-        $field = sprintf('<div class="form-group">
-        <label for="inputFor">%s</label>
-        <input id="inputFor" type="%s" name="%s" value="%s" class="form-control" />
-        <div class="invalid-feedback">%s</div>
-        </div>',
-            $this->attribute,
-            $this->type,
-            $this->attribute,
-            $this->model->{$this->attribute},
-            $this->model->hasError($this->attribute) ? ' is-invalid ' : '',
-            $this->model->getFirstError($this->attribute)
-        );
         return sprintf('<div class="form-group">
         <label for="inputFor">%s</label>
         <input id="inputFor" type="%s" name="%s" value="%s" class="form-control" />

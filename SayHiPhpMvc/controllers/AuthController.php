@@ -9,6 +9,11 @@ use app\core\Controller;
 
 class AuthController extends Controller {
 
+    public function __construct()
+    {
+        $userEntity = new User();
+       $result = $userEntity->select();
+    }
     public function login()
     {
         $this->setLayout('main');

@@ -26,6 +26,20 @@ abstract class DbModel extends Model
         // '</pre>';
         // exit;
     }
+    public function select()
+    {
+        $tableName = $this->tableName();
+        $attributes = $this->attributes();
+        $params = array_map(fn ($attr) => ":$attr", $attributes);
+        $statement = self::prepare("SELECT * FROM $tableName");
+        $statement->execute();
+        $result = $statement->fetchAll();
+        return $result;
+        // echo '<pre>';
+        // var_dump($statement, $params, $attributes);
+        // '</pre>';
+        // exit;
+    }
     public function prepare($sql)
     {
         return Application::$app->db->pdo->prepare($sql);
