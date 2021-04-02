@@ -23,10 +23,13 @@ abstract class Model
     abstract public function rules(): array;
     public function validate()
     {
-        foreach ($this->rules as $attribute => $rules) {
+
+        foreach ($this->rules() as $attribute => $rules) {
+
             $value = $this->{$attribute};
             foreach ($rules as $rule) {
                 $ruleName = $rule;
+
                 if (!is_string($ruleName)) {
                     $ruleName = $rule[0];
                 }
