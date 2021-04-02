@@ -26,8 +26,8 @@ class Field
         return sprintf(
             '
      <div class="form-group">
-     <label>%s</label>
-     <input type="%s" name="%s" value="%s" class="form-control %s"
+     <label for="inputFor">%s</label>
+     <input id="inputFor" type="%s" name="%s" value="%s" class="form-control %s"
      <div class="invalid-feedback">
      %s
      </div>

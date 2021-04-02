@@ -35,7 +35,9 @@
     </form>
   </div>
 </nav>
+<div class="container">
 {{ content }}
+</div>
 </body>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

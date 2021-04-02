@@ -1,9 +1,9 @@
-<?php $form=app\core\form\Form::begin('',"post")?>
-<div class="row">
-    <div class="col">
+<?php $form=app\core\form\Form::begin('test',"post")?>
+<div class="form-row">
+    <div class="form-group col-md-6">
         <?php echo $form->field($model, 'firstName','text') ?>
     </div>
-    <div class="col">
+    <div class="form-group col-md-6">
         <?php echo $form->field($model, 'lastName','text') ?>
     </div>
 </div>
