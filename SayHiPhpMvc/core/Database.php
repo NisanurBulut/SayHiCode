@@ -28,7 +28,7 @@ class Database
             if ($migration === '.' || $migration == '..') {
                 continue;
             }
-            require_once Application::$ROOT_DIR . '/migrations' . $migration;
+            require_once Application::$ROOT_DIR . '/migrations/' . $migration;
             $className = pathinfo($migration, PATHINFO_FILENAME);
             $instance = new $className();
             echo "Applying migration $migration" . PHP_EOL;
@@ -63,5 +63,9 @@ class Database
         $str = implode(",", array_map(fn ($m) => "('$m')", $migrations));
         $statement = $this->pdo->prepare("INSERT INTO migrations (migration) VALUES $str ");
         $statement->execute();
+    }
+
+    protected function log($message){
+
     }
 }
