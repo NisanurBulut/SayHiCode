@@ -17,7 +17,7 @@ class Application
     public Session $session;
     public Database $db;
     public static Application $app;
-    public ?Controller $controller=null;
+    public ?Controller $controller = null;
     public ?UserModel $user; // nullable
     public function __construct($rootPath, array $config)
     {
@@ -48,7 +48,13 @@ class Application
     }
     public function run()
     {
-        echo $this->router->resolve();
+        try {
+            echo $this->router->resolve();
+        } catch (\Exception $e) {
+            echo $this->router->renderView('_error', [
+                'exception' => $e
+            ]);
+        }
     }
     public function login(UserModel $user)
     {
