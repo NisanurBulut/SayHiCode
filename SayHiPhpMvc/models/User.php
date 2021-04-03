@@ -17,6 +17,10 @@ class User extends DbModel
     public string $passwordConfirm = '';
     public int $status = self::STATUS_ACTIVE;
 
+    public function primaryKey(): string
+    {
+        return 'id';
+    }
     public function tableName(): string
     {
         return 'users';
