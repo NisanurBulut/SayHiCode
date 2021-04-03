@@ -39,7 +39,18 @@ abstract class DbModel extends Model
         // '</pre>';
         // exit;
     }
-    public static function findOne($where) { // [email=>nisanurrunasin@gmail.com, firstName=> Nisanur]
+    public static function find($where, $tableName) { // [email=>nisanurrunasin@gmail.com, firstName=> Nisanur]
+        $tableName = $tableName;
+        $attributes = array_keys($where);
+        $sql = implode("AND ",array_map(fn($attr)=>"$attr = :$attr", $attributes));
+        $statement = self::prepare("SELECT * FROM $tableName WHERE $sql");
+        foreach($where as $key=>$value){
+            $statement->bindValue(":$key",$value);
+        }
+        $statement->execute();
+        return $statement->fetchObject(static::class); // gives me instance
+    }
+    public function findOne($where) { // [email=>nisanurrunasin@gmail.com, firstName=> Nisanur]
         $tableName = static::tableName();
         $attributes = array_keys($where);
         $sql = implode("AND ",array_map(fn($attr)=>"$attr = :$attr", $attributes));
@@ -50,7 +61,7 @@ abstract class DbModel extends Model
         $statement->execute();
         return $statement->fetchObject(static::class); // gives me instance
     }
-    public function prepare($sql)
+    public static function prepare($sql)
     {
         return Application::$app->db->pdo->prepare($sql);
     }

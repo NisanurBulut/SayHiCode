@@ -1,7 +1,3 @@
-<?php
- /** @var $model \app\models\User */
-?>
-
 
 <div class="container text-center" style="margin-top: 50px;">
     <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72"

@@ -1,10 +1,9 @@
 <?php
 
 namespace app\core;
-
 use app\core\Session;
 use app\core\Controller;
-
+use app\models\User;
 class Application
 {
     public static string $ROOT_DIR;
@@ -31,9 +30,7 @@ class Application
 
         $primaryValue = $this->session->get('user');
         if ($primaryValue) {
-
-            $primaryKey = $this->userClass::primaryKey();
-            $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);
+            $this->user = User::find(['id'=>$primaryValue],"users");
         }else{
             $this->user=null;
         }

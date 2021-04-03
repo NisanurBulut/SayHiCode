@@ -1,7 +1,7 @@
 <?php $form=app\core\form\Form::begin('register','post')?>
 <div class="form-row">
     <div class="form-group col-md-6">
-        <?php echo $form->field($model, 'firstName','text') ?>
+        <?php echo $form->field($model, 'firstname','text') ?>
     </div>
     <div class="form-group col-md-6">
         <?php echo $form->field($model, 'lastName','text') ?>

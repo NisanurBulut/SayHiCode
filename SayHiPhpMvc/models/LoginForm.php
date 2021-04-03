@@ -13,21 +13,21 @@ class LoginForm extends Model {
 
     public function rules():array{
         return [
-            'email'=>[self::RULE_REQUIRED, self::RULE_EMAIL,[self::RULE_ISEXIST, 'class' => self::class]],
+            'email'=>[self::RULE_REQUIRED, self::RULE_EMAIL],
             'password'=>[self::RULE_REQUIRED]
         ];
     }
     public function login(){
-        $user = $this->validate()
-        // if(!$user) {
-        //     // throw error
-        //     $this->user->addError('email','User does not exist with this email address');
-        //     return false;
-        // }
-        // if(!password_verify($this->password, $user->password)){
-        //     $this->user->addError('password','Password is incorrect');
-        //     return false;
-        // }
+        $user = User::find(['email'=>$this->email],"users");
+        if(!$user) {
+            // throw error
+            $this->user->addError('email','User does not exist with this email address');
+            return false;
+        }
+        if(!password_verify($this->password, $user->password)){
+            $this->user->addError('password','Password is incorrect');
+            return false;
+        }
 
         Application::$app->login($user);
         return true;
