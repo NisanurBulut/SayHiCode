@@ -1,9 +1,11 @@
 <?php
 
 namespace app\core;
+
 use app\core\Session;
 use app\core\Controller;
 use app\models\User;
+
 class Application
 {
     public static string $ROOT_DIR;
@@ -18,6 +20,7 @@ class Application
     public ?DbModel $user; // nullable
     public function __construct($rootPath, array $config)
     {
+        $this->userClass = $config['userClass'];
         self::$ROOT_DIR = $rootPath;
         self::$app = $this;
         $this->request = new Request();
@@ -25,14 +28,13 @@ class Application
         $this->session = new Session();
         $this->router = new Router($this->request, $this->response);
 
-        $this->userClass = $config['userClass'];
         $this->db = new Database($config['db']);
 
         $primaryValue = $this->session->get('user');
         if ($primaryValue) {
-            $this->user = User::find(['id'=>$primaryValue],"users");
-        }else{
-            $this->user=null;
+            $this->user = User::find(['id' => $primaryValue], "users");
+        } else {
+            $this->user = null;
         }
     }
     public function getController()
@@ -57,8 +59,13 @@ class Application
         return true;
     }
 
-    public function logout() {
-        $this->user=null;
+    public function logout()
+    {
+        $this->user = null;
         $this->session->remove('user');
+    }
+    public static function isGuest()
+    {
+        return !self::$app->user;
     }
 }
