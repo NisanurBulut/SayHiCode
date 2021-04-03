@@ -33,13 +33,20 @@ if(Application::$app->session->getFlash('success')): ?>
         <a class="nav-link" href="#">Contact</a>
       </li>
     </ul>
+    <?php if(Application::isGuest()): ?>
     <ul class="navbar-nav">
     <li class="nav-item">
         <a class="nav-link" href="/register" tabindex="-1">register</a>
       </li>
+    <?php else: ?>
       <li class="nav-item">
-        <a class="nav-link" href="/login" tabindex="-1">login</a>
-      </li></ul>
+        <a class="nav-link" href="/logout" tabindex="-1">
+        Welcome <?php echo Application::$app->user->getDisplayName(); ?>
+        Logout
+        </a>
+      </li>
+    </ul>
+    <?php endif; ?>
   </div>
 </nav>
 <div class="container">

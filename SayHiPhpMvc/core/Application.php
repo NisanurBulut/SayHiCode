@@ -17,7 +17,7 @@ class Application
     public Database $db;
     public static Application $app;
     public Controller $controller;
-    public ?DbModel $user; // nullable
+    public ?UserModel $user; // nullable
     public function __construct($rootPath, array $config)
     {
         $this->userClass = $config['userClass'];
@@ -49,7 +49,7 @@ class Application
     {
         echo $this->router->resolve();
     }
-    public function login(DbModel $user)
+    public function login(UserModel $user)
     {
         // save the user in session
         $this->user = $user;
