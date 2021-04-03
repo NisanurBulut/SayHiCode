@@ -35,8 +35,9 @@ class Router
         if (is_string($callback)) {
             return $this->renderView($callback);
         }
-        if (is_array($callback)) {
+        if (is_array($callback)) { // burada callbackteb vahsettiğim şey tam olarak index.php de yazdığım route tanımlamalarıdır.
             Application::$app->controller = new $callback[0]();
+            Application::$app->controller->action = $callback[1];
             $callback[0] = Application::$app->controller;
         }
         return call_user_func($callback, $this->request, $this->response);
@@ -64,8 +65,7 @@ class Router
     protected function layoutContent()
     {
         $layout = Application::$app->layout;
-        if(Application::$app->controller)
-        {
+        if (Application::$app->controller) {
             $layout = Application::$app->controller->layout;
         }
         ob_start();
