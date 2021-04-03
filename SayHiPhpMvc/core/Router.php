@@ -2,6 +2,8 @@
 
 namespace app\core;
 
+use app\core\exceptions\NotFoundException;
+
 class Router
 {
     protected array $routes = [];
@@ -30,7 +32,7 @@ class Router
 
         if ($callback === false) {
             $this->response->setStatusCode(404);
-            return $this->renderContent('Not found');
+            throw new NotFoundException();
         }
         if (is_string($callback)) {
             return $this->renderView($callback);
