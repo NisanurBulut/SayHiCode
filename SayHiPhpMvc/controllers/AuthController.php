@@ -6,7 +6,9 @@ use app\core\Application;
 use app\models\User;
 use app\core\Request;
 use app\core\Controller;
-use app\core\Session;
+use app\core\Response;
+use app\models\loginForm;
+
 class AuthController extends Controller {
 
     public function __construct()
@@ -14,13 +16,19 @@ class AuthController extends Controller {
         $userEntity = new User();
         $result = $userEntity->select();
     }
-    public function login()
+    public function login(Request $request, Response $response)
     {
         $this->setLayout('main');
-        $params = [
-            'name' => "Selam Nisanur"
-        ];
-        return $this->render('auth/login', $params);
+        $loginForm = new LoginForm();
+
+        if($request->isPost()){
+            $loginForm->loadData($request->getBody());
+            if($loginForm->validate() && $loginForm->login()){
+                $response->redirect('/');
+                return;
+            }
+        }
+        return $this->render('auth/login', ['model'=>$loginForm]);
     }
     public function register(Request $request)
     {
