@@ -2,7 +2,7 @@
 
 namespace app\core;
 
-use Session;
+use app\core\Session;
 use app\core\Controller;
 
 class Application

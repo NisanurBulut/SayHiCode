@@ -6,7 +6,7 @@ use app\core\Application;
 use app\models\User;
 use app\core\Request;
 use app\core\Controller;
-
+use app\core\Session;
 class AuthController extends Controller {
 
     public function __construct()
