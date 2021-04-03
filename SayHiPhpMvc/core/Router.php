@@ -31,7 +31,6 @@ class Router
         $callback = $this->routes[$method][$path] ?? false;
 
         if ($callback === false) {
-            $this->response->setStatusCode(404);
             throw new NotFoundException();
         }
         if (is_string($callback)) {
