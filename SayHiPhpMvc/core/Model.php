@@ -11,7 +11,7 @@ abstract class Model
     public const RULE_MATCH = 'match';
     public const RULE_EMAIL = 'email';
     public const RULE_UNIQUE = 'unique';
-
+    public const RULE_ISEXIST = 'isexist';
     public function loadData($data)
     {
         foreach ($data as $key => $value) {
@@ -60,17 +60,30 @@ abstract class Model
                     $className = $rule['class'];
                     $uniqueAttr = $rule['attribute'] ?? $attribute;
                     $tableName = $className::tableName();
-                    $statement = Application::$app->db->prepare("SELECT * FROM $tableName WHERE $uniqueAttr = :attr");
-                    $statement->bindValue(":attr", $value);
-                    $statement->execute();
-                    $record = $statement->fetchObject();
+                    $record = $this->isExist($uniqueAttr,$tableName,$value);
                     if ($record) {
                         $this->addErrorForRule($attribute, self::RULE_UNIQUE, ['field' => $this->getLabel($attribute)]);
+                    }
+                }
+                if ($ruleName === self::RULE_ISEXIST) {
+                    $className = $rule['class'];
+                    $uniqueAttr = $rule['attribute'] ?? $attribute;
+                    $tableName = $className::tableName();
+                    $record = $this->isExist($uniqueAttr,$tableName,$value);
+                    if (!$record) {
+                        $this->addErrorForRule($attribute, self::RULE_ISEXIST, ['field' => $this->getLabel($attribute)]);
                     }
                 }
             }
         }
         return empty($this->errors);
+    }
+    public function isExist($uniqueAttr, $tableName, $value){
+        $statement = Application::$app->db->prepare("SELECT * FROM $tableName WHERE $uniqueAttr = :attr");
+        $statement->bindValue(":attr", $value);
+        $statement->execute();
+        $record = $statement->fetchObject();
+        return $record;
     }
     private function addErrorForRule(string $attribute, string $rule, $params = [])
     {
@@ -92,7 +105,8 @@ abstract class Model
             self::RULE_MATCH => 'This field must be the same as {match}',
             self::RULE_MIN => 'Min length of this field must be {min}',
             self::RULE_MAX => 'Max length of this field must be {max}',
-            self::RULE_UNIQUE => 'Record with this {field} already exists'
+            self::RULE_UNIQUE => 'Record with this {field} already exists',
+            self::RULE_ISEXIST => 'Record with this {field} does not exists'
         ];
     }
 

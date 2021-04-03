@@ -30,8 +30,6 @@ abstract class DbModel extends Model
     public function select()
     {
         $tableName = $this->tableName();
-        $attributes = $this->attributes();
-        $params = array_map(fn ($attr) => ":$attr", $attributes);
         $statement = self::prepare("SELECT * FROM $tableName");
         $statement->execute();
         $result = $statement->fetchAll();
@@ -41,7 +39,7 @@ abstract class DbModel extends Model
         // '</pre>';
         // exit;
     }
-    public function findOne($where) { // [email=>nisanurrunasin@gmail.com, firstName=> Nisanur]
+    public static function findOne($where) { // [email=>nisanurrunasin@gmail.com, firstName=> Nisanur]
         $tableName = static::tableName();
         $attributes = array_keys($where);
         $sql = implode("AND ",array_map(fn($attr)=>"$attr = :$attr", $attributes));
