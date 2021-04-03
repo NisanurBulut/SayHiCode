@@ -40,6 +40,17 @@ abstract class DbModel extends Model
         // '</pre>';
         // exit;
     }
+    public function findOne($where) { // [email=>nisanurrunasin@gmail.com, firstName=> Nisanur]
+        $tableName = static::tableName();
+        $attributes = array_keys($where);
+        $sql = implode("AND ",array_map(fn($attr)=>"$attr = :$attr", $attributes));
+        $statement = self::prepare("SELECT * FROM $tableName WHERE $sql");
+        foreach($where as $key=>$value){
+            $statement->bindValue(":$key",$value);
+        }
+        $statement->execute();
+        return $statement->fetchObject(static::class); // gives me instance
+    }
     public function prepare($sql)
     {
         return Application::$app->db->pdo->prepare($sql);
