@@ -30,8 +30,8 @@ class AuthController extends Controller {
             $registerModel->loadData($request->getBody());
 
             if($registerModel->validate() && $registerModel->save()){
-                Application::$app->response->redirect('/');
                 Application::$app->session->setFlash('success','Thanks for registering');
+                Application::$app->response->redirect('/');
             }
             return $this->render('auth/register',[
                 'model'=>$registerModel

@@ -7,9 +7,11 @@ class Session
     public function __construct()
     {
         session_start();
-        $flashMessages = $_SESSION[self::FLASH_KEY] ?? '';
-        foreach ($flashMessages as $key => &$flashMessage) {
-            $flashMessage['remove'] = false;
+        $flashMessages = $_SESSION[self::FLASH_KEY] ?? [];
+        if (is_array($flashMessages) || is_object($flashMessages)) {
+            foreach ($flashMessages as $key => &$flashMessage) {
+                $flashMessage['remove'] = true;
+            }
         }
         $_SESSION[self::FLASH_KEY] = $flashMessages;
     }
@@ -28,12 +30,15 @@ class Session
 
     public function __destruct()
     {
-        $flashMessages = $_SESSION[self::FLASH_KEY] ?? '';
-        foreach ($flashMessages as $key => &$flashMessage) {
-            if ($flashMessage['remove']) {
-                unset($flashMessages[$key]);
+        $flashMessages = $_SESSION[self::FLASH_KEY] ?? [];
+        if (is_array($flashMessages) || is_object($flashMessages)) {
+            foreach ($flashMessages as $key => &$flashMessage) {
+                if ($flashMessage['remove']) {
+                    unset($flashMessages[$key]);
+                }
             }
         }
+
         $_SESSION[self::FLASH_KEY] = $flashMessages;
     }
 }
