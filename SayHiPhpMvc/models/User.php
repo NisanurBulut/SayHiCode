@@ -35,12 +35,19 @@ class User extends DbModel
         return [
             'firstName' => [self::RULE_REQUIRED],
             'lastName' => [self::RULE_REQUIRED],
-            'email' => [self::RULE_REQUIRED, [self::RULE_UNIQUE, 'class'=>self::class]],
+            'email' => [self::RULE_REQUIRED, [self::RULE_UNIQUE, 'class' => self::class]],
             'password' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 1], [self::RULE_MAX, 'max' => 2]],
             'passwordConfirm' => [self::RULE_REQUIRED, [self::RULE_MATCH, 'match' => 'password']],
         ];
     }
-
+    public function labels(): array
+    {
+        return ['firstName'=>'First Name',
+                'lastName'=>'Last Name',
+                'email'=>'Email Address',
+                'password'=>'Password',
+                'confirmPassword'=>'Confirm Password'];
+    }
     public function attributes(): array
     {
         return ['firstName', 'lastName', 'email', 'password', 'status'];
