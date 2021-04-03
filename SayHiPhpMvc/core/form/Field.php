@@ -28,7 +28,7 @@ class Field
         <input id="inputFor" type="%s" name="%s" value="%s" class="form-control" />
         <small  class="text-danger %s"> %s </small>
         </div>',
-            $this->model->labels()[$this->attribute] ?? $this->attribute,
+            $this->model->getLabel($this->attribute),
             $this->type,
             $this->attribute,
             $this->model->{$this->attribute},
