@@ -40,6 +40,9 @@ if(Application::$app->session->getFlash('success')): ?>
       </li>
     <?php else: ?>
       <li class="nav-item">
+      <li class="nav-item">
+        <a class="nav-link" href="/profile" tabindex="-1">profile</a>
+      </li>
         <a class="nav-link" href="/logout" tabindex="-1">
         Welcome <?php echo Application::$app->user->getDisplayName(); ?>
         Logout

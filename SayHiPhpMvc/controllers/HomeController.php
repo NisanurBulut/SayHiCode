@@ -28,4 +28,8 @@ class HomeController extends Controller {
         var_dump($body);
         return 'handling submitted data';
     }
+    public function profile()
+    {
+        return $this->render('profile');
+    }
 }

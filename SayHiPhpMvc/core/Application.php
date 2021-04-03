@@ -9,6 +9,7 @@ use app\models\User;
 class Application
 {
     public static string $ROOT_DIR;
+    public string $layout = 'main';
     public string $userClass;
     public Router $router;
     public Request $request;
@@ -16,7 +17,7 @@ class Application
     public Session $session;
     public Database $db;
     public static Application $app;
-    public Controller $controller;
+    public ?Controller $controller=null;
     public ?UserModel $user; // nullable
     public function __construct($rootPath, array $config)
     {
