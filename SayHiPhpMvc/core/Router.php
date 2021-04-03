@@ -36,9 +36,13 @@ class Router
             return $this->renderView($callback);
         }
         if (is_array($callback)) { // burada callbackteb vahsettiğim şey tam olarak index.php de yazdığım route tanımlamalarıdır.
-            Application::$app->controller = new $callback[0]();
-            Application::$app->controller->action = $callback[1];
-            $callback[0] = Application::$app->controller;
+            $controller = new $callback[0]();
+            Application::$app->controller = $controller;
+            $controller->action = $callback[1];
+            $callback[0] = $controller;
+            foreach ($controller->getMiddlewares() as $middleware) {
+                $middleware->execute();
+            }
         }
         return call_user_func($callback, $this->request, $this->response);
     }

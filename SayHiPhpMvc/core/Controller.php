@@ -8,7 +8,7 @@ use app\core\middlewares\BaseMiddleware;
 class Controller
 {
     public string $layout = 'main';
-    public array $middlewares = [];
+    protected array $middlewares = [];
     public string $action = '';
     public function __construct()
     {
@@ -24,5 +24,14 @@ class Controller
     public function registerMiddleware(BaseMiddleware $middleware)
     {
         $this->middlewares[] = $middleware;
+    }
+
+
+    /**
+     * Get the value of middlewares
+     */
+    public function getMiddlewares()
+    {
+        return $this->middlewares;
     }
 }
