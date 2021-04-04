@@ -5,6 +5,7 @@ namespace app\core;
 use app\models\User;
 use app\core\Session;
 use app\core\Controller;
+use app\core\db\Database;
 
 class Application
 {
