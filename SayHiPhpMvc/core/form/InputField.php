@@ -4,8 +4,9 @@ namespace app\core\form;
 
 use app\core\form;
 use app\core\Model;
+use app\core\form\BaseField;
 
-class Field
+class InputField extends BaseField
 {
     public Model $model;
     public string $attribute;
@@ -16,26 +17,20 @@ class Field
     public const TYPE_NUMBER = 'number';
     public function __construct(Model $model, string $attribute, string $type)
     {
-        $this->model = $model;
-        $this->attribute = $attribute;
+        parent::__construct($model, $attribute);
         $this->type = $type;
     }
-
-    public function __toString()
+    public function renderInput(): string
     {
-        return sprintf('<div class="form-group">
-        <label for="inputFor">%s</label>
-        <input id="inputFor" type="%s" name="%s" value="%s" class="form-control" />
-        <small  class="text-danger %s"> %s </small>
-        </div>',
-            $this->model->getLabel($this->attribute),
+        return sprintf(
+            '<input id="inputFor" type="%s" name="%s" value="%s" class="form-control%s" />',
             $this->type,
             $this->attribute,
             $this->model->{$this->attribute},
-            $this->model->hasError($this->attribute) ? ' is-invalid ' : '',
-            $this->model->getFirstError($this->attribute)
+            $this->model->hasError($this->attribute) ? ' is-invalid ' : ''
         );
     }
+
 
     public function passwordField()
     {
