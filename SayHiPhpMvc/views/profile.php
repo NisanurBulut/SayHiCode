@@ -1,1 +1,1 @@
-Profile page
+<?php $this->title = 'Home/Profile' ?>
