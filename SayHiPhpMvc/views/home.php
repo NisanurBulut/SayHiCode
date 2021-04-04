@@ -1,0 +1,1 @@
+<?php $this->title = 'Home' ?>

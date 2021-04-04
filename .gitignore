@@ -27,3 +27,5 @@ yarn-error.log*
 */backend/node_modules/*/
 */vendor/*/
 */config.js
+*/.idea/*/
+SayHiPhpMvc/.env
