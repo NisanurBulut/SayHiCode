@@ -4,7 +4,7 @@
         <?php echo $form->field($model, 'firstname','text') ?>
     </div>
     <div class="form-group col-md-6">
-        <?php echo $form->field($model, 'lastName','text') ?>
+        <?php echo $form->field($model, 'lastname','text') ?>
     </div>
 </div>
 <?php echo $form->field($model,'email','text') ?>

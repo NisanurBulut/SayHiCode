@@ -34,7 +34,7 @@ class Router
             throw new NotFoundException();
         }
         if (is_string($callback)) {
-            return $this->renderView($callback);
+            return Application::$app->view->renderView($callback);
         }
         if (is_array($callback)) { // burada callbackteb vahsettiğim şey tam olarak index.php de yazdığım route tanımlamalarıdır.
             $controller = new $callback[0]();
@@ -46,35 +46,5 @@ class Router
             }
         }
         return call_user_func($callback, $this->request, $this->response);
-    }
-    public function renderView($view, $params = [])
-    {
-        $layoutContent = $this->layoutContent();
-        $viewContent = $this->renderOnlyView($view, $params);
-        return str_replace('{{ content }}', $viewContent, $layoutContent);
-    }
-    protected function renderOnlyView($view, $params)
-    {
-        foreach ($params as $key => $value) {
-            $$key = $value;
-        }
-        ob_start();
-        include_once Application::$ROOT_DIR . "/views/$view.php";
-        return ob_get_clean();
-    }
-    public function renderContent($viewContent)
-    {
-        $layoutContent = $this->layoutContent();
-        return str_replace('{{ content }}', $viewContent, $layoutContent);
-    }
-    protected function layoutContent()
-    {
-        $layout = Application::$app->layout;
-        if (Application::$app->controller) {
-            $layout = Application::$app->controller->layout;
-        }
-        ob_start();
-        include_once Application::$ROOT_DIR . "/views/layouts/$layout.php";
-        return ob_get_clean();
     }
 }

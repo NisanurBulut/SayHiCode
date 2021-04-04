@@ -46,15 +46,15 @@ class User extends UserModel
     }
     public function labels(): array
     {
-        return ['firstName'=>'First Name',
-                'lastName'=>'Last Name',
+        return ['firstname'=>'First Name',
+                'lastname'=>'Last Name',
                 'email'=>'Email Address',
                 'password'=>'Password',
                 'confirmPassword'=>'Confirm Password'];
     }
     public function attributes(): array
     {
-        return ['firstName', 'lastName', 'email', 'password', 'status'];
+        return ['firstname', 'lastname', 'email', 'password', 'status'];
     }
     public function getDisplayName():string {
         return $this->firstname.' '.$this->lastname;
