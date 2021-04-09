@@ -177,6 +177,17 @@ Semantic UI is used for frontend design in this application. Mysql is used for t
 - Email address is specific to the user.
 - The user can reset their password.
 - The user must register in the application to order.
+-
+## SAY Hİ PHP MVC
+
+Modern PHP is used in this work. This means no framework is used. PDO was used for database operations. Migration operations were carried out using filing structure and raw sql queries.
+The user's password is stored in the database in hash form. Bootstrap library is used as database, MYSQL design.In addition, a middleware mechanism has been developed for auth control. Users who are not logged in cannot access the homepage.
+* SOLID DRY and KISS software development principles are focused. OOP has been applied using abstraction and encapsulation structures.
+* The project is generally developed with the MVC design pattern.
+
+The project topic is very simple: Users sign up for the application and see the list of other members on the main page.
+
+![SayHiPhpMvc](https://github.com/NisanurBulut/SayHiCode/blob/master/SayHiPhpMvc/Trailers/Trailer_SayHiPhpMvc.gif)
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [FakeStoreAPI](https://fakestoreapi.herokuapp.com/)
   [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/) [HeroIcons](https://heroicons.com/)
