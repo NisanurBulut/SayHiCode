@@ -19,7 +19,7 @@ abstract class BaseField
         return sprintf('<div class="form-group">
         <label for="inputFor">%s</label>
                 %s
-        <small  class="text-danger %s"> %s </small>
+        <small  class="text-danger"> %s </small>
         </div>',
             $this->model->getLabel($this->attribute),
             $this->renderInput(),

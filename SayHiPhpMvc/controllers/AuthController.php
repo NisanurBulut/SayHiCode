@@ -13,7 +13,7 @@ class AuthController extends Controller {
 
     public function __construct()
     {
-       $this->registerMiddleware(new AuthMiddleware(['profile']));
+       $this->registerMiddleware(new AuthMiddleware(['home']));
     }
     public function login(Request $request, Response $response)
     {
@@ -23,7 +23,7 @@ class AuthController extends Controller {
         if($request->isPost()){
             $loginForm->loadData($request->getBody());
             if($loginForm->validate() && $loginForm->login()){
-                $response->redirect('/');
+                $response->redirect('/home');
                 return;
             }
         }
@@ -37,8 +37,8 @@ class AuthController extends Controller {
             $registerModel->loadData($request->getBody());
 
             if($registerModel->validate() && $registerModel->save()){
-                Application::$app->session->setFlash('success','Thanks for registering');
-                Application::$app->response->redirect('/');
+                Application::$app->session->setFlash('success','Thanks for registering. Please Login..');
+                Application::$app->response->redirect('/login');
             }
             return $this->render('auth/register',[
                 'model'=>$registerModel
@@ -50,6 +50,6 @@ class AuthController extends Controller {
     }
     public function logout(Request $request, Response $response){
         Application::$app->logout();
-        $response->redirect('/');
+        $response->redirect('/login');
     }
 }

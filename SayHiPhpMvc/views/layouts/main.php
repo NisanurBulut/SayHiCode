@@ -8,18 +8,8 @@
   <title><?php echo $this->title ?></title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
-
+<?php use app\core\Application; ?>
 <body>
-  <div class="container">
-    <?php
-
-    use app\core\Application;
-
-    if (Application::$app->session->getFlash('success')) : ?>
-      <div class="alert alert-success">
-        <?php echo Application::$app->session->getFlash('success'); ?></div>
-    <?php endif; ?>
-  </div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light mr-auto">
     <a class="navbar-brand" href="#">Say Hi PHP MVC</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="float:right;">
@@ -28,12 +18,6 @@
       </ul>
       <ul class="navbar-nav">
       <?php if(!Application::isGuest()): ?>
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/profile" tabindex="-1">profile</a>
-        </li>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
@@ -54,13 +38,15 @@
       </ul>
     </div>
   </nav>
-  <div class="container">
+  <div class="container" style="padding-top: 10%;">
+  <?php
+    if (Application::$app->session->getFlash('success')) : ?>
+      <div class="alert alert-success">
+        <?php echo Application::$app->session->getFlash('success'); ?></div>
+    <?php endif; ?>
     {{ content }}
   </div>
 </body>
-<!-- Optional JavaScript -->
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 

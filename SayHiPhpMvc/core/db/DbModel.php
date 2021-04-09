@@ -1,6 +1,10 @@
 <?php
 
-namespace app\core;
+namespace app\core\db;
+
+use PDO;
+use app\core\Model;
+use app\core\Application;
 
 abstract class DbModel extends Model
 {
@@ -22,22 +26,14 @@ abstract class DbModel extends Model
         }
         $statement->execute();
         return true;
-        // echo '<pre>';
-        // var_dump($statement, $params, $attributes);
-        // '</pre>';
-        // exit;
     }
     public function select()
     {
         $tableName = $this->tableName();
         $statement = self::prepare("SELECT * FROM $tableName");
         $statement->execute();
-        $result = $statement->fetchAll();
+        $result = $statement->fetchAll(PDO::FETCH_CLASS);
         return $result;
-        // echo '<pre>';
-        // var_dump($statement, $params, $attributes);
-        // '</pre>';
-        // exit;
     }
     public static function find($where, $tableName) { // [email=>nisanurrunasin@gmail.com, firstName=> Nisanur]
         $tableName = $tableName;
