@@ -50,7 +50,7 @@ class User extends UserModel
                 'lastname'=>'Last Name',
                 'email'=>'Email Address',
                 'password'=>'Password',
-                'confirmPassword'=>'Confirm Password'];
+                'passwordConfirm'=>'Confirm Password'];
     }
     public function attributes(): array
     {
