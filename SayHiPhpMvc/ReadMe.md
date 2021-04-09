@@ -10,3 +10,5 @@ The user's password is stored in the database in hash form. Bootstrap library is
 * The project is generally developed with the MVC design pattern.
 
 The project topic is very simple: Users sign up for the application and see the list of other members on the main page.
+
+![SayHiPhpMvc](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiPhpMvc.gif)
