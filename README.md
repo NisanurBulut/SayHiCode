@@ -178,7 +178,7 @@ Semantic UI is used for frontend design in this application. Mysql is used for t
 - The user can reset their password.
 - The user must register in the application to order.
 -
-## SAY Hİ PHP MVC
+## 6 SAY Hİ PHP MVC
 
 Modern PHP is used in this work. This means no framework is used. PDO was used for database operations. Migration operations were carried out using filing structure and raw sql queries.
 The user's password is stored in the database in hash form. Interface has been designed with Bootstrap library and MYSQL is used as database, a middleware mechanism has been developed for auth control. Users who are not logged in cannot access the homepage.
