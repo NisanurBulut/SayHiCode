@@ -170,7 +170,7 @@ Semantic UI is used for frontend design in this application. Mysql is used for t
 - The user can reset their password.
 - The user must register in the application to order.
 -
-### 8. SAYHİPHPMVC
+### 8. SayHiPhpMvc
 <hr>
 Modern PHP is used in this work. This means no framework is used. PDO was used for database operations. Migration operations were carried out using filing structure and raw sql queries.
 
