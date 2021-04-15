@@ -1,7 +1,7 @@
 ## Give a Star! :star:
 If you like or are using this project to learn or start your solution, please give it a star. Thanks!
 
-### 1 SayHiGithub
+### 1. SayHiGithub
 With this application, the use of react hooks and context api has been implemented. Hooks used: useState, useContext, useEffect
 ![SayHiGithub](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiCode.gif)
 
@@ -16,7 +16,7 @@ With this application, the use of react hooks and context api has been implement
   For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
 
 
-### 2 SayHiMERN
+### 2. SayHiMERN
 <hr>
 GraphQL api and MongoDb database are used in this application.User object performs booking and home event operations with GraphQl API.the user subscribes to the application and logs on. It receives token data at the login process. With this token information, the application can be online.
 * React-material is used in interface designs.
@@ -49,7 +49,7 @@ GraphQL api and MongoDb database are used in this application.User object perfor
 - npm install --save-dev nodemon
 - npm install --save dataloader
 
-### 3 SayHiMEAN
+### 3. SayHiMEAN
 <hr>
 In this study, practice of grahql, apollo and angular has been done.
 
@@ -62,7 +62,7 @@ In this study, practice of grahql, apollo and angular has been done.
 - npm i express express-graphql graphql mongoose body-parser cors
 
 
-### SayHiSemanticUi
+### 4. SayHiSemanticUi
 This work is a MERNG application. Users share book status.The database is MongoDb and the backend is GraphQL.The user interface has been developed with ReactJs and SemanticUI components.
 <hr>
 
@@ -117,7 +117,7 @@ This work is a MERNG application. Users share book status.The database is MongoD
 - npm install @apollo/react-hooks apollo-cache-inmemory apollo-link-http apollo-client
 - npm install --save dataloader
 
-### 4 SayHiReactQuery
+### 5. SayHiReactQuery
 <hr>
 This study demonstrates the use of the React-Jquery library.In addition, the use of react-material and component-style are shown.
 
@@ -135,7 +135,7 @@ This study demonstrates the use of the React-Jquery library.In addition, the use
 
 ![SayHiReactQuery](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiReactQuery.gif)
 
-### 5 SayHiLaravel
+### 6. SayHiLaravel
 <hr>
 With this study, a social media application was made using Laravel Framework at a simple level. Sqlite database has been used.Tailwind CSS is used in frontend design.
 
@@ -158,7 +158,7 @@ With this study, a social media application was made using Laravel Framework at 
 - php artisan serve
 - npm install tailwindcss
 - npm install
-### 6 SayHiPHP
+### 7. SayHiPHP
 <hr>
 Semantic UI is used for frontend design in this application. Mysql is used for the database. The application was coded in PHP programming language and Laravel FrameWork was used. Ajax calls were made with the JQuery library.
 
@@ -178,7 +178,7 @@ Semantic UI is used for frontend design in this application. Mysql is used for t
 - The user can reset their password.
 - The user must register in the application to order.
 -
-## SAY Hİ PHP MVC
+### 8. SayHiPHPMVC
 
 Modern PHP is used in this work. This means no framework is used. PDO was used for database operations. Migration operations were carried out using filing structure and raw sql queries.
 The user's password is stored in the database in hash form. Interface has been designed with Bootstrap library and MYSQL is used as database, a middleware mechanism has been developed for auth control. Users who are not logged in cannot access the homepage.
