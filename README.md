@@ -2,11 +2,11 @@
 If you like or are using this project to learn or start your solution, please give it a star. Thanks!
 
 ### 1. SayHiGithub
+<hr>
 With this application, the use of react hooks and context api has been implemented. Hooks used: useState, useContext, useEffect
 ![SayHiGithub](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiCode.gif)
 
 ## Gihthub API
-
 - [Root Endpoint](https://api.github.com)
 - [Get User](https://api.github.com/users/nisanurbulut)
 - [Repos](https://api.github.com/users/nisanurbulut/repos?per_page=100)
@@ -15,10 +15,11 @@ With this application, the use of react hooks and context api has been implement
 
   For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
 
-
 ### 2. SayHiMERN
 <hr>
 GraphQL api and MongoDb database are used in this application.User object performs booking and home event operations with GraphQl API.the user subscribes to the application and logs on. It receives token data at the login process. With this token information, the application can be online.
+
+![SayHiMERN](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SmartBook.gif)
 * React-material is used in interface designs.
 - If the user is not the owner of the event, he / she cannot see the detail information.
 - inserted react-material-spinner for waiting to response of api
@@ -28,8 +29,6 @@ GraphQL api and MongoDb database are used in this application.User object perfor
 - Each user can see their own booking list.
 - Each user can see their own event list.
 - The user can cancel the reservation.
-
-![SayHiMERN](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SmartBook.gif)
 
 ## SmartBook API
 
@@ -61,11 +60,11 @@ In this study, practice of grahql, apollo and angular has been done.
 ### Installation
 - npm i express express-graphql graphql mongoose body-parser cors
 
-
 ### 4. SayHiSemanticUi
-This work is a MERNG application. Users share book status.The database is MongoDb and the backend is GraphQL.The user interface has been developed with ReactJs and SemanticUI components.
 <hr>
+This work is a MERNG application. Users share book status.The database is MongoDb and the backend is GraphQL.The user interface has been developed with ReactJs and SemanticUI components.
 
+![SaySemanticUi](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiSemanticUi.gif)
 - Implemented apollo custom errors form form validation
 - Created files&folders structure
 - After login action user has token
@@ -79,9 +78,6 @@ This work is a MERNG application. Users share book status.The database is MongoD
 - Showed error messages
 - Used loading component for waiting processes
 - Implemented custom hooks
-
-![SaySemanticUi](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiSemanticUi.gif)
-
 ### Entities
 
 | BookPost              | Comment           | Like               | User              |RegisterInput             |
@@ -109,8 +105,6 @@ This work is a MERNG application. Users share book status.The database is MongoD
   * likeBookPost(postId: ID!): BookPost!
 - Subscription
   * newBookPost: BookPost!
-
-
 ### Installation
 - npm install apollo-server grahql mongoose
 - npm install bcryptjs jsonwebtoken
@@ -121,20 +115,17 @@ This work is a MERNG application. Users share book status.The database is MongoD
 <hr>
 This study demonstrates the use of the React-Jquery library.In addition, the use of react-material and component-style are shown.
 
+![SayHiReactQuery](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiReactQuery.gif)
 - The fakestoreapi API source lists fake product information.
 - The product can be added to the cart
 - The amount of product in the cart can be changed.
 - As the amount of product changes, the total cost is recalculated.
 - Product can be removed from the basket.
-
 ## Installation
 - npx create-react-app SayHiReactQuery --template typscript
 - npm i @material-ui/core @material-ui/icons
 - npm i react-query
 - npm i styled-components @types/styled-components
-
-![SayHiReactQuery](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiReactQuery.gif)
-
 ### 6. SayHiLaravel
 <hr>
 With this study, a social media application was made using Laravel Framework at a simple level. Sqlite database has been used.Tailwind CSS is used in frontend design.
@@ -178,16 +169,18 @@ Semantic UI is used for frontend design in this application. Mysql is used for t
 - The user can reset their password.
 - The user must register in the application to order.
 -
-## 8. SAYHİPHPMVC
-
+### 8. SAYHİPHPMVC
+<hr>
 Modern PHP is used in this work. This means no framework is used. PDO was used for database operations. Migration operations were carried out using filing structure and raw sql queries.
+
+![SayHiPhpMvc](https://github.com/NisanurBulut/SayHiCode/blob/master/SayHiPhpMvc/Trailers/Trailer_SayHiPhpMvc.gif)
 The user's password is stored in the database in hash form. Interface has been designed with Bootstrap library and MYSQL is used as database, a middleware mechanism has been developed for auth control. Users who are not logged in cannot access the homepage.
+
 * SOLID DRY and KISS software development principles are focused. OOP has been applied using abstraction and encapsulation structures.
 * The project is generally developed with the MVC design pattern.
 
 The project topic is very simple: Users sign up for the application and see the list of other members on the main page.
 
-![SayHiPhpMvc](https://github.com/NisanurBulut/SayHiCode/blob/master/SayHiPhpMvc/Trailers/Trailer_SayHiPhpMvc.gif)
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [FakeStoreAPI](https://fakestoreapi.herokuapp.com/)
   [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/) [HeroIcons](https://heroicons.com/)
