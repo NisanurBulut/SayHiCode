@@ -2,11 +2,11 @@
 If you like or are using this project to learn or start your solution, please give it a star. Thanks!
 
 ### 1. SayHiGithub
+<hr>
 With this application, the use of react hooks and context api has been implemented. Hooks used: useState, useContext, useEffect
 ![SayHiGithub](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiCode.gif)
 
 ## Gihthub API
-
 - [Root Endpoint](https://api.github.com)
 - [Get User](https://api.github.com/users/nisanurbulut)
 - [Repos](https://api.github.com/users/nisanurbulut/repos?per_page=100)
@@ -32,7 +32,6 @@ GraphQL api and MongoDb database are used in this application.User object perfor
 ![SayHiMERN](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SmartBook.gif)
 
 ## SmartBook API
-
 - [Root Endpoint](http://localhost:8000/smartBookingApi)
 - [Get Events](http://localhost:8000/smartBookingApi/events)
 - [Get Bookings](http://localhost:8000/smartBookingApi/bookings)
@@ -63,8 +62,8 @@ In this study, practice of grahql, apollo and angular has been done.
 
 
 ### 4. SayHiSemanticUi
-This work is a MERNG application. Users share book status.The database is MongoDb and the backend is GraphQL.The user interface has been developed with ReactJs and SemanticUI components.
 <hr>
+This work is a MERNG application. Users share book status.The database is MongoDb and the backend is GraphQL.The user interface has been developed with ReactJs and SemanticUI components.
 
 - Implemented apollo custom errors form form validation
 - Created files&folders structure
@@ -109,7 +108,6 @@ This work is a MERNG application. Users share book status.The database is MongoD
   * likeBookPost(postId: ID!): BookPost!
 - Subscription
   * newBookPost: BookPost!
-
 
 ### Installation
 - npm install apollo-server grahql mongoose
@@ -179,7 +177,7 @@ Semantic UI is used for frontend design in this application. Mysql is used for t
 - The user must register in the application to order.
 -
 ### 8. SayHiPHPMVC
-
+<hr>
 Modern PHP is used in this work. This means no framework is used. PDO was used for database operations. Migration operations were carried out using filing structure and raw sql queries.
 The user's password is stored in the database in hash form. Interface has been designed with Bootstrap library and MYSQL is used as database, a middleware mechanism has been developed for auth control. Users who are not logged in cannot access the homepage.
 * SOLID DRY and KISS software development principles are focused. OOP has been applied using abstraction and encapsulation structures.
