@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useQuery } from 'react-query'
 import logo from "./logo.svg";
 import {
   Wrapper,
@@ -11,18 +10,32 @@ import {
   SearchInput,
 } from "./components/styled/index";
 import cat from "./images/cat.png";
+import axios from "axios";
+import { Joke } from "./types/Joke";
 
-const BASE_URL="https://v2.jokeapi.dev/joke/Any";
-
+const BASE_URL = "https://v2.jokeapi.dev/joke/Any";
 function App() {
   const [search, setSearch] = useState("");
-  
+  const [error, setError] = useState(false);
+  const [jokes, setJokes] = useState<Joke[]>([]);
+
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
-  const getJokes = async(event:React.FormEvent<HTMLFormElement>)=>{
+  const getJokes = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const ENDPOINT = `${BASE_URL}?contains=${search}&amount=10`;
 
-  }
+    const { data } = await axios.get(ENDPOINT);
+    if (data.error) {
+      setError(true);
+      setJokes([]);
+    } else {
+      setError(false);
+      setJokes(data.jokes);
+    }
+    setSearch("");
+  };
   return (
     <div>
       <Wrapper>
@@ -39,6 +52,7 @@ function App() {
           />
           <Button type="submit">Search</Button>
         </FormSearch>
+        { /* Jokes */}
       </Wrapper>
     </div>
   );
