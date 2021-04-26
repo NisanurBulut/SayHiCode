@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { DefaultTheme } from "styled-components";
 
-interface SearchInputProps {
+interface SearchProps {
   theme: DefaultTheme;
 }
 
-const SearchInput = styled.input<SearchInputProps>`
+const Search = styled.input<SearchProps>`
   margin: 0px 15px 10px 0px;
   padding: 10px;
   width: 25rem;
@@ -14,4 +14,4 @@ const SearchInput = styled.input<SearchInputProps>`
   border: 1px solid ${({ theme }) => theme.colors.secondary};
 `;
 
-export default SearchInput;
+export default Search;

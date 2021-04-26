@@ -6,7 +6,7 @@ import {
   Image,
   FormSearch,
   Button,
-  SearchInput,
+  Search,
 } from "./components/styled/index";
 import JokeItem from './components/JokeItem';
 import cat from "./images/cat.png";
@@ -44,7 +44,7 @@ const App:React.FC=()=>{
           <Image src={cat} alt="Cat" />
         </Row>
         <FormSearch onSubmit={getJokes}>
-          <SearchInput
+          <Search
             type="text"
             placeholder="Search Joke"
             value={search}
