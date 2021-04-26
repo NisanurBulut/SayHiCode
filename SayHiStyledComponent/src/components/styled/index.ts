@@ -1,3 +1,3 @@
-import Wrapper from './Wrapper';
-
-export {Wrapper};
+import Wrapper from "./Wrapper";
+import Row from "./Row";
+export { Wrapper, Row };

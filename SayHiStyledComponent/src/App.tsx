@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import { Wrapper } from "./components/styled/index";
+import { Wrapper, Row } from "./components/styled/index";
 function App() {
   return (
     <div>
