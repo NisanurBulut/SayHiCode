@@ -1,11 +1,12 @@
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme } from "styled-components";
 
 const sayHiRepoTheme: DefaultTheme = {
-  borderRadius: '5px',
+  borderRadius: "5px",
 
   colors: {
-    main: 'cyan',
-    secondary: 'magenta',
+    main: "#3C12FA",
+    secondary: "#8A28DE",
+    white: "#FFF",
   },
 };
 
