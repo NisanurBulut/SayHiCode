@@ -184,11 +184,15 @@ The project topic is very simple: Users sign up for the application and see the 
 
 ### 9. SayHiStyledComponent
 <hr>
+<img align="left" width="100px" height="100px" src="https://github.com/NisanurBulut/SayHiCode/blob/dev-sayhistyledcomponent/SayHiStyledComponent/src/images/coloredcat.jpg"><p>It is a ReactJs application that uses a TypeScript template.Styled component structure is used in this study.It is an introductory level work to Styled component.Joke search was made using JOKE API. Jokes are listed according to the searched keyword.</p>
+<br/>
 
 ## Installation
-- npm install @types/styled-components
+- npm install @types/styled-components styled-components
+- npm install --save axios
+![SayHiSayHiStyledComponent](https://github.com/NisanurBulut/SayHiCode/blob/dev-sayhistyledcomponent/Trailers/Trailer_SayHiStyledComponent.gif)
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [FakeStoreAPI](https://fakestoreapi.herokuapp.com/)
   [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/) [HeroIcons](https://heroicons.com/)
-  [The Net Ninja- Laravel Tutorial](https://youtu.be/zckH4xalOns)
+  [The Net Ninja- Laravel Tutorial](https://youtu.be/zckH4xalOns) [Quicksand](https://fonts.google.com/specimen/Quicksand)[MyColorSpace](https://mycolor.space/) [JokeAPI](https://v2.jokeapi.dev/joke/Any)
