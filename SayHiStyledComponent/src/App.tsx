@@ -7,6 +7,7 @@ import {
   FormSearch,
   Button,
   Search,
+  Text,
 } from "./components/styled/index";
 import JokeItem from './components/JokeItem';
 import cat from "./images/cat.png";
@@ -52,7 +53,7 @@ const App:React.FC=()=>{
           />
           <Button type="submit">Search</Button>
         </FormSearch>
-        {error && <p>Sorry, no jokes found</p>}
+        {error && <Text>Sorry, no jokes found</Text>}
         {
           jokes.length>0 &&
           jokes.map((joke)=><JokeItem key={joke.id} joke={joke} />)

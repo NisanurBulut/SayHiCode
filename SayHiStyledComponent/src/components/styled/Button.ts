@@ -9,7 +9,7 @@ const Button = styled.button<ButtonProps>`
   padding: 10px;
   border-radius: 5px;
   border:none;
-  width:5rem;
+  width:8rem;
   background-color:${({theme})=>theme.colors.secondary};
   color:${({theme})=>theme.colors.white};
 `;
