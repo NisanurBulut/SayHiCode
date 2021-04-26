@@ -6,7 +6,7 @@ interface SearchInputProps {
 }
 
 const SearchInput = styled.input<SearchInputProps>`
-  margin: 10px 15px 10px 0px;
+  margin: 0px 15px 10px 0px;
   padding: 10px;
   width: 25rem;
   border-radius: 5px;
