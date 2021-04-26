@@ -184,7 +184,7 @@ The project topic is very simple: Users sign up for the application and see the 
 
 ### 9. SayHiStyledComponent
 <hr>
-<img align="left" width="100" height="100" src="https://github.com/NisanurBulut/SayHiCode/blob/dev-sayhistyledcomponent/SayHiStyledComponent/src/images/cat.png"><p>It is a ReactJs application that uses a TypeScript template.Styled component structure is used in this study.It is an introductory level work to Styled component.Joke search was made using JOKE API. Jokes are listed according to the searched keyword.</p>
+<img align="left" src="https://github.com/NisanurBulut/SayHiCode/blob/dev-sayhistyledcomponent/SayHiStyledComponent/src/images/coloredcat.png"><p>It is a ReactJs application that uses a TypeScript template.Styled component structure is used in this study.It is an introductory level work to Styled component.Joke search was made using JOKE API. Jokes are listed according to the searched keyword.</p>
 
 ![SayHiSayHiStyledComponent](https://github.com/NisanurBulut/SayHiCode/blob/master/SayHiStyledComponent/Trailers/Trailer_SayHiStyledComponent.gif)
 ## Installation
