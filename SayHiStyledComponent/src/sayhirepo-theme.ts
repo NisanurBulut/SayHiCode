@@ -5,7 +5,7 @@ const sayHiRepoTheme: DefaultTheme = {
 
   colors: {
     main: "#3C12FA",
-    secondary: "#8A28DE",
+    secondary: "#1a9ee0",
     white: "#FFF",
   },
 };

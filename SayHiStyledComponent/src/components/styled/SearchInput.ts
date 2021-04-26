@@ -1,16 +1,17 @@
 import styled from "styled-components";
 import { DefaultTheme } from "styled-components";
 
-interface SearchProps {
+interface SearchInputProps {
   theme: DefaultTheme;
 }
 
-const Search = styled.input<SearchProps>`
+const SearchInput = styled.input<SearchInputProps>`
   margin: 10px 15px 10px 0px;
   padding: 10px;
-  width: 15rem;
+  width: 25rem;
   border-radius: 5px;
+  outline:none;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
 `;
 
-export default Search;
+export default SearchInput;

@@ -5,8 +5,9 @@ import {
   Row,
   Header,
   Image,
-  Form,
-  Search,
+  FormSearch,
+  Button,
+  SearchInput,
 } from "./components/styled/index";
 import cat from "./images/cat.png";
 function App() {
@@ -14,6 +15,9 @@ function App() {
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
+  const getJokes = async(event:React.FormEvent<HTMLFormElement>)=>{
+
+  }
   return (
     <div>
       <Wrapper>
@@ -21,15 +25,15 @@ function App() {
           <Header>Say Hi Styled Component</Header>
           <Image src={cat} alt="Cat" />
         </Row>
-        <Form onSubmit={}>
-          <Search
+        <FormSearch onSubmit={getJokes}>
+          <SearchInput
             type="text"
             placeholder="Search Joke"
             value={search}
             onChange={handleSearchChange}
           />
-         
-        </Form>
+          <Button type="submit">Search</Button>
+        </FormSearch>
       </Wrapper>
     </div>
   );

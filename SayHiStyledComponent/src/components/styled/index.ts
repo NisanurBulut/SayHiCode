@@ -3,6 +3,7 @@ import Row from "./Row";
 import Header from "./Header";
 import Image from "./Image";
 import FormSearch from "./FormSearch";
-import Search from "./FormSearch";
+import SearchInput from "./SearchInput";
+import Button from "./Button";
 
-export { Wrapper, Row, Header,Image,FormSearch,Search };
+export { Wrapper, Row, Header, Image, FormSearch, SearchInput, Button };
