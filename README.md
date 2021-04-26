@@ -184,9 +184,9 @@ The project topic is very simple: Users sign up for the application and see the 
 
 ### 9. SayHiStyledComponent
 <hr>
-<img align="left" src="https://github.com/NisanurBulut/SayHiCode/blob/dev-sayhistyledcomponent/SayHiStyledComponent/src/images/coloredcat.jpg"><p>It is a ReactJs application that uses a TypeScript template.Styled component structure is used in this study.It is an introductory level work to Styled component.Joke search was made using JOKE API. Jokes are listed according to the searched keyword.</p>
+<img align="left" width="200px" height="200px" src="https://github.com/NisanurBulut/SayHiCode/blob/dev-sayhistyledcomponent/SayHiStyledComponent/src/images/coloredcat.jpg"><p>It is a ReactJs application that uses a TypeScript template.Styled component structure is used in this study.It is an introductory level work to Styled component.Joke search was made using JOKE API. Jokes are listed according to the searched keyword.</p>
 
-![SayHiSayHiStyledComponent](https://github.com/NisanurBulut/SayHiCode/blob/master/SayHiStyledComponent/Trailers/Trailer_SayHiStyledComponent.gif)
+![SayHiSayHiStyledComponent](https://github.com/NisanurBulut/SayHiCode/blob/dev-sayhistyledcomponent/Trailers/Trailer_SayHiStyledComponent.gif)
 ## Installation
 - npm install @types/styled-components styled-components
 - npm install react-query
