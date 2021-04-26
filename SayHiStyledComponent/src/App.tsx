@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import {
   Wrapper,
   Row,
@@ -14,7 +13,7 @@ import axios from "axios";
 import { Joke } from "./types/Joke";
 
 const BASE_URL = "https://v2.jokeapi.dev/joke/Any";
-function App() {
+const App:React.FC=()=>{
   const [search, setSearch] = useState("");
   const [error, setError] = useState(false);
   const [jokes, setJokes] = useState<Joke[]>([]);
@@ -22,10 +21,10 @@ function App() {
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
+
   const getJokes = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const ENDPOINT = `${BASE_URL}?contains=${search}&amount=10`;
-
     const { data } = await axios.get(ENDPOINT);
     if (data.error) {
       setError(true);
