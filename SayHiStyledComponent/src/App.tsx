@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
-import { Wrapper, Row, Header, Image } from "./components/styled/index";
+import {
+  Wrapper,
+  Row,
+  Header,
+  Image,
+  Form,
+  Search,
+} from "./components/styled/index";
 import cat from "./images/cat.png";
 function App() {
+  const [search, setSearch] = useState("");
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
+  };
   return (
     <div>
       <Wrapper>
@@ -10,7 +21,15 @@ function App() {
           <Header>Say Hi Styled Component</Header>
           <Image src={cat} alt="Cat" />
         </Row>
-      <h1>App</h1>
+        <Form onSubmit={}>
+          <Search
+            type="text"
+            placeholder="Search Joke"
+            value={search}
+            onChange={handleSearchChange}
+          />
+         
+        </Form>
       </Wrapper>
     </div>
   );
