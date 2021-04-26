@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { DefaultTheme } from "styled-components";
 
-const Wrapper = styled.div`
+interface WrapperProps {
+        theme:DefaultTheme
+}
+const Wrapper = styled.div<WrapperProps>`
         display: flex;
         flex-direction: column;
         align-items: center;
