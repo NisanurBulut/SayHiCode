@@ -8,6 +8,7 @@ import {
   Button,
   SearchInput,
 } from "./components/styled/index";
+import JokeItem from './components/JokeItem';
 import cat from "./images/cat.png";
 import axios from "axios";
 import { Joke } from "./types/Joke";
@@ -51,7 +52,11 @@ const App:React.FC=()=>{
           />
           <Button type="submit">Search</Button>
         </FormSearch>
-        { /* Jokes */}
+        {error && <p>Sorry, no jokes found</p>}
+        {
+          jokes.length>0 &&
+          jokes.map((joke)=><JokeItem key={joke.id} joke={joke} />)
+        }
       </Wrapper>
     </div>
   );
