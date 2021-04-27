@@ -4,8 +4,8 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
+import LanguageIcon from '@material-ui/icons/Language';
 import { CountryType } from "../types";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -51,6 +51,7 @@ const CardItem: React.FC<CountryItemProps> = ({ countryItem }) => {
           </Typography>
         </CardContent>
         <div className={classes.controls}>
+          <LanguageIcon />
         {countryItem.languages
           .map((t, index) => 
             <React.Fragment key={index}>
