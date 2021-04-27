@@ -14,8 +14,13 @@ import cat from "./images/cat.png";
 import axios from "axios";
 import { Joke } from "./types/Joke";
 
-const BASE_URL = "https://v2.jokeapi.dev/joke/Any";
+
+require('dotenv').config()
+
 const App:React.FC=()=>{
+
+  
+
   const [search, setSearch] = useState("");
   const [error, setError] = useState(false);
   const [jokes, setJokes] = useState<Joke[]>([]);
@@ -26,7 +31,7 @@ const App:React.FC=()=>{
 
   const getJokes = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const ENDPOINT = `${BASE_URL}?contains=${search}&amount=10`;
+    const ENDPOINT = `${process.env.REACT_APP_BASE_URL}?contains=${search}&amount=10`;
     const { data } = await axios.get(ENDPOINT);
     if (data.error) {
       setError(true);
