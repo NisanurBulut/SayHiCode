@@ -34,8 +34,8 @@ function CountryList() {
       <Grid container spacing={4}>
         {data?.data.map((item) => {
           return (
-            <Grid item md={6}>
-              <CardItem countryItem={item} />
+            <Grid item md={4}>
+              <CardItem key={item.name} countryItem={item} />
             </Grid>
           );
         })}

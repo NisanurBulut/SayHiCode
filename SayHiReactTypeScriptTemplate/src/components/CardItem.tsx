@@ -3,11 +3,7 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
-import PlayArrowIcon from "@material-ui/icons/PlayArrow";
-import SkipNextIcon from "@material-ui/icons/SkipNext";
 import { CountryType } from "../types";
 
 const useStyles = makeStyles((theme) => ({
@@ -23,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     flex: "1 0 auto",
   },
   cover: {
-    width:"300px", 
+    width:200, 
     alignItems:"end"
   },
   controls: {
@@ -55,23 +51,12 @@ const CardItem: React.FC<CountryItemProps> = ({ countryItem }) => {
           </Typography>
         </CardContent>
         <div className={classes.controls}>
-          <IconButton aria-label="previous">
-            {theme.direction === "rtl" ? (
-              <SkipNextIcon />
-            ) : (
-              <SkipPreviousIcon />
-            )}
-          </IconButton>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon className={classes.playIcon} />
-          </IconButton>
-          <IconButton aria-label="next">
-            {theme.direction === "rtl" ? (
-              <SkipPreviousIcon />
-            ) : (
-              <SkipNextIcon />
-            )}
-          </IconButton>
+        {countryItem.languages
+          .map((t, index) => 
+            <React.Fragment key={index}>
+              <span> {t.name}</span> &nbsp;
+            </React.Fragment>
+          )}
         </div>
       </div>
       <CardMedia
