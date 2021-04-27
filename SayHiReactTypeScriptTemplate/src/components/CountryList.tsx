@@ -5,10 +5,7 @@ import { CountryType } from "../types";
 import Grid from "@material-ui/core/Grid";
 import { CountryItem, Loading } from "../components";
 import SearchTwoTone from "@material-ui/icons/SearchTwoTone";
-import {
-  IconButton,
-  InputBase
-} from "@material-ui/core";
+import { IconButton, InputBase } from "@material-ui/core";
 import { Paper, makeStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,10 +28,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 function CountryList() {
   const classes = useStyles();
-  const [searchKey, setSearchKey] = useState("");
   const [loading, setLoading] = useState<boolean>(true);
   const [countries, setCountries] = useState<CountryType[]>([]);
 
@@ -43,30 +38,40 @@ function CountryList() {
       "https://restcountries.eu/rest/v2/all"
     );
     setCountries(countries?.data);
+
     setLoading(false);
     return countries;
   };
-
-   const { error } = useQuery(
-    "countries",
-    getCountries
-  );
+  const searchCountry = async (country: string) => {
+    if (country.length === 0){
+      getCountries();
+    }
+    const countries = await axios.get<CountryType[]>(
+      `https://restcountries.eu/rest/v2/name/${country}`
+    );
+    setCountries(countries?.data);
+    setLoading(false);
+    return countries;
+  };
+  const { error } = useQuery("countries", getCountries);
 
   return (
     <div className={classes.root}>
-        <Paper className={classes.searchPaper}>
+      <Paper className={classes.searchPaper}>
         <InputBase
-          placeholder="Search countries"
+          placeholder="Search country"
           className={classes.searchInput}
-          value={searchKey}
-          onChange={(e) => setSearchKey(e.target.value)}
+          onChange={(e) => {
+            setLoading(true);
+            searchCountry(e.target.value);
+          }}
         />
         <IconButton>
           <SearchTwoTone />
         </IconButton>
       </Paper>
-        <Loading isLoading={loading}>
-      <Grid container spacing={4}>
+      <Loading isLoading={loading}>
+        <Grid container spacing={4}>
           {countries.map((item) => {
             return (
               <Grid key={item.name} item md={4}>
@@ -74,8 +79,8 @@ function CountryList() {
               </Grid>
             );
           })}
-      </Grid>
-        </Loading>
+        </Grid>
+      </Loading>
     </div>
   );
 }

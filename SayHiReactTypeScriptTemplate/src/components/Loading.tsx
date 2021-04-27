@@ -19,6 +19,7 @@ interface ILoadingProps {
 const Loading: FunctionComponent<ILoadingProps> = (props) => {
   const classes = useStyles();
   const { isLoading } = props;
+  console.log(isLoading, new Date());
   if (isLoading) {
     return (
       <div className={classes.root}>
