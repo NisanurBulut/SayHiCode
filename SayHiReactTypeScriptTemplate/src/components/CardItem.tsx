@@ -17,12 +17,13 @@ const useStyles = makeStyles((theme) => ({
   details: {
     display: "flex",
     flexDirection: "column",
+    width:"50%"
   },
   content: {
     flex: "1 0 auto",
   },
   cover: {
-    width:"100%", 
+    width:"300px", 
     alignItems:"end"
   },
   controls: {

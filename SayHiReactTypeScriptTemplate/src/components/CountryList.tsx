@@ -31,10 +31,10 @@ function CountryList() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid container spacing={4}>
         {data?.data.map((item) => {
           return (
-            <Grid item md={3}>
+            <Grid item md={6}>
               <CardItem countryItem={item} />
             </Grid>
           );
