@@ -200,6 +200,7 @@ The project topic is very simple: Users sign up for the application and see the 
 ## Installation
 - npm install react-query
 - npm install axios
+- npm install @material-ui/core
 ![SayHiSayHiStyledComponent](https://github.com/NisanurBulut/SayHiCode/blob/dev-sayhistyledcomponent/Trailers/Trailer_SayHiStyledComponent.gif)
 
 ## Helpfull Websites
