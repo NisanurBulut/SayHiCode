@@ -36,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
 interface CountryItemProps {
     countryItem: CountryType;
 }
-const CardItem: React.FC<CountryItemProps> = ({ countryItem }) => {
+const CountryItem: React.FC<CountryItemProps> = ({ countryItem }) => {
   const classes = useStyles();
-  const theme = useTheme();
+
   return (
     <Card className={classes.root}>
       <div className={classes.details}>
@@ -70,4 +70,4 @@ const CardItem: React.FC<CountryItemProps> = ({ countryItem }) => {
   );
 };
 
-export default CardItem;
+export default CountryItem;

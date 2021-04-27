@@ -1,6 +1,6 @@
 import React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query';
-import CountryList from './components/CountryList';
+import {CountryList} from './components';
 import Container from '@material-ui/core/Container';
 
 function App() {
