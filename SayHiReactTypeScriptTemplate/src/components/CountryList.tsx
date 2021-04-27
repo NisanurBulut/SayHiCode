@@ -11,7 +11,15 @@ const getCountries = async () => {
 function CountryList() {
   const { status, data, error, isFetching } = useQuery('countries',getCountries);
   console.log(status, data, error, isFetching);
-  return <div></div>;
+  return (
+    <ul>
+   {
+    data?.data.map((item)=>{
+      return <li>{item.capital}</li>
+    })
+   } 
+    </ul>
+  );
 }
 
 export default CountryList;
