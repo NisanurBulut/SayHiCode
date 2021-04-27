@@ -5,6 +5,7 @@ import { CountryType } from "../types";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import CardItem from "./CardItem";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -33,8 +34,8 @@ function CountryList() {
       <Grid container spacing={3}>
         {data?.data.map((item) => {
           return (
-            <Grid item xs={4}>
-              <Paper className={classes.paper}>{item.capital}</Paper>
+            <Grid item md={3}>
+              <CardItem countryItem={item} />
             </Grid>
           );
         })}

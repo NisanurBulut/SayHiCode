@@ -7,7 +7,7 @@ function App() {
     const queryClient = new QueryClient();
     return (
         <QueryClientProvider client={queryClient}>
-           <Container maxWidth="md">
+           <Container maxWidth="lg">
            <CountryList />
            </Container>
         </QueryClientProvider>
