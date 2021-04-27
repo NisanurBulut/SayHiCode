@@ -1,3 +1,4 @@
 import CountryItem from "./CountryItem";
 import CountryList from "./CountryList";
-export { CountryItem, CountryList };
+import Loading from "./Loading";
+export { CountryItem, CountryList, Loading };

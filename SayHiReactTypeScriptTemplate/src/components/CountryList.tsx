@@ -3,9 +3,9 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { CountryType } from "../types";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import CountryItem from "./CountryItem";
+import { CountryItem, Loading } from "../components";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -24,22 +24,24 @@ const getCountries = async () => {
 };
 function CountryList() {
   const classes = useStyles();
-  const { status, data, error, isFetching } = useQuery(
+  const { status, data, error, isLoading } = useQuery(
     "countries",
     getCountries
   );
-
+  console.log(isLoading);
   return (
     <div className={classes.root}>
-      <Grid container spacing={4}>
-        {data?.data.map((item) => {
-          return (
-            <Grid item md={4}>
-              <CountryItem key={item.name} countryItem={item} />
-            </Grid>
-          );
-        })}
-      </Grid>
+        <Grid container spacing={4}>
+        <Loading isLoading={isLoading}>
+          {data?.data.map((item) => {
+            return (
+              <Grid key={item.name} item md={4}>
+                <CountryItem countryItem={item} />
+              </Grid>
+            );
+          })}
+      </Loading>
+        </Grid>
     </div>
   );
 }
