@@ -2,23 +2,44 @@ import React from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { CountryType } from "../types";
-
-
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+}));
 const getCountries = async () => {
-    const countries = await axios.get<CountryType[]>("https://restcountries.eu/rest/v2/all");
-    return countries;
-  };
+  const countries = await axios.get<CountryType[]>(
+    "https://restcountries.eu/rest/v2/all"
+  );
+  return countries;
+};
 function CountryList() {
-  const { status, data, error, isFetching } = useQuery('countries',getCountries);
-  console.log(status, data, error, isFetching);
+  const classes = useStyles();
+  const { status, data, error, isFetching } = useQuery(
+    "countries",
+    getCountries
+  );
+
   return (
-    <ul>
-   {
-    data?.data.map((item)=>{
-      return <li>{item.capital}</li>
-    })
-   } 
-    </ul>
+    <div className={classes.root}>
+      <Grid container spacing={3}>
+        {data?.data.map((item) => {
+          return (
+            <Grid item xs={4}>
+              <Paper className={classes.paper}>{item.capital}</Paper>
+            </Grid>
+          );
+        })}
+      </Grid>
+    </div>
   );
 }
 
