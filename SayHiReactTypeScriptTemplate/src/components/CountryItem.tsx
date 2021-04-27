@@ -7,10 +7,10 @@ import LocationOnTwoToneIcon from "@material-ui/icons/LocationOnTwoTone";
 import Typography from "@material-ui/core/Typography";
 import MonetizationOnTwoToneIcon from "@material-ui/icons/MonetizationOnTwoTone";
 import LocationCityTwoToneIcon from "@material-ui/icons/LocationCityTwoTone";
-import List from "@material-ui/core/List";
+
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListItem, { ListItemProps } from "@material-ui/core/ListItem";
+import ListItem from "@material-ui/core/ListItem";
 import MapTwoToneIcon from "@material-ui/icons/MapTwoTone";
 import PeopleTwoToneIcon from "@material-ui/icons/PeopleTwoTone";
 import PublicTwoToneIcon from "@material-ui/icons/PublicTwoTone";
@@ -75,6 +75,12 @@ const CountryItem: React.FC<CountryItemProps> = ({ countryItem }) => {
               </ListItem>
             </Grid>
             <Grid item xs={6} md={6}>
+            <ListItem>
+                <ListItemIcon>
+                  <PublicTwoToneIcon />
+                </ListItemIcon>
+                <ListItemText primary={countryItem.nativeName} />
+              </ListItem>
               <ListItem>
                 <ListItemIcon>
                   <LocationCityTwoToneIcon />
