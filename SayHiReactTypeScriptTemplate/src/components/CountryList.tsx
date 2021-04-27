@@ -30,23 +30,28 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
 }));
-const getCountries = async () => {
-  const countries = await axios.get<CountryType[]>(
-    "https://restcountries.eu/rest/v2/all"
-  );
-  return countries;
-};
+
 
 function CountryList() {
   const classes = useStyles();
   const [searchKey, setSearchKey] = useState("");
-  const { status, data, error, isLoading } = useQuery(
+  const [loading, setLoading] = useState<boolean>(true);
+  const [countries, setCountries] = useState<CountryType[]>([]);
+
+  const getCountries = async () => {
+    const countries = await axios.get<CountryType[]>(
+      "https://restcountries.eu/rest/v2/all"
+    );
+    setCountries(countries?.data);
+    setLoading(false);
+    return countries;
+  };
+
+   const { error } = useQuery(
     "countries",
     getCountries
   );
-  useEffect(() => {
-    
-  }, []);
+
   return (
     <div className={classes.root}>
         <Paper className={classes.searchPaper}>
@@ -60,17 +65,17 @@ function CountryList() {
           <SearchTwoTone />
         </IconButton>
       </Paper>
+        <Loading isLoading={loading}>
       <Grid container spacing={4}>
-        <Loading isLoading={isLoading}>
-          {data?.data.map((item) => {
+          {countries.map((item) => {
             return (
               <Grid key={item.name} item md={4}>
                 <CountryItem countryItem={item} />
               </Grid>
             );
           })}
-        </Loading>
       </Grid>
+        </Loading>
     </div>
   );
 }
