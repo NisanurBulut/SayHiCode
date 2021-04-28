@@ -202,7 +202,7 @@ The project topic is very simple: Users sign up for the application and see the 
 - npm install axios
 - npm install @material-ui/core
 
-[SayHiReactTypeScriptTemplate](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiStyledComponent.gif")
+[SayHiReactTypeScriptTemplate](https://github.com/NisanurBulut/SayHiCode/blob/SayHiReactTypeScriptTemplate/Trailers/Trailer_SayHiReactTypeScriptTemplate.gif")
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [json2ts](http://json2ts.com/) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/) [HeroIcons](https://heroicons.com/)
