@@ -194,8 +194,9 @@ The project topic is very simple: Users sign up for the application and see the 
 
 ### 10. SayHiReactTypeScriptTemplate
 <hr>
-<img align="left" width="100px" height="100px" src=""><p></p>
-<br/>
+<img align="left" width="100px" height="100px" src="https://raw.githubusercontent.com/NisanurBulut/SayHiCode/SayHiReactTypeScriptTemplate/SayHiReactTypeScriptTemplate/public/logo.png"><p>This work is a ReactJs application written with the TypeScript Template structure. Countries are listed using the RestCountries API. Searches can be made between countries. ReactQuery and Axios libraries are used for http requests. Interface design is made using MaterialUI components.</p>
+
+[SayHiSayHiStyledComponent](https://github.com/NisanurBulut/SayHiCode/blob/SayHiReactTypeScriptTemplate/Trailers/Trailer_SayHiReactTypeScriptTemplate.gif)
 
 ## Installation
 - npm install react-query
