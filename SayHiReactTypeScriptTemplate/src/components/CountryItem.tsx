@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -7,7 +7,7 @@ import LocationOnTwoToneIcon from "@material-ui/icons/LocationOnTwoTone";
 import Typography from "@material-ui/core/Typography";
 import MonetizationOnTwoToneIcon from "@material-ui/icons/MonetizationOnTwoTone";
 import LocationCityTwoToneIcon from "@material-ui/icons/LocationCityTwoTone";
-
+import {purple, green, deepOrange} from '@material-ui/core/colors';
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
@@ -16,6 +16,7 @@ import PeopleTwoToneIcon from "@material-ui/icons/PeopleTwoTone";
 import PublicTwoToneIcon from "@material-ui/icons/PublicTwoTone";
 import { CountryType } from "../types";
 import Grid from "@material-ui/core/Grid";
+import { createMuiTheme } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -36,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 0,
   },
 }));
+
+
+
 interface CountryItemProps {
   countryItem: CountryType;
 }
@@ -57,19 +61,19 @@ const CountryItem: React.FC<CountryItemProps> = ({ countryItem }) => {
             <Grid item xs={6} md={6}>
               <ListItem>
                 <ListItemIcon>
-                  <LocationOnTwoToneIcon />
+                  <LocationOnTwoToneIcon fontSize="large" color="error"/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.region} />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
-                  <MapTwoToneIcon />
+                  <MapTwoToneIcon fontSize="large" style={{ color: purple[800] }}/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.subregion} />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
-                  <MonetizationOnTwoToneIcon />
+                  <MonetizationOnTwoToneIcon fontSize="large" style={{ color: green[800] }}/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.currencies[0].code} />
               </ListItem>
@@ -77,19 +81,19 @@ const CountryItem: React.FC<CountryItemProps> = ({ countryItem }) => {
             <Grid item xs={6} md={6}>
             <ListItem>
                 <ListItemIcon>
-                  <PublicTwoToneIcon />
+                  <PublicTwoToneIcon fontSize="large"  color="primary"/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.nativeName} />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
-                  <LocationCityTwoToneIcon />
+                  <LocationCityTwoToneIcon color="secondary" fontSize="large"/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.capital} />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
-                  <PeopleTwoToneIcon />
+                  <PeopleTwoToneIcon fontSize="large" style={{ color: deepOrange[500] }}/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.population} />
               </ListItem>
