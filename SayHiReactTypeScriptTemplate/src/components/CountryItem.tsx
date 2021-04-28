@@ -16,17 +16,10 @@ import PeopleTwoToneIcon from "@material-ui/icons/PeopleTwoTone";
 import PublicTwoToneIcon from "@material-ui/icons/PublicTwoTone";
 import { CountryType } from "../types";
 import Grid from "@material-ui/core/Grid";
-import { createMuiTheme } from '@material-ui/core/styles';
+import Tooltip from '@material-ui/core/Tooltip';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    "& ul": {
-      "list-style": "none",
-    },
-    "& li": {
-      display: "flex",
-      "margin-bottom": "0.5em",
-    },
   },
   media: {
     height: "200px",
@@ -37,8 +30,6 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 0,
   },
 }));
-
-
 
 interface CountryItemProps {
   countryItem: CountryType;
@@ -59,44 +50,57 @@ const CountryItem: React.FC<CountryItemProps> = ({ countryItem }) => {
         <div className="content">
           <Grid container spacing={1}>
             <Grid item xs={6} md={6}>
+            <Tooltip placement="top-start" title="Region">
               <ListItem>
                 <ListItemIcon>
                   <LocationOnTwoToneIcon fontSize="large" color="error"/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.region} />
               </ListItem>
+              </Tooltip>
+              <Tooltip placement="top-start" title="Subregion">
               <ListItem>
                 <ListItemIcon>
                   <MapTwoToneIcon fontSize="large" style={{ color: purple[800] }}/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.subregion} />
               </ListItem>
+              </Tooltip>
+              <Tooltip placement="top-start" title="Currency Code" >
               <ListItem>
                 <ListItemIcon>
                   <MonetizationOnTwoToneIcon fontSize="large" style={{ color: green[800] }}/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.currencies[0].code} />
               </ListItem>
+              </Tooltip>
+           
             </Grid>
             <Grid item xs={6} md={6}>
+            <Tooltip placement="top-start" title="NativeName">
             <ListItem>
                 <ListItemIcon>
                   <PublicTwoToneIcon fontSize="large"  color="primary"/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.nativeName} />
               </ListItem>
+              </Tooltip>
+              <Tooltip placement="top-start" title="Capital">
               <ListItem>
                 <ListItemIcon>
                   <LocationCityTwoToneIcon color="secondary" fontSize="large"/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.capital} />
               </ListItem>
+              </Tooltip>
+              <Tooltip placement="top-start" title="Population">
               <ListItem>
                 <ListItemIcon>
                   <PeopleTwoToneIcon fontSize="large" style={{ color: deepOrange[500] }}/>
                 </ListItemIcon>
                 <ListItemText primary={countryItem.population} />
               </ListItem>
+              </Tooltip>
             </Grid>
           </Grid>
         </div>
