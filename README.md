@@ -196,13 +196,11 @@ The project topic is very simple: Users sign up for the application and see the 
 <hr>
 <img align="left" width="100px" height="100px" src="https://raw.githubusercontent.com/NisanurBulut/SayHiCode/SayHiReactTypeScriptTemplate/SayHiReactTypeScriptTemplate/public/logo.png"><p>This work is a ReactJs application written with the TypeScript Template structure. Countries are listed using the RestCountries API. Searches can be made between countries. ReactQuery and Axios libraries are used for http requests. Interface design is made using MaterialUI components.</p>
 
-[SayHiSayHiStyledComponent](https://github.com/NisanurBulut/SayHiCode/blob/SayHiReactTypeScriptTemplate/Trailers/Trailer_SayHiReactTypeScriptTemplate.gif)
-
 ## Installation
 - npm install react-query
 - npm install axios
 - npm install @material-ui/core
-![SayHiSayHiStyledComponent](https://github.com/NisanurBulut/SayHiCode/blob/dev-sayhistyledcomponent/Trailers/Trailer_SayHiStyledComponent.gif)
+[SayHiReactTypeScriptTemplate](https://github.com/NisanurBulut/SayHiCode/blob/SayHiReactTypeScriptTemplate/Trailers/Trailer_SayHiReactTypeScriptTemplate.gif)
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [json2ts](http://json2ts.com/) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/) [HeroIcons](https://heroicons.com/)
