@@ -32,28 +32,29 @@ function CountryList() {
   const classes = useStyles();
   const [loading, setLoading] = useState<boolean>(true);
   const [countries, setCountries] = useState<CountryType[]>([]);
+  const [error, setError] = useState<string>("");
+  const [searchKey, setSearchKey] = useState<string>("");
 
   const getCountries = async () => {
-    const countries = await axios.get<CountryType[]>(
-      "https://restcountries.eu/rest/v2/all"
-    );
-    setCountries(countries?.data);
-
-    setLoading(false);
-    return countries;
-  };
-  const searchCountry = async (country: string) => {
-    if (country.length === 0){
-      getCountries();
+    setLoading(true);
+    let url="https://restcountries.eu/rest/v2/all";
+    if(searchKey.length>0){
+      url=`https://restcountries.eu/rest/v2/name/${searchKey}`;
     }
     const countries = await axios.get<CountryType[]>(
-      `https://restcountries.eu/rest/v2/name/${country}`
-    );
-    setCountries(countries?.data);
-    setLoading(false);
+      url
+    ).then((result)=>{
+      setCountries(result.data);
+    }).catch((err)=>{
+      setError(err);
+      setCountries([]);
+    }).finally(()=>setLoading(false));
     return countries;
   };
-  const { error } = useQuery("countries", getCountries);
+
+  useEffect(()=>{
+    getCountries();
+  },[searchKey])
 
   return (
     <div className={classes.root}>
@@ -62,8 +63,7 @@ function CountryList() {
           placeholder="Search country"
           className={classes.searchInput}
           onChange={(e) => {
-            setLoading(true);
-            searchCountry(e.target.value);
+            setSearchKey(e.target.value);
           }}
         />
         <IconButton>
