@@ -197,12 +197,12 @@ The project topic is very simple: Users sign up for the application and see the 
 <img align="left" width="100px" height="100px" src="https://raw.githubusercontent.com/NisanurBulut/SayHiCode/SayHiReactTypeScriptTemplate/SayHiReactTypeScriptTemplate/public/logo.png"><p>This work is a ReactJs application written with the TypeScript Template structure. Countries are listed using the RestCountriesAPI. Searches can be made between countries. ReactQuery and Axios libraries are used for http requests. Interface design is made using MaterialUI components.</p>
 <br/>
 
-## Installation
-- npm install react-query
-- npm install axios
-- npm install @material-ui/core
+### 11. SayHiXAML
+<hr>
+<img align="left" width="100px" height="100px" src="https://github.com/NisanurBulut/SayHiCode/blob/master/SayHiXAML/images/logo.png"><p>In this study, an interface was designed using the XAML language. The main purpose of the application is to demonstrate the use of the strategy design pattern. Each student has a department. These are: numerical, verbal and equilibrium. In the exams, students order courses according to their departments. These courses are in Turkish, mathematics, social and science. The strategy design pattern prepares a priority order for the students according to their departments.</p>
+<br/>
 
-![SayHiReactTypeScriptTemplate](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiReactTypeScriptTemplate.gif)
+![SayHiXAML](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiXAML.gif)
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [json2ts](http://json2ts.com/) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/) [HeroIcons](https://heroicons.com/)
