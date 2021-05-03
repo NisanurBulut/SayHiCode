@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
         Background="#542e71"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid MouseDown="Grid_MouseDown">
         <Grid.RowDefinitions>
             <RowDefinition Height="75"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -18,7 +18,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid Grid.ColumnSpan="2" >
+        <Grid Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition>
                 </ColumnDefinition>
