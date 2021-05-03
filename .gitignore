@@ -31,3 +31,6 @@ yarn-error.log*
 SayHiPhpMvc/.env
 */node_modules/*/
 SayHiMERN/frontend/node_modules/*/
+SayHiXAML/.vs/*/
+SayHiXAML/bin/*/
+
