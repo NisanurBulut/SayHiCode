@@ -8,15 +8,12 @@ namespace SayHiXAML.core
     public enum EnumDepartment
     {
         [Description("Türkçe")]
-        TURKCE=0,
+        VERBAL=0,
 
-        [Description("Matematik")]
-        MATEMATIK = 1,
+        [Description("Eşit Ağırlık")]
+        EqualWeight = 1,
 
-        [Description("FEN")]
-        FEN = 2,
-
-        [Description("SOSYAL")]
-        SOSYAL = 3
+        [Description("Sayısal")]
+        NUMERICAL = 2
     }
 }

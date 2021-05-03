@@ -6,24 +6,24 @@ namespace SayHiXAML.core
 {
     public class EqualWeightStrategy : IExamStrategy
     {
-        public EnumDepartment getFirst()
+        public EnumLesson getFirst()
         {
-            return EnumDepartment.TURKCE;
+            return EnumLesson.TURKISH;
         }
 
-        public EnumDepartment getForth()
+        public EnumLesson getForth()
         {
-            return EnumDepartment.FEN;
+            return EnumLesson.SCIENCE;
         }
 
-        public EnumDepartment getSecond()
+        public EnumLesson getSecond()
         {
-            return EnumDepartment.MATEMATIK;
+            return EnumLesson.MATH;
         }
 
-        public EnumDepartment getThird()
+        public EnumLesson getThird()
         {
-            return EnumDepartment.SOSYAL;
+            return EnumLesson.SOCIAL;
         }
     }
 }
