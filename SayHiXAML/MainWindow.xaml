@@ -18,25 +18,12 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid Grid.ColumnSpan="2">
+        <Grid Grid.ColumnSpan="2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition>
                 </ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.ColumnSpan="8" Grid.Column="0" Orientation="Horizontal" Margin="0,0,0,20">
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,0,20">
                 <Image 
                         Width="50" 
                            Height="50" Source="images/cat.png"
@@ -50,7 +37,7 @@
                            FontFamily="fonts/#Dosis"/>
             </StackPanel>
         </Grid>
-       
+
         <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="60">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
@@ -59,7 +46,7 @@
                            Height="50" Source="images/cat.png"
                         RenderOptions.BitmapScalingMode="Fant"
                         />
-                <TextBlock Text="Say Hi XAML" 
+                    <TextBlock Text="Say Hi XAML" 
                            Foreground="White" 
                            FontSize="25" 
                            FontWeight="Medium"
@@ -92,7 +79,7 @@
                         FontSize="14" 
                         FontWeight="Medium"
                         Margin="0,0,10,0">
-                <Button.Style>
+                    <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="TextElement.FontFamily" Value="fonts/#Dosis"/>
                             <Setter Property="Background" Value="#fb3640" />
@@ -142,5 +129,47 @@
                 </Button>
             </StackPanel>
         </StackPanel>
+        <Grid Grid.Column="1" Grid.RowSpan="2" Margin="160,-365,-610,85" Panel.ZIndex="-1">
+            <Grid.RenderTransform>
+                <RotateTransform Angle="50"></RotateTransform>
+            </Grid.RenderTransform>
+            <StackPanel Orientation="Horizontal" Margin="-350,250,-255,-250">
+                <StackPanel>
+                    <Border Width="700" 
+                            Height="35" 
+                            Margin="150,0,0,0" 
+                            CornerRadius="20"
+                            Background="#a799b7"/>
+                    <Border Width="700" 
+                            Height="35" 
+                            Margin="0,10,0,0" 
+                            CornerRadius="20"
+                            Background="#fb3640"/>
+                    <Border Width="700" 
+                            Height="35" 
+                            Margin="75,10,0,0" 
+                            CornerRadius="20"
+                            Background="#fdca40"/>
+                </StackPanel>
+                <StackPanel>
+                    <Border Width="700" 
+                            Height="35" 
+                            Margin="150,0,0,0" 
+                            CornerRadius="20"
+                            Background="#a799b7"/>
+                    <Border Width="700" 
+                            Height="35" 
+                            Margin="0,10,0,0" 
+                            CornerRadius="20"
+                            Background="#fb3640"/>
+                    <Border Width="700" 
+                            Height="35" 
+                            Margin="75,10,0,0" 
+                            CornerRadius="20"
+                            Background="#fdca40"/>
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
