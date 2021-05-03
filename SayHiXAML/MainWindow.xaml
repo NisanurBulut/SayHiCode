@@ -1,0 +1,189 @@
+﻿<Window x:Class="SayHiXAML.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SayHiXAML"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#542e71"
+        Title="MainWindow"
+        Height="650"
+        Width="900">
+    <Grid MouseDown="Grid_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal"
+                        Margin="0,0,0,20">
+                <Image Width="100"
+                       Height="100"
+                       Source="images/logo.png"
+                       RenderOptions.BitmapScalingMode="Fant" />
+                <TextBlock Text="Say Hi XAML"
+                           Foreground="White"
+                           FontSize="25"
+                           FontWeight="Medium"
+                           VerticalAlignment="Center"
+                           FontFamily="fonts/#Dosis" />
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="50,0,30,0">
+            <StackPanel Margin="0,0,0,20">
+                <Label Foreground="White" FontSize="18" Margin="0,0,0,20"
+                       FontWeight="Bold">What is your department ?</Label>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="rBtnEsitAgirlik">
+                        <WrapPanel Orientation="Vertical">
+                            <Image Source="/images/esitagirlik.png"
+                                   Width="75"
+                                   Height="75" />
+                            <TextBlock FontFamily="fonts/#Dosis"
+                                       FontSize="15"
+                                       FontWeight="Medium"
+                                       Margin="10,10,10,0"
+                                       Text="Equal Weight"
+                                       Foreground="White" />
+                        </WrapPanel>
+                    </RadioButton>
+                    <RadioButton Margin="0,5"
+                                 x:Name="rBtnSayisal">
+                        <WrapPanel Orientation="Vertical">
+                            <Image Source="/images/sayisal.png"
+                                   Width="75"
+                                   Height="75" />
+                            <TextBlock FontSize="15"
+                                       FontWeight="Medium"
+                                       Margin="10,5,10,0"
+                                       FontFamily="fonts/#Dosis"
+                                       Text="Numerical"
+                                       Foreground="White" />
+                        </WrapPanel>
+                    </RadioButton>
+                    <RadioButton IsChecked="True"
+                                 x:Name="rButtonSozel">
+                        <WrapPanel Orientation="Vertical">
+                            <Image Source="/images/sozel.png"
+                                   Width="75"
+                                   Height="75" />
+                            <TextBlock Margin="10,10,10,0"
+                                       FontSize="15"
+                                       FontWeight="Medium"
+                                       FontFamily="fonts/#Dosis"
+                                       Text="Verbal"
+                                       Foreground="White" />
+                        </WrapPanel>
+                    </RadioButton>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                        Margin="0,15,0,00">
+                <TextBlock Text=""
+                           FontFamily="fonts/#Dosis"
+                           Foreground="White"
+                           FontSize="14"
+                           FontWeight="Medium"
+                           Margin="0,15,0,10" x:Name="strategyText" />
+                <Button Content="Decide Department Strategy"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        Margin="0,0,10,0"
+                        Click="btn_decideDepartmentClick">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="TextElement.FontFamily"
+                                    Value="fonts/#Dosis" />
+                            <Setter Property="Background"
+                                    Value="#fb3640" />
+                            <Setter Property="Cursor"
+                                    Value="Hand" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver"
+                                         Value="True">
+                                    <Setter Property="Background"
+                                            Value="#fdca40" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="220"
+                                    Height="35"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"></ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Column="1"
+              Grid.RowSpan="2"
+              Margin="160,-365,-610,85"
+              Panel.ZIndex="-1">
+            <Grid.RenderTransform>
+                <RotateTransform Angle="50"></RotateTransform>
+            </Grid.RenderTransform>
+            <StackPanel Orientation="Horizontal"
+                        Margin="-350,250,-255,-250">
+                <StackPanel>
+                    <Border Width="700"
+                            Height="35"
+                            Margin="150,0,0,0"
+                            CornerRadius="20"
+                            Background="#a799b7" />
+                    <Border Width="700"
+                            Height="35"
+                            Margin="0,10,0,0"
+                            CornerRadius="20"
+                            Background="#fb3640" />
+                    <Border Width="700"
+                            Height="35"
+                            Margin="75,10,0,0"
+                            CornerRadius="20"
+                            Background="#fdca40" />
+                </StackPanel>
+                <StackPanel>
+                    <Border Width="700"
+                            Height="35"
+                            Margin="150,0,0,0"
+                            CornerRadius="20"
+                            Background="#a799b7" />
+                    <Border Width="700"
+                            Height="35"
+                            Margin="0,10,0,0"
+                            CornerRadius="20"
+                            Background="#fb3640" />
+                    <Border Width="700"
+                            Height="35"
+                            Margin="75,10,0,0"
+                            CornerRadius="20"
+                            Background="#fdca40" />
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
