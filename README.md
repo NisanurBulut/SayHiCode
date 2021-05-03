@@ -199,8 +199,7 @@ The project topic is very simple: Users sign up for the application and see the 
 
 ### 11. SayHiXAML
 <hr>
-<img align="left" width="100px" height="100px" src="https://github.com/NisanurBulut/SayHiCode/blob/master/SayHiXAML/images/logo.png"><p>In this study, an interface was designed using the XAML language. The main purpose of the application is to demonstrate the use of the strategy design pattern. Each student has a department. These are: numerical, verbal and equilibrium. In the exams, students order courses according to their departments. These courses are in Turkish, mathematics, social and science. The strategy design pattern prepares a priority order for the students according to their departments.</p>
-<br/>
+<img align="left" width="120px" height="120px" src="https://github.com/NisanurBulut/SayHiCode/blob/master/SayHiXAML/images/logo.png"><p>In this study, an interface was designed using the <b>XAML language</b>. The main purpose of the application is to demonstrate the use of the <b>strategy design pattern</b>. Each student has a department. These are: numerical, verbal and equilibrium. In the exams, students order courses according to their departments. These courses are in Turkish, mathematics, social and science. The strategy design pattern prepares a priority order for the students according to their departments.</p>
 
 ![SayHiXAML](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiXAML.gif)
 
