@@ -6,5 +6,9 @@ namespace SayHiXAML.core
 {
     public interface IExamStrategy
     {
+        EnumLesson getFirst();
+        EnumLesson getSecond();
+        EnumLesson getThird();
+        EnumLesson getForth();
     }
 }
