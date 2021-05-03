@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SayHiXAML.core
 {
-    public enum EnumLesson
+    public enum EnumDepartment
     {
         [Description("Türkçe")]
         TURKCE=0,

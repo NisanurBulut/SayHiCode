@@ -6,24 +6,24 @@ namespace SayHiXAML.core
 {
     public class NumericalStrategy : IExamStrategy
     {
-        public EnumLesson getFirst()
+        public EnumDepartment getFirst()
         {
-            return EnumLesson.MATEMATIK;
+            return EnumDepartment.MATEMATIK;
         }
 
-        public EnumLesson getForth()
+        public EnumDepartment getForth()
         {
-            return EnumLesson.FEN;
+            return EnumDepartment.FEN;
         }
 
-        public EnumLesson getSecond()
+        public EnumDepartment getSecond()
         {
-            return EnumLesson.FEN;
+            return EnumDepartment.FEN;
         }
 
-        public EnumLesson getThird()
+        public EnumDepartment getThird()
         {
-            return EnumLesson.FEN;
+            return EnumDepartment.FEN;
         }
     }
 }
