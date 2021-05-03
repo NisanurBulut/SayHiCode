@@ -51,22 +51,22 @@
                     <RadioButton>
                         <WrapPanel>
                             <Image Source="/images/esitagirlik.png"
-                                   Width="50"
-                                   Height="50" />
+                                   Width="75"
+                                   Height="75" />
                         </WrapPanel>
                     </RadioButton>
                     <RadioButton Margin="0,5">
                         <WrapPanel>
                             <Image Source="/images/sayisal.png"
-                                   Width="50"
-                                   Height="50" />
+                                   Width="75"
+                                   Height="75" />
                         </WrapPanel>
                     </RadioButton>
                     <RadioButton IsChecked="True">
                         <WrapPanel>
                             <Image Source="/images/sozel.png"
-                                   Width="50"
-                                   Height="50" />
+                                   Width="75"
+                                   Height="75" />
                         </WrapPanel>
                     </RadioButton>
                 </StackPanel>
