@@ -7,7 +7,7 @@ namespace SayHiXAML.core
 {
     public enum EnumDepartment
     {
-        [Description("Türkçe")]
+        [Description("Sözel")]
         VERBAL=0,
 
         [Description("Eşit Ağırlık")]
