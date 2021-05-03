@@ -23,7 +23,22 @@ namespace SayHiXAML
 
         private void btn_decideDepartmentClick(object sender, RoutedEventArgs e)
         {
+            if (this.rBtnEsitAgirlik.IsChecked == true)
+            {
 
+            }
+            else if (this.rBtnSayisal.IsChecked == true)
+            {
+
+            }
+            else if (this.rButtonSozel.IsChecked == true)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
 }

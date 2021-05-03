@@ -48,7 +48,7 @@
                 <Label Foreground="White"
                        FontWeight="Bold">What is your department ?</Label>
                 <StackPanel Orientation="Horizontal">
-                    <RadioButton>
+                    <RadioButton x:Name="rBtnEsitAgirlik">
                         <WrapPanel Orientation="Vertical">
                             <Image Source="/images/esitagirlik.png"
                                    Width="75"
@@ -58,7 +58,7 @@
                                        Foreground="White" />
                         </WrapPanel>
                     </RadioButton>
-                    <RadioButton Margin="0,5">
+                    <RadioButton Margin="0,5" x:Name="rBtnSayisal">
                         <WrapPanel Orientation="Vertical">
                             <Image Source="/images/sayisal.png"
                                    Width="75"
@@ -68,7 +68,7 @@
                                        Foreground="White" />
                         </WrapPanel>
                     </RadioButton>
-                    <RadioButton IsChecked="True">
+                    <RadioButton IsChecked="True" x:Name="rButtonSozel">
                         <WrapPanel Orientation="Vertical">
                             <Image Source="/images/sozel.png"
                                    Width="75"
