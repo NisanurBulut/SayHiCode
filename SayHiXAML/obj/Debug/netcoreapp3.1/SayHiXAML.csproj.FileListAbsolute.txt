@@ -16,3 +16,4 @@ D:\Projelerim\SayHiCode\SayHiXAML\obj\Debug\netcoreapp3.1\SayHiXAML.csproj.CoreC
 D:\Projelerim\SayHiCode\SayHiXAML\obj\Debug\netcoreapp3.1\SayHiXAML.dll
 D:\Projelerim\SayHiCode\SayHiXAML\obj\Debug\netcoreapp3.1\SayHiXAML.pdb
 D:\Projelerim\SayHiCode\SayHiXAML\obj\Debug\netcoreapp3.1\SayHiXAML.genruntimeconfig.cache
+D:\Projelerim\SayHiCode\SayHiXAML\obj\Debug\netcoreapp3.1\SayHiXAML.csprojAssemblyReference.cache

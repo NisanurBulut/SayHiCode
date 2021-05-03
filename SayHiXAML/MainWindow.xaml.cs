@@ -20,5 +20,10 @@ namespace SayHiXAML
                 DragMove();
             }
         }
+
+        private void btn_decideDepartmentClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -49,24 +49,33 @@
                        FontWeight="Bold">What is your department ?</Label>
                 <StackPanel Orientation="Horizontal">
                     <RadioButton>
-                        <WrapPanel>
+                        <WrapPanel Orientation="Vertical">
                             <Image Source="/images/esitagirlik.png"
                                    Width="75"
                                    Height="75" />
+                            <TextBlock Margin="10,10,10,0"
+                                       Text="Eşit Ağırlık"
+                                       Foreground="White" />
                         </WrapPanel>
                     </RadioButton>
                     <RadioButton Margin="0,5">
-                        <WrapPanel>
+                        <WrapPanel Orientation="Vertical">
                             <Image Source="/images/sayisal.png"
                                    Width="75"
                                    Height="75" />
+                            <TextBlock Margin="10,10,10,0"
+                                       Text="Sayısal"
+                                       Foreground="White" />
                         </WrapPanel>
                     </RadioButton>
                     <RadioButton IsChecked="True">
-                        <WrapPanel>
+                        <WrapPanel Orientation="Vertical">
                             <Image Source="/images/sozel.png"
                                    Width="75"
                                    Height="75" />
+                            <TextBlock Margin="10,10,10,0"
+                                       Text="Sözel"
+                                       Foreground="White" />
                         </WrapPanel>
                     </RadioButton>
                 </StackPanel>
@@ -74,11 +83,12 @@
 
             <StackPanel Orientation="Horizontal"
                         Margin="0,15,0,0">
-                <Button Content="Start"
+                <Button Content="Decide Department"
                         Foreground="White"
                         FontSize="14"
                         FontWeight="Medium"
-                        Margin="0,0,10,0">
+                        Margin="0,0,10,0"
+                        Click="btn_decideDepartmentClick">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="TextElement.FontFamily"
