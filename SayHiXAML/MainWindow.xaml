@@ -92,8 +92,14 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
-                        Margin="0,15,0,0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                        Margin="0,15,0,00">
+                <TextBlock Text=""
+                           FontFamily="fonts/#Dosis"
+                           Foreground="White"
+                           FontSize="14"
+                           FontWeight="Medium"
+                           Margin="0,15,0,10" x:Name="strategyText" />
                 <Button Content="Decide Department Strategy"
                         Foreground="White"
                         FontSize="14"
@@ -117,6 +123,7 @@
                             </Style.Triggers>
                         </Style>
                     </Button.Style>
+                    
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Width="200"

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using SayHiXAML.core;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SayHiXAML
@@ -23,21 +24,25 @@ namespace SayHiXAML
 
         private void btn_decideDepartmentClick(object sender, RoutedEventArgs e)
         {
+            this.strategyText.Text = string.Empty;
             if (this.rBtnEsitAgirlik.IsChecked == true)
             {
-
+                StudentModel studentModel = new StudentModel(EnumDepartment.EQUALWEIGHT);
+                this.strategyText.Text = studentModel.OrderPriority();
             }
             else if (this.rBtnSayisal.IsChecked == true)
             {
-
+                StudentModel studentModel = new StudentModel(EnumDepartment.NUMERICAL);
+                this.strategyText.Text = studentModel.OrderPriority();
             }
             else if (this.rButtonSozel.IsChecked == true)
             {
-
+                StudentModel studentModel = new StudentModel(EnumDepartment.VERBAL);
+                this.strategyText.Text = studentModel.OrderPriority();
             }
             else
             {
-
+                this.strategyText.Text = "Plase select department...";
             }
         }
     }

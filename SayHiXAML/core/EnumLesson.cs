@@ -7,16 +7,16 @@ namespace SayHiXAML.core
 {
     public enum EnumLesson
     {
-        [Description("Türkçe")]
+        [Description("Turkish")]
         TURKISH=0,
 
-        [Description("Sosyal")]
+        [Description("Social")]
         SOCIAL = 1,
 
-        [Description("Fen")]
+        [Description("Science")]
         SCIENCE = 2,
 
-        [Description("Matematik")]
+        [Description("Math")]
         MATH = 3
     }
 }

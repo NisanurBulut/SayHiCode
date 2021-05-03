@@ -39,7 +39,10 @@ namespace SayHiXAML.core
 
         public String OrderPriority()
         {
-            return examStrategy.getFirstLesson() + " " + examStrategy.getSecondLesson() + " " + examStrategy.getThirdLesson()+"c" + examStrategy.getForthLesson();
+            return "1. "+ examStrategy.getFirstLesson().DescriptionAttr() + "\n" +
+                   "2. "+ examStrategy.getSecondLesson().DescriptionAttr() + "\n" + 
+                   "3. "+ examStrategy.getThirdLesson().DescriptionAttr() + "\n" + 
+                   "4. "+ examStrategy.getForthLesson();
         } 
     }
 }
