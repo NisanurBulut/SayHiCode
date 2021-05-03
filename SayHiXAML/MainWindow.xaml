@@ -57,7 +57,7 @@
                                        FontSize="15"
                                        FontWeight="Medium"
                                        Margin="10,10,10,0"
-                                       Text="Eşit Ağırlık"
+                                       Text="Equal Weight"
                                        Foreground="White" />
                         </WrapPanel>
                     </RadioButton>
@@ -71,7 +71,7 @@
                                        FontWeight="Medium"
                                        Margin="10,5,10,0"
                                        FontFamily="fonts/#Dosis"
-                                       Text="Sayısal"
+                                       Text="Numerical"
                                        Foreground="White" />
                         </WrapPanel>
                     </RadioButton>
@@ -85,16 +85,16 @@
                                        FontSize="15"
                                        FontWeight="Medium"
                                        FontFamily="fonts/#Dosis"
-                                       Text="Sözel"
+                                       Text="Verbal"
                                        Foreground="White" />
                         </WrapPanel>
                     </RadioButton>
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal"
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
                         Margin="0,15,0,0">
-                <Button Content="Decide Department"
+                <Button Content="Decide Department Strategy"
                         Foreground="White"
                         FontSize="14"
                         FontWeight="Medium"
