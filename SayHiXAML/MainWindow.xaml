@@ -8,7 +8,9 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="#542e71"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="450"
+        Width="800">
     <Grid MouseDown="Grid_MouseDown">
         <Grid.RowDefinitions>
             <RowDefinition Height="75"></RowDefinition>
@@ -23,150 +25,134 @@
                 <ColumnDefinition>
                 </ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,0,20">
-                <Image 
-                        Width="50" 
-                           Height="50" Source="images/cat.png"
-                        RenderOptions.BitmapScalingMode="Fant"
-                        />
-                <TextBlock Text="Say Hi XAML" 
-                           Foreground="White" 
-                           FontSize="25" 
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal"
+                        Margin="0,0,0,20">
+                <Image Width="50"
+                       Height="50"
+                       Source="images/cat.png"
+                       RenderOptions.BitmapScalingMode="Fant" />
+                <TextBlock Text="Say Hi XAML"
+                           Foreground="White"
+                           FontSize="25"
                            FontWeight="Medium"
                            VerticalAlignment="Center"
-                           FontFamily="fonts/#Dosis"/>
+                           FontFamily="fonts/#Dosis" />
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="60">
-            <StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
-                    <Image 
-                        Width="50" 
-                           Height="50" Source="images/cat.png"
-                        RenderOptions.BitmapScalingMode="Fant"
-                        />
-                    <TextBlock Text="Say Hi XAML" 
-                           Foreground="White" 
-                           FontSize="25" 
-                           FontWeight="Medium"
-                           VerticalAlignment="Center"
-                           FontFamily="fonts/#Dosis"/>
+        <StackPanel Grid.Row="1"
+                    VerticalAlignment="Center"
+                    Margin="60">
+            <StackPanel Margin="0,0,0,20">
+                <Label Foreground="White"
+                       FontWeight="Bold">What is your department ?</Label>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton>
+                        <WrapPanel>
+                            <Image Source="/images/esitagirlik.png"
+                                   Width="50"
+                                   Height="50" />
+                        </WrapPanel>
+                    </RadioButton>
+                    <RadioButton Margin="0,5">
+                        <WrapPanel>
+                            <Image Source="/images/sayisal.png"
+                                   Width="50"
+                                   Height="50" />
+                        </WrapPanel>
+                    </RadioButton>
+                    <RadioButton IsChecked="True">
+                        <WrapPanel>
+                            <Image Source="/images/sozel.png"
+                                   Width="50"
+                                   Height="50" />
+                        </WrapPanel>
+                    </RadioButton>
                 </StackPanel>
-                <Image Width="50" Height="50" Source="images/cat.png"/>
-                <TextBlock Text="Say Hi XAML" 
-                           Foreground="White" 
-                           FontSize="25" 
-                           FontWeight="Medium"
-                           VerticalAlignment="Center"
-                           FontFamily="fonts/#Dosis"/>
-                <TextBlock Text="Say Hi XAML" 
-                           Foreground="White" 
-                           FontSize="25" 
-                           FontWeight="Medium"
-                           VerticalAlignment="Center"
-                           FontFamily="fonts/#Dosis"/>
-                <TextBlock Text="Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi." 
-                           Foreground="White" 
-                           FontSize="12" 
-                           FontWeight="Medium"
-                           VerticalAlignment="Center"
-                           FontFamily="fonts/#Dosis" TextWrapping="Wrap"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,15,0,0">
                 <Button Content="Start"
-                        Foreground="White" 
-                        FontSize="14" 
+                        Foreground="White"
+                        FontSize="14"
                         FontWeight="Medium"
                         Margin="0,0,10,0">
                     <Button.Style>
                         <Style TargetType="Button">
-                            <Setter Property="TextElement.FontFamily" Value="fonts/#Dosis"/>
-                            <Setter Property="Background" Value="#fb3640" />
-                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="TextElement.FontFamily"
+                                    Value="fonts/#Dosis" />
+                            <Setter Property="Background"
+                                    Value="#fb3640" />
+                            <Setter Property="Cursor"
+                                    Value="Hand" />
                             <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#fdca40" />
+                                <Trigger Property="IsMouseOver"
+                                         Value="True">
+                                    <Setter Property="Background"
+                                            Value="#fdca40" />
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
                     </Button.Style>
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Border Width="100" 
-                                    Height="25" 
-                                    CornerRadius="12" 
+                            <Border Width="200"
+                                    Height="25"
+                                    CornerRadius="12"
                                     Background="{TemplateBinding Background}">
-                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"></ContentPresenter>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button Content="Register"
-                        Foreground="White" FontSize="14" FontWeight="Medium">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="TextElement.FontFamily" Value="fonts/#Dosis"/>
-                            <Setter Property="Background" Value="#fb3640" />
-                            <Setter Property="Cursor" Value="Hand"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#fdca40" />
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Width="100" 
-                                    Height="25" 
-                                    CornerRadius="12" 
-                                    Background="{TemplateBinding Background}">
-                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+
             </StackPanel>
         </StackPanel>
-        <Grid Grid.Column="1" Grid.RowSpan="2" Margin="160,-365,-610,85" Panel.ZIndex="-1">
+        <Grid Grid.Column="1"
+              Grid.RowSpan="2"
+              Margin="160,-365,-610,85"
+              Panel.ZIndex="-1">
             <Grid.RenderTransform>
                 <RotateTransform Angle="50"></RotateTransform>
             </Grid.RenderTransform>
-            <StackPanel Orientation="Horizontal" Margin="-350,250,-255,-250">
+            <StackPanel Orientation="Horizontal"
+                        Margin="-350,250,-255,-250">
                 <StackPanel>
-                    <Border Width="700" 
-                            Height="35" 
-                            Margin="150,0,0,0" 
+                    <Border Width="700"
+                            Height="35"
+                            Margin="150,0,0,0"
                             CornerRadius="20"
-                            Background="#a799b7"/>
-                    <Border Width="700" 
-                            Height="35" 
-                            Margin="0,10,0,0" 
+                            Background="#a799b7" />
+                    <Border Width="700"
+                            Height="35"
+                            Margin="0,10,0,0"
                             CornerRadius="20"
-                            Background="#fb3640"/>
-                    <Border Width="700" 
-                            Height="35" 
-                            Margin="75,10,0,0" 
+                            Background="#fb3640" />
+                    <Border Width="700"
+                            Height="35"
+                            Margin="75,10,0,0"
                             CornerRadius="20"
-                            Background="#fdca40"/>
+                            Background="#fdca40" />
                 </StackPanel>
                 <StackPanel>
-                    <Border Width="700" 
-                            Height="35" 
-                            Margin="150,0,0,0" 
+                    <Border Width="700"
+                            Height="35"
+                            Margin="150,0,0,0"
                             CornerRadius="20"
-                            Background="#a799b7"/>
-                    <Border Width="700" 
-                            Height="35" 
-                            Margin="0,10,0,0" 
+                            Background="#a799b7" />
+                    <Border Width="700"
+                            Height="35"
+                            Margin="0,10,0,0"
                             CornerRadius="20"
-                            Background="#fb3640"/>
-                    <Border Width="700" 
-                            Height="35" 
-                            Margin="75,10,0,0" 
+                            Background="#fb3640" />
+                    <Border Width="700"
+                            Height="35"
+                            Margin="75,10,0,0"
                             CornerRadius="20"
-                            Background="#fdca40"/>
+                            Background="#fdca40" />
                 </StackPanel>
 
             </StackPanel>
