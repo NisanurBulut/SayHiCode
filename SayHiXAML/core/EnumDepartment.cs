@@ -11,7 +11,7 @@ namespace SayHiXAML.core
         VERBAL=0,
 
         [Description("Eşit Ağırlık")]
-        EqualWeight = 1,
+        EQUALWEIGHT = 1,
 
         [Description("Sayısal")]
         NUMERICAL = 2

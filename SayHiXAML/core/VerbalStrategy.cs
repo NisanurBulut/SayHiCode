@@ -6,22 +6,22 @@ namespace SayHiXAML.core
 {
     public class VerbalStrategy : IExamStrategy
     {
-        public EnumLesson getFirst()
+        public EnumLesson getFirstLesson()
         {
             return EnumLesson.TURKISH;
         }
 
-        public EnumLesson getForth()
+        public EnumLesson getForthLesson()
         {
             return EnumLesson.SCIENCE;
         }
 
-        public EnumLesson getSecond()
+        public EnumLesson getSecondLesson()
         {
             return EnumLesson.SOCIAL;
         }
 
-        public EnumLesson getThird()
+        public EnumLesson getThirdLesson()
         {
             return EnumLesson.MATH;
         }

@@ -12,15 +12,34 @@ namespace SayHiXAML.core
         {
             this.Department = department;
 
-            if(this.Department==null)
+            if (this.Department == null)
             {
                 throw new NullReferenceException();
-
-                switch (this.Department)
-                {
-                    case ""
-                }
+            }
+            switch (this.Department)
+            {
+                case EnumDepartment.VERBAL:
+                    {
+                        examStrategy = new VerbalStrategy();
+                        break;
+                    }
+                case EnumDepartment.EQUALWEIGHT:
+                    {
+                        examStrategy = new EqualWeightStrategy();
+                        break;
+                    }
+                case EnumDepartment.NUMERICAL:
+                    {
+                        examStrategy = new NumericalStrategy();
+                        break;
+                    }
+                default: break;
             }
         }
+
+        public String OrderPriority()
+        {
+            return examStrategy.getFirstLesson() + " " + examStrategy.getSecondLesson() + " " + examStrategy.getThirdLesson()+"c" + examStrategy.getForthLesson();
+        } 
     }
 }
