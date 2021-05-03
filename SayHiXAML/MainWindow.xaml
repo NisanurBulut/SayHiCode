@@ -13,7 +13,7 @@
         Width="900">
     <Grid MouseDown="Grid_MouseDown">
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -28,9 +28,9 @@
             <StackPanel Grid.Column="0"
                         Orientation="Horizontal"
                         Margin="0,0,0,20">
-                <Image Width="50"
-                       Height="50"
-                       Source="images/cat.png"
+                <Image Width="100"
+                       Height="100"
+                       Source="images/logo.png"
                        RenderOptions.BitmapScalingMode="Fant" />
                 <TextBlock Text="Say Hi XAML"
                            Foreground="White"
