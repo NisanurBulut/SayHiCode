@@ -203,8 +203,23 @@ The project topic is very simple: Users sign up for the application and see the 
 
 ![SayHiXAML](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiXAML.gif)
 
+### 12. SayHiTypeScript
+<hr>
+<img align="left" width="120px" height="120px" src="https://github.com/NisanurBulut/SayHiCode/blob/master/SayHiTypeScript/public/assets/logo.png"><p>In this tutorial, the installation and usage of typescript is explained. The basics of TypeScript are practiced. Especially the use of tuple and interface has been studied.<p>
+<b>This working will show you how to :</b>
+<hr>
+
+![SayHiXAML](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiTypeScript.gif)
+
+| Compiling TypeScript | Explicit Types             | Classes                    | Rendering an HTML Template |
+|----------------------|----------------------------|----------------------------|----------------------------|
+| Type Basics          | Dynamic (Any) Types        | Public, Private & Readonly | Generics                   |
+| Object & Arrays      | Better Workflow & tsconfig | Modules                    | Enums                      |
+| Function Basics      | Type Alies                 | Interfaces                 | Tuples                     |
+| Function signatures  | The Dom & Type Casting     | Interfaces With Classes    |                            |
+
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [json2ts](http://json2ts.com/) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/) [HeroIcons](https://heroicons.com/)
   [The Net Ninja- Laravel Tutorial](https://youtu.be/zckH4xalOns) [Quicksand](https://fonts.google.com/specimen/Quicksand) [MyColorSpace](https://mycolor.space/) [JokeAPI](https://v2.jokeapi.dev/joke/Any)
   [RestCountries](https://restcountries.eu/) [FakeStoreAPI](https://fakestoreapi.herokuapp.com/)
-[Strategy Pattern](https://www.youtube.com/watch?v=5upBcx8Z7FM&t=151s)
+[Strategy Pattern](https://www.youtube.com/watch?v=5upBcx8Z7FM&t=151s) [TypeScriptTutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI)
