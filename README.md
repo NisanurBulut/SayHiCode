@@ -209,14 +209,13 @@ The project topic is very simple: Users sign up for the application and see the 
 <b>This working will show you how to :</b>
 <hr>
 
-![SayHiXAML](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiTypeScript.gif)
-
 | Compiling TypeScript | Explicit Types             | Classes                    | Rendering an HTML Template |
 |----------------------|----------------------------|----------------------------|----------------------------|
 | Type Basics          | Dynamic (Any) Types        | Public, Private & Readonly | Generics                   |
 | Object & Arrays      | Better Workflow & tsconfig | Modules                    | Enums                      |
 | Function Basics      | Type Alies                 | Interfaces                 | Tuples                     |
 | Function signatures  | The Dom & Type Casting     | Interfaces With Classes    |                            |
+![SayHiXAML](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiTypeScript.gif)
 
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [json2ts](http://json2ts.com/) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/) [HeroIcons](https://heroicons.com/)
