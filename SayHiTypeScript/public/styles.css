@@ -1,82 +1,86 @@
-body{
-    margin: 0;
-    font-family: Roboto; 
-    background-color: #9a8194;
-  }
-  footer{
-    background: #c6a9a3;
-    padding: 60px;
-    margin-top: 60px;
-    border-radius: 5px;
-  }
-  button{
-    color: white;
-    border: 0;
-    background: #7b6079;
-    padding: 6px;
-    min-width: 100px;
-    border-radius: 4px;
-  }
-  .wrapper{
-    max-width: 960px;
-    margin: 0 auto;
-  }
-  .logo-wrapper {
-    margin: 40px auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .logo-wrapper>img{
-    max-width: 100px;
-    max-height: 100px;
-  }
-  .logo-wrapper>h1{
-    color: #eee;
-    text-align: center;
-  }
-  ul{
-    padding: 0;
-    list-style-type: none;
-  }
-  li {
-    padding: 6px 10px;
-    border: 2px solid #eee;
-    margin: 10px auto;
-    background-color: #99bbad;
-    border-radius: 5px;
-  }
-  li h4{
-    color: #7b6079;
-    margin: 0;
-    text-transform: capitalize;
-  }
-  li p{
-    color: #444;
-    font-size: large;
-    margin: 8px 0 0;
-  }
- 
-  form{
-    max-width: 960px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  label{
-    display: block;
-    font-weight: bold;
-    font-size: 0.8em;
-    color: #333;
-    margin: 16px 0 6px;
-  }
-  input, select{
-    padding: 6px;
-    border: 1px solid #e1e1e1;
-    border-radius: 4px;
-  }
-  .field{
-    display: inline-block;
-    margin: 0 10px;
-  }
+body {
+  margin: 0;
+  font-family: Roboto;
+  background-color: #9a8194;
+}
+footer {
+  background: #c6a9a3;
+  padding: 60px;
+  margin-top: 60px;
+  border-radius: 5px;
+}
+button {
+  color: white;
+  border: 0;
+  background: #7b6079;
+  padding: 6px;
+  min-width: 100px;
+  border-radius: 4px;
+}
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.logo-wrapper {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.logo-wrapper > img {
+  max-width: 100px;
+  max-height: 100px;
+}
+.logo-wrapper > h1 {
+  color: #eee;
+  text-align: center;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  padding: 6px 10px;
+  border: 2px solid #eee;
+  margin: 10px auto;
+  background-color: #99bbad;
+  border-radius: 5px;
+}
+.field > label {
+  font-size: larger;
+  color: #eee;
+}
+li h4 {
+  color: #7b6079;
+  margin: 0;
+  text-transform: capitalize;
+}
+li p {
+  color: #eee;
+  font-size: larger;
+  margin: 8px 0 0;
+}
 
+form {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #333;
+  margin: 16px 0 6px;
+}
+input,
+select {
+  padding: 6px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+}
+.field {
+  display: inline-block;
+  margin: 0 10px;
+}
