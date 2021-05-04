@@ -39,10 +39,12 @@ body{
     padding: 0;
     list-style-type: none;
   }
-  li{
+  li {
     padding: 6px 10px;
     border: 1px solid #eee;
     margin: 10px auto;
+    background-color: #ebd8b7;
+    border-radius: 5px;
   }
   li h4{
     color: #ebd8b7;
