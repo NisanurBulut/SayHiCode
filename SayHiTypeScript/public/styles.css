@@ -7,11 +7,12 @@ body{
     background: #c6a9a3;
     padding: 60px;
     margin-top: 60px;
+    border-radius: 5px;
   }
   button{
     color: white;
     border: 0;
-    background: #9a8194;
+    background: #7b6079;
     padding: 6px;
     min-width: 100px;
     border-radius: 4px;
@@ -41,18 +42,19 @@ body{
   }
   li {
     padding: 6px 10px;
-    border: 1px solid #eee;
+    border: 2px solid #eee;
     margin: 10px auto;
-    background-color: #ebd8b7;
+    background-color: #99bbad;
     border-radius: 5px;
   }
   li h4{
-    color: #ebd8b7;
+    color: #7b6079;
     margin: 0;
     text-transform: capitalize;
   }
   li p{
-    color: #333;
+    color: #eee;
+    font-size: large;
     margin: 8px 0 0;
   }
  
