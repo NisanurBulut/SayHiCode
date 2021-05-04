@@ -18,10 +18,15 @@ const list = new ListTemplate(ul);
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
   let doc: HasFormatter;
+  let values: [string, string, number] = [
+    tofrom.value,
+    details.value,
+    amount.valueAsNumber,
+  ];
   if (type.value === "invoice") {
-    doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else {
-    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   }
   list.render(doc, type.value, "end");
 });
@@ -32,7 +37,13 @@ const addUID = <T extends object>(obj: T) => {
 };
 
 // ENUMS
-enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON}
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON,
+}
 
 interface Resource<T> {
   uid: number;
@@ -41,16 +52,24 @@ interface Resource<T> {
 }
 
 const docOne: Resource<object> = {
-    uid: 1,
-    resourceName: ResourceType.AUTHOR,
-    data: {title:"Nisanur"},
-  };
-  
+  uid: 1,
+  resourceName: ResourceType.AUTHOR,
+  data: { title: "Nisanur" },
+};
+
 const docThree: Resource<string> = {
   uid: 3,
   resourceName: ResourceType.BOOK,
   data: "Gölge ve Kemik",
 };
 
+// tuples
 
+let arr = ["Nisanur", 29, true];
+arr[0] = false;
+arr[1] = "Nisanur";
+arr = [29, false, "Furkan"];
 
+let tup: [string, number, boolean] = ["Nisanur", 29, true];
+
+// tup[0]=false // error
