@@ -1,14 +1,25 @@
 body{
     margin: 0;
     font-family: Roboto; 
+    background-color: #ebd8b7;
   }
   .wrapper{
     max-width: 960px;
     margin: 0 auto;
   }
-  h1{
+  .logo-wrapper {
     margin: 40px auto;
-    color: #ff0aa7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo-wrapper>img{
+    max-width: 100px;
+    max-height: 100px;
+  }
+  .logo-wrapper>h1{
+    color: #9a8194;
     text-align: center;
   }
   ul{
@@ -21,7 +32,7 @@ body{
     margin: 10px auto;
   }
   li h4{
-    color: #ff0aa7;
+    color: #e1701a;
     margin: 0;
     text-transform: capitalize;
   }
@@ -30,7 +41,7 @@ body{
     margin: 8px 0 0;
   }
   footer{
-    background: #eee;
+    background: #99bbad;
     padding: 60px;
     margin-top: 60px;
   }
@@ -58,7 +69,7 @@ body{
   button{
     color: white;
     border: 0;
-    background: #ff0aa7;
+    background: #9a8194;
     padding: 6px;
     min-width: 80px;
     border-radius: 4px;
