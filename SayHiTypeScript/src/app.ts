@@ -31,14 +31,26 @@ const addUID = <T extends object>(obj: T) => {
   return { ...obj, uid };
 };
 
+// ENUMS
+enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON}
+
 interface Resource<T> {
   uid: number;
-  resourceName: string;
-  data: string;
+  resourceName: ResourceType;
+  data: T;
 }
 
+const docOne: Resource<object> = {
+    uid: 1,
+    resourceName: ResourceType.AUTHOR,
+    data: {title:"Nisanur"},
+  };
+  
 const docThree: Resource<string> = {
-  uid: 1,
-  resourceName: "person",
-  data: "Nisanur",
+  uid: 3,
+  resourceName: ResourceType.BOOK,
+  data: "Gölge ve Kemik",
 };
+
+
+
