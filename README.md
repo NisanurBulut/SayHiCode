@@ -215,6 +215,7 @@ The project topic is very simple: Users sign up for the application and see the 
 | Object & Arrays      | Better Workflow & tsconfig | Modules                    | Enums                      |
 | Function Basics      | Type Alies                 | Interfaces                 | Tuples                     |
 | Function signatures  | The Dom & Type Casting     | Interfaces With Classes    |                            |
+
 ![SayHiXAML](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiTypeScript.gif)
 
 ## Helpfull Websites
