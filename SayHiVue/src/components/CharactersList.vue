@@ -1,6 +1,6 @@
 <template>
   <div class="character-list">
-       <p>Sortered by {{ sorter }}</p>
+    <p>Sortered by {{ sorter }}</p>
     <ul>
       <li v-for="character in characters" :key="character.id">
         <h2>{{ character.name }} in {{ character.location }}</h2>
@@ -15,7 +15,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType, computed } from "vue";
 import Character from "../types/Character";
 import SortTerm from "../types/SortTerm";
 
@@ -30,7 +30,14 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {},
+  setup(props) {
+    const sortedCharacters = computed(() => {
+      return [...props.characters].sort((a: Character, b: Character) => {
+        return a[props.sorter] > b[props.sorter] ? 1 : -1;
+      });
+    });
+    return { sortedCharacters };
+  },
 });
 </script>
 <style scoped>
