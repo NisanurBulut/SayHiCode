@@ -2,7 +2,7 @@
   <div class="app">
      <header>
         <div class="title">
-        <img src="" alt="site logo">
+        <img src="./assets/winx.png" alt="site logo">
         <h1>Hyrule Jobs</h1>
       </div>
       <div class="sorter">
@@ -25,7 +25,7 @@ export default defineComponent({
   components: { CharacterList },
   setup() {
     const characters = ref<Character[]>([
-   
+      {id:"1",name:"Bloom",description:"",location:"",powers:"",image_url:""}
     ])
    const sorter = ref<SortTerm>('name')
     const handleClick = (term: SortTerm) => {
