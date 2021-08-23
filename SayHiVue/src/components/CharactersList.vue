@@ -1,17 +1,18 @@
 <template>
   <div class="character-list">
     <p>Sortered by {{ sorter }}</p>
-    <ul>
+    <transition-group name="list" tag="ul">
       <li v-for="character in characters" :key="character.id">
         <h2>{{ character.name }} in {{ character.location }}</h2>
-        <div class="salary">
+        <div class="powers">
+              <img src="{{character.img_url}}" alt="">
           <p>{{ character.powers }}</p>
         </div>
         <div class="description">
           <p>{{ character.description }}</p>
         </div>
       </li>
-    </ul>
+    </transition-group>
   </div>
 </template>
 <script lang="ts">
@@ -70,4 +71,7 @@ export default defineComponent({
   font-weight: bold;
   margin: 10px 4px;
 }
+ .list-move {
+    transition: all 1s;
+  }
 </style>
