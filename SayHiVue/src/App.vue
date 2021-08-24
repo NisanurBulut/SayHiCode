@@ -20,31 +20,13 @@
 import { defineComponent, ref } from 'vue';
 import Character from './types/Character';
 import SortTerm from './types/SortTerm';
-import CharacterList from './components/CharacterList.vue'
+import CharacterList from './components/CharacterList.vue';
+import data from "./db.json";
 export default defineComponent({
   name: 'App',
   components: { CharacterList },
   setup() {
-    const characters = ref<Character[]>([
-      {id:"1",name:"Bloom",
-      description:"Bloom, 16 yaşındadır. Domino adlı gezegenin prensesi, ejderha ateşi gücüne sahip olan peri ve bu büyük gücün koruyucusudur. Kral Oritel ve Kraliçe Marion'un kızıdır.",
-      location:"Domino",powers:"ejderha ateşi",
-      image_url:""},
-      {
-        id:"2", name:"Musa",
-        description:"Miusa (Özgün adı: Musa), Müzik'in Koruyucu Perisi ve Alfea'nın eski bir öğrencisidir. Ayrıca, Winx Club'ın bir üyesidir. O duyurulan 5. Winx perisidir",
-        location:"",
-        powers:"Ses/müzik Sihiri (büyüsü), ses İyileştirme",
-        image_url:""
-      },
-       {
-        id:"2", name:"Musa",
-        description:"Miusa (Özgün adı: Musa), Müzik'in Koruyucu Perisi ve Alfea'nın eski bir öğrencisidir. Ayrıca, Winx Club'ın bir üyesidir. O duyurulan 5. Winx perisidir",
-        location:"",
-        powers:"Ses/müzik Sihiri (büyüsü), ses İyileştirme",
-        image_url:""
-      }
-    ])
+  const characters = ref<Character[]>(data);
    const sorter = ref<SortTerm>('name')
     const handleClick = (term: SortTerm) => {
       sorter.value = term
