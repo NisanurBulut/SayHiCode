@@ -24,7 +24,7 @@ export default defineComponent({
   props: {
     characters: {
       required: true,
-      type: Array as PropType<Character[]>,
+      type: Array as PropType<Character[]>
     },
     sorter: {
       type: String as PropType<SortTerm>,

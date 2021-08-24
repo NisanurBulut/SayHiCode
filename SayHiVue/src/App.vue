@@ -1,13 +1,14 @@
+  
 <template>
   <div class="app">
      <header>
         <div class="title">
-        <img src="./assets/winx.png" alt="site logo">
-        <h1>Hyrule Jobs</h1>
+        <img src="./assets/winx.png" alt="winx logo">
+        <h1>Hi Winx Club</h1>
       </div>
       <div class="sorter">
         <button @click="handleClick('name')">Sort by name</button>
-        <button @click="handleClick('power')">Sort by power</button>
+        <button @click="handleClick('powers')">Sort by power</button>
         <button @click="handleClick('location')">Sort by location</button>
       </div>
     </header>
@@ -19,7 +20,7 @@
 import { defineComponent, ref } from 'vue';
 import Character from './types/Character';
 import SortTerm from './types/SortTerm';
-import CharacterList from './components/CharactersList.vue'
+import CharacterList from './components/CharacterList.vue'
 export default defineComponent({
   name: 'App',
   components: { CharacterList },

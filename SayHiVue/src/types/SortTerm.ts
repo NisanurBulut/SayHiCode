@@ -1,3 +1,3 @@
-type SortTerm = "name" | "power" | "location";
+type SortTerm = "name" | "powers" | "location";
 
 export default SortTerm;
