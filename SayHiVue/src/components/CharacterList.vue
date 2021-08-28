@@ -3,15 +3,17 @@
     <p>Sortered by {{ sorter }}</p>
     <transition-group name="list" tag="ul">
       <li v-for="character in characters" :key="character.id">
-        <h2>{{ character.name }} in {{ character.location }}</h2>
-        <div class="powers">
-              <img src="{{character.img_url}}" alt="">
-          <p>{{ character.powers }}</p>
-        </div>
-        <div class="description">
+        <div class="row">
+          <img :src="character.image_url" :alt="character.name" />
           <p>{{ character.description }}</p>
         </div>
+     
+        <div class="row">
+         <p class="powers">{{ character.powers }}</p>
+         <p class="location">{{ character.location }}</p>
+        </div>
       </li>
+    
     </transition-group>
   </div>
 </template>
@@ -24,7 +26,7 @@ export default defineComponent({
   props: {
     characters: {
       required: true,
-      type: Array as PropType<Character[]>
+      type: Array as PropType<Character[]>,
     },
     sorter: {
       type: String as PropType<SortTerm>,
@@ -42,6 +44,12 @@ export default defineComponent({
 });
 </script>
 <style scoped>
+
+.row{
+  display: flex;
+  justify-content: space-between;
+}
+
 .character-list {
   max-width: 960px;
   margin: 40px auto;
@@ -56,22 +64,24 @@ export default defineComponent({
   margin: 16px 0;
   border-radius: 4px;
 }
-.character-list h2 {
-  margin: 0 0 10px;
-  text-transform: capitalize;
+.character-list li img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.location {
+  color: #1a17bf;
+  font-weight: bold;
+  margin: 10px 4px;
 }
 .powers {
-  display: flex;
-}
-.powers img {
-  width: 30px;
-}
-.powers p {
   color: #17bf66;
   font-weight: bold;
   margin: 10px 4px;
 }
- .list-move {
-    transition: all 1s;
-  }
+.list-move {
+  transition: all 1s;
+}
 </style>
