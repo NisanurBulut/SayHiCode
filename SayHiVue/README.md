@@ -1,24 +1,8 @@
-# sayhivue
+## Give a Star! :star:
+If you like or are using this project to learn or start your solution, please give it a star. Thanks!
 
-## Project setup
-```
-npm install
-```
+### 13. SayHiVue
+<hr>
+<img align="left" width="120px" height="120px" src="https://github.com/NisanurBulut/SayHiCode/blob/master/SayHiVue/src/assets/winx.png"><p>This work is a Vue3 project. Data listing and sorting were done with json data. Practice has been made on using Vue-cli. Parent and child component relationship is examined.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![SayHiVue](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiVue.gif)
