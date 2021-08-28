@@ -3,20 +3,8 @@
     <p class="sort-text">Sortered by {{ sorter }}</p>
     <transition-group name="list" tag="ul">
       <li v-for="character in sortedCharacters" :key="character.id">
-        <div class="row">
-          <h2>{{character.name}}</h2>
-        </div>
-        <div class="row">
-          <img :src="character.image_url" :alt="character.name" />
-          <p>{{ character.description }}</p>
-        </div>
-     
-        <div class="row">
-         <p class="powers">{{ character.powers }}</p>
-         <p class="location">{{ character.location }}</p>
-        </div>
+    <character-item :character="character" />
       </li>
-    
     </transition-group>
   </div>
 </template>
@@ -24,8 +12,9 @@
 import { defineComponent, PropType, computed } from "vue";
 import Character from "../types/Character";
 import SortTerm from "../types/SortTerm";
-
+import CharacterItem from './CharacterItem.vue'
 export default defineComponent({
+  components: { CharacterItem },
   props: {
     characters: {
       required: true,
