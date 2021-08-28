@@ -7,10 +7,11 @@
 
 body {
   font-family: 'Open Sans';
-  background: #d4b7d4;
+  background: #7c087cc9;
 }
 
 h1 {
   font-family: HyliaSerif;
   letter-spacing: 4px;
+  color: white;
 }

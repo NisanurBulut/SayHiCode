@@ -1,8 +1,11 @@
 <template>
   <div class="character-list">
-    <p>Sortered by {{ sorter }}</p>
+    <p class="sort-text">Sortered by {{ sorter }}</p>
     <transition-group name="list" tag="ul">
       <li v-for="character in sortedCharacters" :key="character.id">
+        <div class="row">
+          <h2>{{character.name}}</h2>
+        </div>
         <div class="row">
           <img :src="character.image_url" :alt="character.name" />
           <p>{{ character.description }}</p>
@@ -44,16 +47,25 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-
+.sort-text {
+    color: white;
+  font-weight: bold;
+}
 .row{
   display: flex;
   justify-content: space-between;
+  text-align: center;
 }
 
 .character-list {
   max-width: 960px;
   margin: 40px auto;
 }
+  .character-list h2 {
+      color:#014EFE;
+    margin: 0 0 10px;
+    text-transform: capitalize;
+  }
 .character-list ul {
   padding: 0;
 }
@@ -67,8 +79,6 @@ export default defineComponent({
 .character-list li img {
   border-radius: 50%;
   width: 100px;
-  height: 100px;
-  margin-right: 10px;
 }
 
 .location {

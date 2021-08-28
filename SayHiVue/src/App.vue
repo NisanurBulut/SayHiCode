@@ -57,7 +57,7 @@ export default defineComponent({
     justify-content: center;
   }
   header img {
-    width: 120px;
+    width: 150px;
     margin-right: 20px;
   }
   header h1 {

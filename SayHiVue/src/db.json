@@ -37,5 +37,13 @@
               "location":"Zenith",
               "powers":"Teknoloji gücü",
               "image_url":"https://i.pinimg.com/236x/ce/e6/52/cee6523b8be23bb671a50e6153a39e6f.jpg"
+            },
+            {
+              "id":"6", 
+              "name":"Flora",
+              "description":"Doğanın gücünü kullanır. Oldukça sakin, iyi kalpli ve romantiktir. Helia'ya çok aşıktır. Lynpheanın koruyucusudur. En sevdiği arkadaşı Layla'dır. Pixie'si Chatta'dır. Selkie'si Desiryee'dir.",
+              "location":"Lynpheanın ",
+              "powers":"Doğa gücü",
+              "image_url":"https://i.pinimg.com/236x/3a/b4/25/3ab4252206c6e5618a5d0e24ec221a9d.jpg"
             }
     ]
