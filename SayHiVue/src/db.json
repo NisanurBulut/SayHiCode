@@ -2,24 +2,40 @@
         {
             "id":"1",
             "name":"Bloom",
-            "description":"Bloom, 16 yaşındadır. Domino adlı gezegenin prensesi, ejderha ateşi gücüne sahip olan peri ve bu büyük gücün koruyucusudur. Kral Oritel ve Kraliçe Marion'un kızıdır.",
+            "description":"Bloom, 16 yaşındadır. Domino adlı gezegenin prensesi, ejderha ateşi gücüne sahip olan peri ve bu büyük gücün koruyucusudur. Kral Oritel ve Kraliçe Marion'un kızıdır. Ejder Ateşi (Dragon Fire/Flame) gücüne sahiptir. Dünya'dan geldiği sanılsa da aslında Domino'nun prensesidir. Sky'a çok aşıktır. Bloom, çok güzel, tatlı ve iyi kalpli bir kızdır. Gerçek annesini ve babasını Winx Kayıp Krallığın Sırrı adlı sinema filminde bulmuştur. Bloom'un Daphne adlı bir de ablası vardır. Ablası Daphne su perisidir. Bloom ise Evrenin en güçlü sihri olan Ejder Ateşi'ne sahiptir. Kiko, onun evcil hayvanıdır. Lockette ise pixie'sidir. En yakın arkadaşı ise Stella'dır. Selkie'si Serena'dır. ",
             "location":"Domino",
             "powers":"ejderha ateşi",
-            "image_url":""},
+            "image_url":"https://i.pinimg.com/236x/c1/7c/9d/c17c9d35bbb830d0766cd317150a503c.jpg"},
             {
               "id":"2", 
-              "name":"Musa",
-              "description":"Miusa (Özgün adı: Musa), Müzik'in Koruyucu Perisi ve Alfea'nın eski bir öğrencisidir. Ayrıca, Winx Club'ın bir üyesidir. O duyurulan 5. Winx perisidir",
-              "location":"",
+              "name":"Miusa",
+              "description":"Müzik'in Koruyucu Perisi ve Alfea'nın eski bir öğrencisidir. Miusa Müziği, Dans Etmeyi, Şarkı Söylemeyi, ve Enstrümental Çalgılar çalmayı sever. Fakat onun en sevdiği çalgı Konser Flüt'üdür. Miusa genellikle muhteşem müzik çalar, Fakat en iyi yanlız iken müzik çalar. Winx Club'daki en erkeksi, kaba davranın kişi Miusa'dır, Annesi Öldüğünden beri çok hayata çok duygusal bakmaktadır.",
+              "location":"Melody Gezegeni",
               "powers":"Ses/müzik Sihiri (büyüsü), ses İyileştirme",
-              "image_url":""
+              "image_url":"https://i.pinimg.com/564x/a6/d7/67/a6d767c7114aac956e4bde3940dbb2b3.jpg"
             },
              {
-              "id":"2", 
-              "name":"Musa",
-              "description":"Miusa (Özgün adı: Musa), Müzik'in Koruyucu Perisi ve Alfea'nın eski bir öğrencisidir. Ayrıca, Winx Club'ın bir üyesidir. O duyurulan 5. Winx perisidir",
-              "location":"",
-              "powers":"Ses/müzik Sihiri (büyüsü), ses İyileştirme",
-              "image_url":""
+              "id":"3", 
+              "name":"Stella",
+              "description":"1. sezonda 17 yaşındadır. Güneş'in ve Ay'ın gücünü kullanır. Parlak Güneş perisidir. Brandon'a çok aşıktır. Konuşkandır ve modayı çok sever. Sihirli Boyut'un merkezi olan Solaria'dan gelmektedir ve yegane Solaria prensesidir. Ebeveynleri Kraliçe Luna ve Kral Radius'dur. Stella yıldızları, annesi ay'ı, babası ise güneş'i temsil etmektedir. En sevdiği arkadaşı Bloom'dur. Pixie'si Amore'dir. Selkie'si İlliris'dir. Peri hayvanı: Shiny'dir. Stella, Solaria Yüzüğü'nün koruyucusu ve Solaria'nın Koruyucu Perisi'dir.Hobileri; alışveriş.Yaratıcı kişiliktedir, modayı takip eder",
+              "location":"Solaria",
+              "powers":"Parlak Güneş, Ay, Yıldızlar",
+              "image_url":"https://i.pinimg.com/236x/d2/50/73/d250735c3bdd017f559a5764584e57ea.jpg"
+            },
+            {
+              "id":"4", 
+              "name":"Layla",
+              "description":"Diziye 2. sezonda katılmıştır. Sonsuz Okyanus perisidir ayrıca morfiks gücüne sahiptir. Sporu çok sever. Nabu ile nişanlıydı fakat Nabu Ogron'un hamlesi üzerine ölmüştür. Daha sonra Roy ile aralarında bir şey olmuştur ve Nex de ona âşıktır. Andros gezegeninin prensesidir. En sevdiği arkadaşı Flora'dır. Pixie'si Piff'dir. Selkie'si Lemmy'dir. ",
+              "location":"Andros",
+              "powers":"Su, Dalgalar, Morfiks",
+              "image_url":"https://i.pinimg.com/236x/e6/0a/c8/e60ac87d9b79121cbb251af05c750330.jpg"
+            },
+            {
+              "id":"5", 
+              "name":"Tecna",
+              "description":"Teknoloji gücüne hakimdir. Bilgisayarı ve cep telefonunu çok sever. Bu nedenle mantıklı ve rasyonel bir kişiliğe sahiptir. Timmy'e âşıktır. Zenith gezegeninden gelmektedir. En sevdiği arkadaşı ise Musa'dır. ",
+              "location":"Zenith",
+              "powers":"Teknoloji gücü",
+              "image_url":"https://i.pinimg.com/236x/ce/e6/52/cee6523b8be23bb671a50e6153a39e6f.jpg"
             }
     ]
