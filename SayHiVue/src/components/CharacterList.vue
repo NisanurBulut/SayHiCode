@@ -2,7 +2,7 @@
   <div class="character-list">
     <p>Sortered by {{ sorter }}</p>
     <transition-group name="list" tag="ul">
-      <li v-for="character in characters" :key="character.id">
+      <li v-for="character in sortedCharacters" :key="character.id">
         <div class="row">
           <img :src="character.image_url" :alt="character.name" />
           <p>{{ character.description }}</p>
