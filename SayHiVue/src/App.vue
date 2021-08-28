@@ -3,7 +3,7 @@
   <div class="app">
      <header>
         <div class="title">
-        <img src="./assets/winx-removebg-preview.png" alt="winx logo">
+        <img src="./assets/winx.png" alt="winx logo">
         <h1>Hi Winx Club</h1>
       </div>
       <div class="sorter">
