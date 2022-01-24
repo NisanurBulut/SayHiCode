@@ -230,3 +230,4 @@ The project topic is very simple: Users sign up for the application and see the 
   [The Net Ninja- Laravel Tutorial](https://youtu.be/zckH4xalOns) [Quicksand](https://fonts.google.com/specimen/Quicksand) [MyColorSpace](https://mycolor.space/) [JokeAPI](https://v2.jokeapi.dev/joke/Any)
   [RestCountries](https://restcountries.eu/) [FakeStoreAPI](https://fakestoreapi.herokuapp.com/)
 [Strategy Pattern](https://www.youtube.com/watch?v=5upBcx8Z7FM&t=151s) [TypeScriptTutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI) [CatAPI](https://thecatapi.com/)
+[Python Tutorial for Beginners - Learn Python in 5 Hours [FULL COURSE]](https://youtu.be/t8pPdKYpowI)
