@@ -225,6 +225,10 @@ The project topic is very simple: Users sign up for the application and see the 
 
 ![SayHiVue](https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/Trailer_SayHiVue.gif)
 
+### 14. SayHiPython
+<hr>
+<img align="left" width="120px" height="120px" src="https://github.com/NisanurBulut/SayHiCode/blob/master/Trailers/sayhi.png"><p>With this study, an introduction to OOP with python was made. Excel file reading and data processing were done.
+
 ## Helpfull Websites
   [json-to-js](https://www.convertonline.io/convert/json-to-js) [json2ts](http://json2ts.com/) [fusioncharts](https://www.fusioncharts.com/)  [React-Query-Tutorial](https://www.youtube.com/watch?v=XRbnuiAbV3g&list=PLzJ4DQ1UrlRb0XiN-vecbtZ31t-Q2Z6BD&ab_channel=boraoren) [Laravel-artisan-blog](https://www.yasird.com/laravel-5-artisan-nedir/) [MailTrap](https://mailtrap.io/) [HeroIcons](https://heroicons.com/)
   [The Net Ninja- Laravel Tutorial](https://youtu.be/zckH4xalOns) [Quicksand](https://fonts.google.com/specimen/Quicksand) [MyColorSpace](https://mycolor.space/) [JokeAPI](https://v2.jokeapi.dev/joke/Any)
