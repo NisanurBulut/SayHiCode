@@ -4,7 +4,7 @@ class Book:
         self.author = author
         self.publish_date = publish_date
 
-    def change_publish_date(self, publish_date):
+    def change_publish_date(self, new_publish_date):
         self.publish_date = new_publish_date
 
     def change_name(self, new_name):
