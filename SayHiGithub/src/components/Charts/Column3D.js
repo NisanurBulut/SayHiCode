@@ -25,7 +25,7 @@ const ChartComponent = ({ data }) => {
     dataSource: {
       // Chart Configuration
       chart: {
-        caption: 'Most Popular',
+        caption: 'Most Popular Repos',
         yAxisName: 'Stars',
         yAxisNameFontSize: 16,
         xAxisName: 'Repos',
@@ -35,21 +35,21 @@ const ChartComponent = ({ data }) => {
         usePlotGradientColor: 0,
         valueFontSize: 16,
         placeValuesInside: 0,
-        divLineColor: "#102a42",
+        divLineColor: '#102a42',
         divLineAlpha: 15,
-        captionFontColor: "#102a42",
+        captionFontColor: '#102a42',
         captionFontBold: 0,
         captionFontSize: 20,
-        captionFont: "Roboto",
-        baseFont: "Open Sans",
+        captionFont: 'Roboto',
+        baseFont: 'Open Sans',
         baseFontSize: 12,
-        baseFontColor: "#617d98",
-        smartLineColor: "#617d98",
+        baseFontColor: '#617d98',
+        smartLineColor: '#617d98',
         showShadow: 0,
         showPlotBorder: 0,
         paletteColors:
-          "#2caeba, #5D62B5, #FFC533, #F2726F, #8d6e63, #1de9b6, #6E80CA",
-        bgColor: "#FFFFFF",
+          '#2caeba, #5D62B5, #FFC533, #F2726F, #8d6e63, #1de9b6, #6E80CA',
+        bgColor: '#FFFFFF',
         showBorder: 0,
       },
       // Chart Data
@@ -57,6 +57,7 @@ const ChartComponent = ({ data }) => {
     },
   };
 
+  // eslint-disable-next-line react/jsx-props-no-spreading
   return <ReactFC {...chartConfigs} />;
 };
 

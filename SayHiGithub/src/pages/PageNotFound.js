@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-const Error = () => {
+
+const PageNotFound = () => {
   return (
-    <div>
+    <Wrapper>
       <h1>404</h1>
       <h3>Sorry, the page you tried connot be found</h3>
       <Link to="/" className="btn">back home</Link>
-    </div>
+    </Wrapper>
   );
 };
 const Wrapper = styled.section`
@@ -24,4 +25,4 @@ const Wrapper = styled.section`
     margin-bottom: 1.5rem;
   }
 `;
-export default Error;
+export default PageNotFound;

@@ -1,16 +1,19 @@
+/* eslint-disable camelcase */
 import React from 'react';
-import { GithubContext } from '../context/context';
 import styled from 'styled-components';
+import { GithubContext } from '../context/context';
 
 const Followers = () => {
   const { githubFollowers } = React.useContext(GithubContext);
+
   return (
     <Wrapper>
       <div className="followers">
-        {githubFollowers.map((follower, index) => {
+        {githubFollowers.map((follower) => {
           const { avatar_url: img, html_url, login } = follower;
+
           return (
-            <article key={index}>
+            <article key={html_url}>
               <img src={img} alt={login} />
               <div>
                 <h4>{login}</h4>

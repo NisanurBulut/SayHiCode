@@ -1,4 +1,4 @@
-import Dashboard from "./Dashboard";
-import Error from "./Error";
+import Dashboard from './Dashboard';
+import PageNotFound from './PageNotFound';
 
-export { Dashboard, Error };
+export { Dashboard, PageNotFound };

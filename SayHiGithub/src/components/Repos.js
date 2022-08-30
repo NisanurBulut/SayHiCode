@@ -1,12 +1,34 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable camelcase */
 import React from 'react';
 import styled from 'styled-components';
 import { GithubContext } from '../context/context';
 import { Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
+
 const Repos = () => {
   const { githubRepos } = React.useContext(GithubContext);
-  var languages = githubRepos.reduce((total, item) => {
-    const { language, stargazers_count } = item;
+
+  const mostForkedRepos = githubRepos.sort((a, b) => {
+    return b.forks_count - a.forks_count;
+  })
+    .slice(0, 5)
+    .map((repo) => {
+      return { label: repo.name, value: repo.forks_count };
+    });
+
+  const mostPopularReposByStars = githubRepos.sort((a, b) => {
+    return b.stargazers_count - a.stargazers_count;
+  })
+    .slice(0, 5)
+    .map((repo) => {
+      return { label: repo.name, value: repo.stargazers_count };
+    });
+
+  const languages = githubRepos.reduce((total, repository) => {
+    const { language, stargazers_count } = repository;
+
     if (!language) return total;
+
     if (!total[language]) {
       total[language] = { label: language, value: 1, stars: stargazers_count };
     } else {
@@ -16,14 +38,17 @@ const Repos = () => {
         stars: total[language].stars + stargazers_count,
       };
     }
+
     return total;
   }, {});
-  const mostUsed = Object.values(languages)
+
+  const mostUsedLanguages = Object.values(languages)
     .sort((a, b) => {
       return b.value - a.value;
     })
     .slice(0, 5);
-  const mostPopular = Object.values(languages)
+
+  const starsPerLanguage = Object.values(languages)
     .sort((a, b) => {
       return b.stars - a.stars;
     })
@@ -32,31 +57,13 @@ const Repos = () => {
     })
     .slice(0, 5);
 
-  // stars, forks
-
-  let { stars, forks } = githubRepos.reduce(
-    (total, item) => {
-      const { stargazers_count, name, forks } = item;
-      total.stars[stargazers_count] = { label: name, value: stargazers_count };
-      total.forks[forks] = { label: name, value: forks };
-      return total;
-    },
-    {
-      stars: {},
-      forks: {},
-    }
-  );
-
-  stars = Object.values(stars).slice(-5).reverse();
-  forks = Object.values(forks).slice(-5).reverse();
-
   return (
-    <section className='section'>
-      <Wrapper className='section-center'>
-        <Pie3D data={mostUsed} />
-        <Column3D data={stars} />
-        <Doughnut2D data={mostPopular} />
-        <Bar3D data={forks} />
+    <section className="section">
+      <Wrapper className="section-center">
+        <Pie3D data={mostUsedLanguages} />
+        <Column3D data={mostPopularReposByStars} />
+        <Doughnut2D data={starsPerLanguage} />
+        <Bar3D data={mostForkedRepos} />
       </Wrapper>
     </section>
   );
